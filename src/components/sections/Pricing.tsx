@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Phone, MapPin, Truck, CheckSquare } from 'lucide-react'
+import { Phone, MapPin, Truck, CheckSquare, Calendar } from 'lucide-react'
 
 const PEW_PRICE = 25
 const MAX_PEWS = 14
 
 export default function Pricing() {
   const [pewCount, setPewCount] = useState(6)
+  const [weddingDate, setWeddingDate] = useState('')
   const [location, setLocation] = useState('')
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
 
@@ -22,7 +23,7 @@ export default function Pricing() {
           <h2 className="section-title mb-4">Get Your Custom Quote</h2>
           <div className="gold-divider" />
           <p className="section-subtitle mt-6 max-w-xl mx-auto">
-            Pews are <span className="text-[#2c1f0e] font-semibold">$25 each</span>, plus travel fees based on your location. Fill out the fields below and give us a call — we'll confirm availability and finalize your quote.
+            Pews are <span className="text-[#2c1f0e] font-semibold">$25 each</span>, plus travel/installation fees based on your location. Fill out the fields below and give us a call — we'll confirm availability and finalize your quote.
           </p>
         </div>
 
@@ -67,6 +68,22 @@ export default function Pricing() {
             <div className="flex justify-between mt-1">
               <span className="font-raleway text-xs text-[#9b836e]">1</span>
               <span className="font-raleway text-xs text-[#9b836e]">{MAX_PEWS}</span>
+            </div>
+          </div>
+
+          {/* Wedding date */}
+          <div className="mb-8">
+            <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
+              What is your wedding date?
+            </label>
+            <div className="relative">
+              <Calendar size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e]" />
+              <input
+                type="date"
+                value={weddingDate}
+                onChange={(e) => setWeddingDate(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
+              />
             </div>
           </div>
 

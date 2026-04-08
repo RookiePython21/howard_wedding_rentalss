@@ -1,140 +1,160 @@
-import { CheckCircle } from 'lucide-react'
-import Button from '../ui/Button'
-import { useCheckout } from '../../hooks/useCheckout'
-import type { PricingTier } from '../../types'
+import { useState } from 'react'
+import { Phone, MapPin, Truck, CheckSquare } from 'lucide-react'
 
-const tiers: PricingTier[] = [
-  {
-    id: 'intimate',
-    name: 'Intimate',
-    price: 349,
-    description: 'Perfect for small, intimate ceremonies',
-    features: [
-      'Up to 10 pews (50–60 guests)',
-      'Natural or walnut finish',
-      'Delivery & setup included',
-      'Teardown & pickup included',
-      'Up to 5 miles from our location',
-      'Day-of coordination support',
-    ],
-    stripePriceId: 'price_intimate_placeholder',
-  },
-  {
-    id: 'classic',
-    name: 'Classic',
-    price: 649,
-    description: 'Our most popular package for mid-size weddings',
-    features: [
-      'Up to 20 pews (100–120 guests)',
-      'Any finish: natural, walnut, or whitewash',
-      'Delivery & setup included',
-      'Teardown & pickup included',
-      'Up to 25 miles from our location',
-      'Ribbon or fabric sash decorating',
-      'Day-of coordination support',
-    ],
-    highlighted: true,
-    stripePriceId: 'price_classic_placeholder',
-  },
-  {
-    id: 'grand',
-    name: 'Grand',
-    price: 999,
-    description: 'Full-scale setup for large, grand celebrations',
-    features: [
-      'Up to 40 pews (200–240 guests)',
-      'Any finish: natural, walnut, or whitewash',
-      'Delivery & setup included',
-      'Teardown & pickup included',
-      'Up to 50 miles from our location',
-      'Full floral & ribbon decorating',
-      'Cushioned seating upgrade available',
-      'Dedicated on-site attendant',
-    ],
-    stripePriceId: 'price_grand_placeholder',
-  },
-]
+const PEW_PRICE = 25
+const MAX_PEWS = 14
 
 export default function Pricing() {
-  const { initiateCheckout, loading, error } = useCheckout()
+  const [pewCount, setPewCount] = useState(6)
+  const [location, setLocation] = useState('')
+  const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
+
+  const pewTotal = pewCount * PEW_PRICE
 
   return (
     <section id="pricing" className="py-20 sm:py-28 bg-[#f5edd8]/30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14">
           <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
-            Packages & Pricing
+            Pricing
           </p>
-          <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
+          <h2 className="section-title mb-4">Get Your Custom Quote</h2>
           <div className="gold-divider" />
           <p className="section-subtitle mt-6 max-w-xl mx-auto">
-            No hidden fees. No surprises. Just beautiful pews at a fair price — with full service included.
+            Pews are <span className="text-[#2c1f0e] font-semibold">$25 each</span>, plus travel fees based on your location. Fill out the fields below and give us a call — we'll confirm availability and finalize your quote.
           </p>
         </div>
 
-        {/* Tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              className={`relative rounded-sm border bg-white flex flex-col transition-all duration-300 hover:shadow-xl ${
-                tier.highlighted
-                  ? 'border-[#c9a96e] shadow-lg shadow-[#c9a96e]/10 scale-[1.02]'
-                  : 'border-cream-200 hover:border-[#c9a96e]/50'
-              }`}
-            >
-              {tier.highlighted && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#c9a96e] text-white font-raleway text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full">
-                    Most Popular
-                  </span>
-                </div>
-              )}
+        {/* Quote form card */}
+        <div className="bg-white border border-cream-200 rounded-sm shadow-lg p-8 sm:p-10">
 
-              <div className={`p-7 pb-6 ${tier.highlighted ? 'pt-10' : ''}`}>
-                <h3 className="font-playfair text-2xl text-[#2c1f0e] mb-1">{tier.name}</h3>
-                <p className="font-raleway text-sm text-[#6b5744] mb-6">{tier.description}</p>
-                <div className="flex items-end gap-1 mb-6">
-                  <span className="font-raleway text-sm text-[#6b5744] mt-1">Starting at</span>
-                  <span className="font-playfair text-4xl font-bold text-[#2c1f0e] ml-2">
-                    ${tier.price}
-                  </span>
-                </div>
-
-                <ul className="space-y-3 mb-7">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5">
-                      <CheckCircle size={16} className="text-[#c9a96e] shrink-0 mt-0.5" />
-                      <span className="font-raleway text-sm text-[#6b5744]">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant={tier.highlighted ? 'gold' : 'outline'}
-                  className="w-full"
-                  loading={loading}
-                  onClick={() => initiateCheckout(tier.stripePriceId ?? '')}
-                >
-                  Reserve This Package
-                </Button>
-              </div>
+          {/* Pew count */}
+          <div className="mb-8">
+            <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
+              How many pews do you need?
+            </label>
+            <p className="font-raleway text-xs text-[#9b836e] mb-4">
+              Each pew seats 9–10 adults &mdash; maximum of {MAX_PEWS} pews
+            </p>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setPewCount((n) => Math.max(1, n - 1))}
+                className="w-10 h-10 rounded-sm border border-cream-200 text-[#2c1f0e] font-playfair text-xl hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors flex items-center justify-center"
+                aria-label="Decrease pew count"
+              >
+                −
+              </button>
+              <span className="font-playfair text-3xl text-[#2c1f0e] w-10 text-center">{pewCount}</span>
+              <button
+                onClick={() => setPewCount((n) => Math.min(MAX_PEWS, n + 1))}
+                className="w-10 h-10 rounded-sm border border-cream-200 text-[#2c1f0e] font-playfair text-xl hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors flex items-center justify-center"
+                aria-label="Increase pew count"
+              >
+                +
+              </button>
+              <span className="font-raleway text-sm text-[#9b836e] ml-2">
+                ≈ {pewCount * 9}–{pewCount * 10} guests
+              </span>
             </div>
-          ))}
+            {/* Visual bar */}
+            <div className="mt-4 h-1.5 bg-cream-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[#c9a96e] transition-all duration-300"
+                style={{ width: `${(pewCount / MAX_PEWS) * 100}%` }}
+              />
+            </div>
+            <div className="flex justify-between mt-1">
+              <span className="font-raleway text-xs text-[#9b836e]">1</span>
+              <span className="font-raleway text-xs text-[#9b836e]">{MAX_PEWS}</span>
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="mb-8">
+            <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
+              Where is the wedding located?
+            </label>
+            <div className="relative">
+              <MapPin size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e]" />
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="City, venue name, or address"
+                className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
+              />
+            </div>
+          </div>
+
+          {/* Placement vs delivery */}
+          <div className="mb-10">
+            <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
+              Do you need us to place the pews?
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                onClick={() => setPlacement('place')}
+                className={`flex items-center gap-3 p-4 rounded-sm border text-left transition-all duration-200 ${
+                  placement === 'place'
+                    ? 'border-[#c9a96e] bg-[#c9a96e]/5'
+                    : 'border-cream-200 hover:border-[#c9a96e]/50'
+                }`}
+              >
+                <CheckSquare
+                  size={18}
+                  className={placement === 'place' ? 'text-[#c9a96e]' : 'text-[#9b836e]'}
+                />
+                <div>
+                  <p className="font-raleway font-semibold text-sm text-[#2c1f0e]">Deliver & Place</p>
+                  <p className="font-raleway text-xs text-[#9b836e]">We set them up for you</p>
+                </div>
+              </button>
+              <button
+                onClick={() => setPlacement('deliver')}
+                className={`flex items-center gap-3 p-4 rounded-sm border text-left transition-all duration-200 ${
+                  placement === 'deliver'
+                    ? 'border-[#c9a96e] bg-[#c9a96e]/5'
+                    : 'border-cream-200 hover:border-[#c9a96e]/50'
+                }`}
+              >
+                <Truck
+                  size={18}
+                  className={placement === 'deliver' ? 'text-[#c9a96e]' : 'text-[#9b836e]'}
+                />
+                <div>
+                  <p className="font-raleway font-semibold text-sm text-[#2c1f0e]">Delivery Only</p>
+                  <p className="font-raleway text-xs text-[#9b836e]">Drop-off, we'll unload</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          {/* Price summary */}
+          <div className="border-t border-cream-200 pt-7">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-raleway text-sm text-[#6b5744]">
+                {pewCount} pew{pewCount !== 1 ? 's' : ''} × $25
+              </span>
+              <span className="font-playfair text-xl text-[#2c1f0e] font-bold">${pewTotal}</span>
+            </div>
+            <div className="flex items-center justify-between mb-6">
+              <span className="font-raleway text-sm text-[#6b5744]">Travel fee</span>
+              <span className="font-raleway text-sm text-[#9b836e] italic">Based on location</span>
+            </div>
+
+            <a
+              href="tel:2709035890"
+              className="btn-gold w-full flex items-center justify-center gap-2 py-4 text-sm"
+            >
+              <Phone size={16} />
+              Call to Confirm — 270.903.5890
+            </a>
+            <p className="text-center font-raleway text-xs text-[#9b836e] mt-4">
+              We'll confirm availability, finalize your travel fee, and hold your date.
+            </p>
+          </div>
         </div>
-
-        {error && (
-          <p className="text-center mt-6 font-raleway text-sm text-red-600">{error}</p>
-        )}
-
-        <p className="text-center mt-8 font-raleway text-sm text-[#6b5744]">
-          Need a custom quote?{' '}
-          <a href="mailto:hello@howardweddingrentals.com" className="text-[#c9a96e] underline hover:text-[#a8813e]">
-            Contact us
-          </a>{' '}
-          and we'll tailor a package for your exact needs.
-        </p>
       </div>
     </section>
   )

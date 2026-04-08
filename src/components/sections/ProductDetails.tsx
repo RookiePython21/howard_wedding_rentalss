@@ -4,13 +4,13 @@ const specs = [
   {
     icon: Ruler,
     title: 'Dimensions',
-    detail: '7 ft long × 18 in deep × 34 in tall',
+    detail: '9 ft long × 18 in deep × 34 in tall',
     sub: 'Standard church pew sizing',
   },
   {
     icon: Users,
     title: 'Capacity',
-    detail: '4–6 adults per pew',
+    detail: '9-10 adults per pew',
     sub: 'Comfortably seated with aisle spacing',
   },
   {
@@ -22,8 +22,7 @@ const specs = [
   {
     icon: Palette,
     title: 'Finishes Available',
-    detail: 'Natural · Walnut · Whitewash',
-    sub: 'Choose what matches your theme',
+    detail: 'Golden Oak',
   },
   {
     icon: Flower2,
@@ -34,8 +33,7 @@ const specs = [
   {
     icon: BarChart3,
     title: 'Availability',
-    detail: '200+ pews in inventory',
-    sub: 'Accommodates up to 240 guests',
+    sub: 'Accommodates up to 140 guests',
   },
 ]
 

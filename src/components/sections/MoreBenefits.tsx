@@ -2,7 +2,7 @@ import { CheckCircle } from 'lucide-react'
 
 const features = [
   'Solid hardwood construction — not plastic or metal',
-  'Multiple wood finish options: natural, walnut, and whitewashed',
+  'Beautiful Golden Oak wood finish — warm, classic, and photo-ready',
   'Cushioned or uncushioned seating available',
   'Decorated with ribbons, florals, or fabric per your request',
   'Seats 4–6 adults comfortably per pew',

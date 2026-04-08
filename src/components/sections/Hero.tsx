@@ -40,7 +40,7 @@ export default function Hero() {
             onClick={() => scrollTo('#pricing')}
             className="text-base px-10 py-4 shadow-xl"
           >
-            View Packages
+            Get a Quote
           </Button>
           <Button
             size="lg"

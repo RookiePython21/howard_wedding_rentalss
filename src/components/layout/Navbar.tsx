@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 
 const NAV_LINKS = [
   { label: 'About', href: '#benefits' },
@@ -55,13 +55,14 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <button
-          onClick={() => handleNav('#pricing')}
-          className="hidden md:inline-flex btn-gold px-5 py-2.5 text-sm"
+        {/* Phone CTA */}
+        <a
+          href="tel:2709035890"
+          className="hidden md:inline-flex items-center gap-2 font-raleway text-sm font-semibold text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
         >
-          Get a Quote
-        </button>
+          <Phone size={16} />
+          270.903.5890
+        </a>
 
         {/* Mobile hamburger */}
         <button
@@ -88,12 +89,13 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <button
-            onClick={() => handleNav('#pricing')}
-            className="mt-4 w-full btn-gold py-3 text-sm"
+          <a
+            href="tel:2709035890"
+            className="mt-4 w-full flex items-center justify-center gap-2 font-raleway text-sm font-semibold text-[#2c1f0e] hover:text-[#c9a96e] transition-colors py-3"
           >
-            Get a Quote
-          </button>
+            <Phone size={16} />
+            270.903.5890
+          </a>
         </div>
       )}
     </header>

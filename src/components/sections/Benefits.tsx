@@ -5,7 +5,7 @@ const benefits = [
     icon: Package,
     title: 'Extensive Inventory',
     description:
-      'Over 200 authentic solid-wood church pews available in multiple finishes — natural, walnut, and whitewashed — to perfectly match your vision.',
+      'Over 200 authentic solid-wood church pews in a beautiful Golden Oak finish — warm, classic, and timeless for any ceremony.',
   },
   {
     icon: Truck,

@@ -15,12 +15,6 @@ const faqs = [
       'Yes — every package includes white-glove delivery, professional placement, and post-ceremony teardown. You don\'t have to lift a finger. We arrive early to ensure everything is perfectly arranged before your guests arrive.',
   },
   {
-    id: 'customize',
-    question: 'Can I customize the look of the pews?',
-    answer:
-      'Absolutely. We offer three wood finishes: natural, walnut, and whitewash. You can add ribbons, sashes, or floral accents — either through your florist or we can assist with basic decorating. Just let us know your vision and we\'ll make it happen.',
-  },
-  {
     id: 'damage',
     question: 'What if a pew gets damaged during my event?',
     answer:
@@ -36,7 +30,7 @@ const faqs = [
     id: 'count',
     question: 'How many pews do I need for my guest count?',
     answer:
-      'Each pew comfortably seats 4–6 adults. As a general rule: divide your expected guest count by 5 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
+      'Each pew comfortably seats 9-10 adults. As a general rule: divide your expected guest count by 10 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
   },
   {
     id: 'deposit',

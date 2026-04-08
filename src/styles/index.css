@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #c9a96e;
+    --gold-dark: #a8813e;
+    --cream: #fdf8ef;
+    --text-dark: #2c1f0e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fdfcf8;
+    color: #2c1f0e;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-[#c9a96e] hover:bg-[#a8813e] text-white font-semibold font-raleway tracking-wide transition-all duration-200 rounded-sm;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-white font-semibold font-raleway tracking-wide transition-all duration-200 rounded-sm;
+  }
+
+  .section-title {
+    @apply font-playfair text-3xl md:text-4xl lg:text-5xl text-[#2c1f0e] leading-tight;
+  }
+
+  .section-subtitle {
+    @apply font-raleway text-[#6b5744] text-lg leading-relaxed;
+  }
+
+  .gold-divider {
+    @apply w-16 h-0.5 bg-[#c9a96e] mx-auto my-4;
+  }
+}
+
+@layer utilities {
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Accordion animation */
+[data-state='open'] .accordion-content {
+  animation: slideDown 200ms ease-out;
+}
+
+[data-state='closed'] .accordion-content {
+  animation: slideUp 200ms ease-out;
+}
+
+@keyframes slideDown {
+  from { height: 0; opacity: 0; }
+  to { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to { height: 0; opacity: 0; }
+}

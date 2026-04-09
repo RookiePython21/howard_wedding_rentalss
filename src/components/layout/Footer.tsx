@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -7,17 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
           {/* Brand */}
           <div>
-            <img
-              src="/images/logo.png"
-              alt="Howard Wedding Rentals"
-              className="h-14 w-auto object-contain mb-4 brightness-200 contrast-50"
-            />
             <p className="font-raleway text-sm text-white/60 leading-relaxed">
               Bringing timeless elegance to weddings across the region. Beautiful wooden pew rentals with full delivery and setup.
             </p>
             <div className="flex gap-4 mt-5">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61573674576448"
                 aria-label="Facebook"
                 className="text-white/50 hover:text-[#c9a96e] transition-colors"
               >
@@ -52,6 +48,16 @@ export default function Footer() {
                   </button>
                 </li>
               ))}
+              <li>
+                <Link to="/about" className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -63,17 +69,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 font-raleway text-sm text-white/60">
                 <Phone size={16} className="text-[#c9a96e] shrink-0" />
-                <a href="tel:+15555555555" className="hover:text-[#c9a96e] transition-colors">
-                  (555) 555-5555
+                <a href="tel:+12709035890" className="hover:text-[#c9a96e] transition-colors">
+                  (270) 903-5890
                 </a>
               </li>
               <li className="flex items-center gap-3 font-raleway text-sm text-white/60">
                 <Mail size={16} className="text-[#c9a96e] shrink-0" />
                 <a
-                  href="mailto:hello@howardweddingrentals.com"
+                  href="mailto:contact@howardweddingrentals.com"
                   className="hover:text-[#c9a96e] transition-colors"
                 >
-                  hello@howardweddingrentals.com
+                  contact@howardweddingrentals.com
                 </a>
               </li>
             </ul>
@@ -85,12 +91,12 @@ export default function Footer() {
             © {new Date().getFullYear()} Howard Wedding Rentals. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
+            <Link to="/privacy-policy" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

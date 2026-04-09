@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-[#c9a96e]/50 rounded-full px-4 py-1.5 mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] animate-pulse" />
           <span className="font-raleway text-xs text-white/90 tracking-widest uppercase">
-            Serving Couples Since 2010
+            Serving Couples Since 2023
           </span>
         </div>
 
@@ -35,35 +35,35 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            size="lg"
-            onClick={() => scrollTo('#pricing')}
-            className="text-base px-10 py-4 shadow-xl"
-          >
-            Get a Quote
-          </Button>
+          <a href="tel:2709035890" tabIndex={-1}>
+            <Button
+              size="lg"
+              className="text-base px-10 py-4 shadow-xl flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 shrink-0 text-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13 1.12.37 2.2.73 3.21a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1 .36 2.09.6 3.21.73a2 2 0 0 1 1.72 2z"/>
+              </svg>
+              Reserve Now
+            </Button>
+          </a>
+   
+     
           <Button
             size="lg"
             variant="outline"
-            onClick={() => scrollTo('#gallery')}
+            onClick={() => scrollTo('#pricing')}
             className="text-base px-10 py-4 text-white border-white hover:bg-white hover:text-[#2c1f0e]"
           >
-            See Our Work
+            Get a Quote
           </Button>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-6 sm:gap-10 max-w-xl mx-auto">
-          {[
-            { value: '500+', label: 'Weddings Served' },
-            { value: '200+', label: 'Pews Available' },
-            { value: '5★', label: 'Average Rating' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-playfair text-2xl sm:text-3xl text-[#c9a96e] font-bold">{stat.value}</p>
-              <p className="font-raleway text-white/60 text-xs sm:text-sm mt-1">{stat.label}</p>
-            </div>
-          ))}
         </div>
       </div>
 

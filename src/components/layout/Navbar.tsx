@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const NAV_LINKS = [
   { label: 'About', href: '#benefits' },
@@ -12,6 +13,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -21,8 +24,12 @@ export default function Navbar() {
 
   const handleNav = (href: string) => {
     setOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -33,13 +40,13 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img
             src="/images/logo.png"
             alt="Howard Wedding Rentals"
             className="h-12 sm:h-14 w-auto object-contain"
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">

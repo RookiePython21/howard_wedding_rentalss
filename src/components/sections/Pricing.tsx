@@ -1,14 +1,68 @@
 import { useState } from 'react'
-import { Phone, MapPin, Truck, CheckSquare, Calendar } from 'lucide-react'
+import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
 
 const PEW_PRICE = 25
 const MAX_PEWS = 14
 
+const OWENSBORO_LAT = 37.7719
+const OWENSBORO_LNG = -87.1112
+const MAX_RADIUS_MILES = 30
+
+function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 3958.8
+  const dLat = ((lat2 - lat1) * Math.PI) / 180
+  const dLng = ((lng2 - lng1) * Math.PI) / 180
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLng / 2) *
+      Math.sin(dLng / 2)
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
+
 export default function Pricing() {
   const [pewCount, setPewCount] = useState(6)
-  const [weddingDate, setWeddingDate] = useState('')
+  const [weddingDate, setWeddingDate] = useState('2026-09-01')
   const [location, setLocation] = useState('')
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
+  const [locationError, setLocationError] = useState('')
+  const [locationChecking, setLocationChecking] = useState(false)
+
+  async function checkLocationRadius() {
+    const trimmed = location.trim()
+    if (!trimmed) { setLocationError(''); return }
+
+    setLocationChecking(true)
+    setLocationError('')
+
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(trimmed)}&format=json&limit=1`,
+        { headers: { 'Accept-Language': 'en' } }
+      )
+      const data = await res.json()
+      if (!data.length) {
+        setLocationError("We couldn't find that location. Please try a city name, venue, or full address.")
+        return
+      }
+      const miles = haversineDistance(
+        OWENSBORO_LAT, OWENSBORO_LNG,
+        parseFloat(data[0].lat), parseFloat(data[0].lon)
+      )
+      if (miles > MAX_RADIUS_MILES) {
+        setLocationError(
+          `We're sorry — that location appears to be about ${Math.round(miles)} miles from Owensboro, KY, which is outside our 30-mile service area. Please give us a call at 270.903.5890 to discuss your options.`
+        )
+      } else {
+        setLocationError('')
+      }
+    } catch {
+      setLocationError('')
+    } finally {
+      setLocationChecking(false)
+    }
+  }
 
   const pewTotal = pewCount * PEW_PRICE
 
@@ -81,6 +135,7 @@ export default function Pricing() {
               <input
                 type="date"
                 value={weddingDate}
+                min="2026-09-01"
                 onChange={(e) => setWeddingDate(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
               />
@@ -92,16 +147,31 @@ export default function Pricing() {
             <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
               Where is the wedding located?
             </label>
+            <p className="font-raleway text-xs text-[#9b836e] mb-4">
+              We serve locations within 30 miles of Owensboro, KY
+            </p>
             <div className="relative">
               <MapPin size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e]" />
+              {locationChecking && (
+                <Loader2 size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e] animate-spin" />
+              )}
               <input
                 type="text"
                 value={location}
-                onChange={(e) => setLocation(e.target.value)}
+                onChange={(e) => { setLocation(e.target.value); setLocationError('') }}
+                onBlur={checkLocationRadius}
                 placeholder="City, venue name, or address"
-                className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
+                className={`w-full pl-10 pr-4 py-3 border rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none transition-colors bg-[#fdfcf8] ${
+                  locationError ? 'border-red-300 focus:border-red-400' : 'border-cream-200 focus:border-[#c9a96e]'
+                }`}
               />
             </div>
+            {locationError && (
+              <div className="flex items-start gap-2 mt-3 p-3 bg-red-50 border border-red-200 rounded-sm">
+                <AlertCircle size={15} className="text-red-400 mt-0.5 shrink-0" />
+                <p className="font-raleway text-xs text-red-600 leading-relaxed">{locationError}</p>
+              </div>
+            )}
           </div>
 
           {/* Placement vs delivery */}

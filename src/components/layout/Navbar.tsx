@@ -10,6 +10,10 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const PAGE_LINKS = [
+  { label: 'Seating Chart Tool', to: '/seating-chart-tool' },
+]
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -60,6 +64,7 @@ export default function Navbar() {
               </button>
             </li>
           ))}
+          {/* PAGE_LINKS hidden — seating chart tool coming soon */}
         </ul>
 
         {/* Phone CTA */}
@@ -95,6 +100,7 @@ export default function Navbar() {
                 </button>
               </li>
             ))}
+            {/* PAGE_LINKS hidden — seating chart tool coming soon */}
           </ul>
           <a
             href="tel:2709035890"

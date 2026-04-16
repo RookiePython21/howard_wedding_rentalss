@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import SeatingChartTool from './pages/SeatingChartTool'
 
 function Home() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/seating-chart-tool" element={<SeatingChartTool />} />
       </Routes>
     </BrowserRouter>
   )

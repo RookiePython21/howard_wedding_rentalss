@@ -7,6 +7,7 @@ import {
   AppStep,
   ViewMode,
   HistorySnapshot,
+  VenueElement,
 } from '../types/seating';
 
 const MAX_HISTORY = 50;
@@ -22,6 +23,7 @@ const debouncedSave = (state: Parameters<typeof saveToLS>[0]) => {
 interface SeatingState {
   guests: Guest[];
   tables: Table[];
+  venueElements: VenueElement[];
   relationships: RelationshipTag[];
   versions: SeatingVersion[];
   currentStep: AppStep;
@@ -34,6 +36,7 @@ interface SeatingState {
   updateGuest: (id: string, updates: Partial<Guest>) => void;
   removeGuest: (id: string) => void;
   moveGuestToTable: (guestId: string, tableId: string | null) => void;
+  assignGuestToSeat: (tableId: string, seatIndex: number, guestId: string | null) => void;
 
   // Table actions
   setTables: (tables: Table[]) => void;
@@ -41,6 +44,12 @@ interface SeatingState {
   updateTable: (id: string, updates: Partial<Table>) => void;
   removeTable: (id: string) => void;
   updateTablePosition: (id: string, position: { x: number; y: number }) => void;
+
+  // Venue element actions
+  setVenueElements: (els: VenueElement[]) => void;
+  addVenueElement: (el: VenueElement) => void;
+  updateVenueElement: (id: string, updates: Partial<VenueElement>) => void;
+  removeVenueElement: (id: string) => void;
 
   // Relationship actions
   addRelationship: (rel: RelationshipTag) => void;
@@ -73,16 +82,31 @@ interface SeatingState {
   reset: () => void;
 }
 
+// Ensure table.seats is a fixed-length array matching capacity.
+// Migrates legacy persisted tables (no seats field) and repairs length drift.
+const normalizeTable = (t: Table): Table => {
+  const seats = Array.isArray(t.seats) ? [...t.seats] : [];
+  while (seats.length < t.capacity) seats.push(null);
+  if (seats.length > t.capacity) seats.length = t.capacity;
+  // Drop seat assignments for guests no longer in guestIds
+  const allowed = new Set(t.guestIds);
+  for (let i = 0; i < seats.length; i++) {
+    if (seats[i] && !allowed.has(seats[i]!)) seats[i] = null;
+  }
+  return { ...t, seats };
+};
+
 const snapshot = (state: SeatingState): HistorySnapshot => ({
   guests: JSON.parse(JSON.stringify(state.guests)),
   tables: JSON.parse(JSON.stringify(state.tables)),
 });
 
-const saveToLS = (state: Pick<SeatingState, 'guests' | 'tables' | 'relationships' | 'versions' | 'currentStep' | 'viewMode'>) => {
+const saveToLS = (state: Pick<SeatingState, 'guests' | 'tables' | 'venueElements' | 'relationships' | 'versions' | 'currentStep' | 'viewMode'>) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({
       guests: state.guests,
       tables: state.tables,
+      venueElements: state.venueElements,
       relationships: state.relationships,
       versions: state.versions,
       currentStep: state.currentStep,
@@ -96,6 +120,7 @@ const saveToLS = (state: Pick<SeatingState, 'guests' | 'tables' | 'relationships
 export const useSeatingStore = create<SeatingState>((set, get) => ({
   guests: [],
   tables: [],
+  venueElements: [],
   relationships: [],
   versions: [],
   currentStep: 'import',
@@ -132,6 +157,7 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
     const tables = get().tables.map(t => ({
       ...t,
       guestIds: t.guestIds.filter(gid => gid !== id),
+      seats: t.seats.map(s => (s === id ? null : s)),
     }));
     const guests = get().guests.filter(g => g.id !== id);
     const relationships = get().relationships.filter(r => r.guestId1 !== id && r.guestId2 !== id);
@@ -154,8 +180,9 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
 
     const tables = state.tables.map(t => {
       let guestIds = t.guestIds.filter(id => id !== guestId);
+      let seats = t.seats.map(s => (s === guestId ? null : s));
       if (t.id === tableId) guestIds = [...guestIds, guestId];
-      return { ...t, guestIds };
+      return { ...t, guestIds, seats };
     });
 
     set({ guests, tables });
@@ -163,19 +190,66 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
     void oldTableId;
   },
 
+  assignGuestToSeat: (tableId, seatIndex, guestId) => {
+    get().pushHistory();
+    const state = get();
+    const table = state.tables.find(t => t.id === tableId);
+    if (!table) return;
+    if (seatIndex < 0 || seatIndex >= table.capacity) return;
+
+    // Guest currently at this seat (if any) gets bumped back to the pool
+    const displacedId = table.seats[seatIndex] ?? null;
+
+    const affectedGuestIds = new Set<string>();
+    if (displacedId) affectedGuestIds.add(displacedId);
+    if (guestId) affectedGuestIds.add(guestId);
+
+    const tables = state.tables.map(t => {
+      let guestIds = [...t.guestIds];
+      let seats = [...t.seats];
+
+      // Clear the incoming guest out of every other seat on every table
+      if (guestId) {
+        seats = seats.map(s => (s === guestId ? null : s));
+        if (t.id !== tableId) guestIds = guestIds.filter(id => id !== guestId);
+      }
+      // Clear the displaced guest out of this table entirely
+      if (displacedId && t.id === tableId) {
+        guestIds = guestIds.filter(id => id !== displacedId);
+      }
+
+      if (t.id === tableId) {
+        seats[seatIndex] = guestId;
+        if (guestId && !guestIds.includes(guestId)) guestIds.push(guestId);
+      }
+
+      return { ...t, guestIds, seats };
+    });
+
+    const guests = state.guests.map(g => {
+      if (g.id === guestId) return { ...g, tableId };
+      if (g.id === displacedId) return { ...g, tableId: null };
+      return g;
+    });
+
+    set({ guests, tables });
+    saveToLS({ ...get(), guests, tables });
+  },
+
   setTables: (tables) => {
-    set({ tables });
-    saveToLS({ ...get(), tables });
+    const normalized = tables.map(normalizeTable);
+    set({ tables: normalized });
+    saveToLS({ ...get(), tables: normalized });
   },
 
   addTable: (table) => {
-    const tables = [...get().tables, table];
+    const tables = [...get().tables, normalizeTable(table)];
     set({ tables });
     saveToLS({ ...get(), tables });
   },
 
   updateTable: (id, updates) => {
-    const tables = get().tables.map(t => t.id === id ? { ...t, ...updates } : t);
+    const tables = get().tables.map(t => t.id === id ? normalizeTable({ ...t, ...updates }) : t);
     set({ tables });
     saveToLS({ ...get(), tables });
   },
@@ -196,6 +270,31 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
     set({ tables });
     // Debounced — don't serialize on every mousemove frame
     debouncedSave({ ...get(), tables });
+  },
+
+  setVenueElements: (venueElements) => {
+    set({ venueElements });
+    saveToLS({ ...get(), venueElements });
+  },
+
+  addVenueElement: (el) => {
+    const venueElements = [...get().venueElements, el];
+    set({ venueElements });
+    saveToLS({ ...get(), venueElements });
+  },
+
+  updateVenueElement: (id, updates) => {
+    const venueElements = get().venueElements.map(el =>
+      el.id === id ? { ...el, ...updates } : el
+    );
+    set({ venueElements });
+    saveToLS({ ...get(), venueElements });
+  },
+
+  removeVenueElement: (id) => {
+    const venueElements = get().venueElements.filter(el => el.id !== id);
+    set({ venueElements });
+    saveToLS({ ...get(), venueElements });
   },
 
   addRelationship: (rel) => {
@@ -330,12 +429,16 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
       const data = JSON.parse(raw);
+      const rawTables: Table[] = data.tables ?? [];
+      // Legacy: older persisted state had step 'vip'; collapse it forward.
+      const step: AppStep = data.currentStep === 'vip' ? 'workspace' : (data.currentStep ?? 'import');
       set({
         guests: data.guests ?? [],
-        tables: data.tables ?? [],
+        tables: rawTables.map(normalizeTable),
+        venueElements: data.venueElements ?? [],
         relationships: data.relationships ?? [],
         versions: data.versions ?? [],
-        currentStep: data.currentStep ?? 'import',
+        currentStep: step,
         viewMode: data.viewMode ?? 'list',
       });
     } catch {
@@ -352,6 +455,7 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
     set({
       guests: [],
       tables: [],
+      venueElements: [],
       relationships: [],
       versions: [],
       currentStep: 'import',

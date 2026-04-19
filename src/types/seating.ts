@@ -12,6 +12,18 @@ export interface Guest {
   tableId: string | null;
 }
 
+export interface VenueElement {
+  id: string;
+  type: string;
+  icon: string;
+  label: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  rotation: number;
+}
+
 export interface Table {
   id: string;
   name: string;
@@ -21,6 +33,7 @@ export interface Table {
   isKidsTable: boolean;
   position: { x: number; y: number };
   guestIds: string[];
+  seats: (string | null)[];
   width?: number;
   height?: number;
   rotation?: number;
@@ -42,7 +55,7 @@ export interface SeatingVersion {
   timestamp: string;
 }
 
-export type AppStep = 'import' | 'setup' | 'workspace';
+export type AppStep = 'import' | 'head-table' | 'elements' | 'setup' | 'seat' | 'workspace';
 export type ViewMode = 'list' | 'floorplan';
 
 export interface HistorySnapshot {

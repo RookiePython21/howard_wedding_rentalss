@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSeatingStore } from '../../store/seatingStore';
 import ImportWizard from './import/ImportWizard';
+import HeadTableSetup from './setup/HeadTableSetup';
+import ElementsSetup from './setup/ElementsSetup';
 import TableSetupWizard from './setup/TableSetupWizard';
+import GuidedSeating from './setup/GuidedSeating';
 import ListView from './workspace/ListView';
 import FloorPlanView from './workspace/FloorPlanView';
 import Toolbar from './workspace/Toolbar';
@@ -68,21 +71,35 @@ function SeatingChartInner() {
 
   return (
     <div className="flex flex-col h-full bg-white">
-      {/* Step Indicator (import step only) */}
-      {currentStep === 'import' && (
+      {/* Step Indicator (pre-workspace steps only) */}
+      {currentStep !== 'workspace' && (
         <div className="flex-shrink-0 border-b border-cream-200 bg-cream-50 px-6 py-2.5">
           <div className="flex items-center gap-3 max-w-3xl mx-auto">
-            <StepBadge n={1} label="Import Guests" active={true} done={false} />
-            <div className="flex-1 h-px bg-gray-200" />
-            <StepBadge n={2} label="Place Main Table" active={false} done={false} />
-            <div className="flex-1 h-px bg-gray-200" />
-            <StepBadge n={3} label="Arrange & Seat" active={false} done={false} />
+            {(() => {
+              const order: typeof currentStep[] = ['import', 'head-table', 'elements', 'setup', 'seat'];
+              const currentIdx = order.indexOf(currentStep);
+              const labels = ['Guests', 'Head Table', 'Elements', 'Tables', 'Seating'];
+              return order.map((s, i) => (
+                <React.Fragment key={s}>
+                  <StepBadge
+                    n={i + 1}
+                    label={labels[i]}
+                    active={currentIdx === i}
+                    done={currentIdx > i}
+                  />
+                  {i < order.length - 1 && <div className="flex-1 h-px bg-gray-200" />}
+                </React.Fragment>
+              ));
+            })()}
           </div>
         </div>
       )}
 
       {currentStep === 'import' && <ImportWizard />}
+      {currentStep === 'head-table' && <HeadTableSetup />}
+      {currentStep === 'elements' && <ElementsSetup />}
       {currentStep === 'setup' && <TableSetupWizard />}
+      {currentStep === 'seat' && <GuidedSeating />}
 
       {currentStep === 'workspace' && (
         <>

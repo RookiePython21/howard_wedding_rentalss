@@ -64,7 +64,16 @@ export default function Navbar() {
               </button>
             </li>
           ))}
-          {/* PAGE_LINKS hidden — seating chart tool coming soon */}
+          {PAGE_LINKS.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className="font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Phone CTA */}
@@ -100,7 +109,17 @@ export default function Navbar() {
                 </button>
               </li>
             ))}
-            {/* PAGE_LINKS hidden — seating chart tool coming soon */}
+            {PAGE_LINKS.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  onClick={() => setOpen(false)}
+                  className="w-full block py-3 font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors border-b border-cream-100"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <a
             href="tel:2709035890"

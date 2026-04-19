@@ -1,16 +1,15 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Upload, AlertCircle, CheckCircle2, Users, ChevronRight, FileSpreadsheet, X } from 'lucide-react';
 import { useSeatingStore } from '../../../store/seatingStore';
 import { parseExcelFile, ParseResult } from '../../../utils/excelParser';
-import { Guest, Table } from '../../../types/seating';
+import { Guest } from '../../../types/seating';
 
 export default function ImportWizard() {
-  const { setGuests, setCurrentStep, setViewMode, addTable, setShowTutorial } = useSeatingStore();
+  const { setGuests, setCurrentStep } = useSeatingStore();
   const [isDragging, setIsDragging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [parseResult, setParseResult] = useState<ParseResult | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [showHeadTableModal, setShowHeadTableModal] = useState(false);
 
   const handleFile = useCallback(async (file: File) => {
     const allowed = ['.xlsx', '.xls', '.csv'];
@@ -46,40 +45,11 @@ export default function ImportWizard() {
   const handleConfirmImport = () => {
     if (!parseResult || parseResult.guests.length === 0) return;
     setGuests(parseResult.guests);
-    setShowHeadTableModal(true);
-  };
-
-  const handleHeadTableConfirm = (shape: Table['shape'], capacity: number) => {
-    const defaults: Record<Table['shape'], { w: number; h: number }> = {
-      circle: { w: 110, h: 110 },
-      rectangle: { w: 150, h: 95 },
-      square: { w: 105, h: 105 },
-    };
-    const { w } = defaults[shape];
-    addTable({
-      id: `head-table-${Date.now()}`,
-      name: 'Main Table',
-      shape,
-      capacity,
-      isHeadTable: true,
-      isKidsTable: false,
-      guestIds: [],
-      position: { x: Math.round(700 - w / 2), y: Math.round(500 - defaults[shape].h / 2) },
-    });
-    setShowTutorial(true);
-    setViewMode('floorplan');
-    setCurrentStep('workspace');
-  };
-
-  const handleSkipHeadTable = () => {
-    setShowHeadTableModal(false);
-    setViewMode('floorplan');
-    setCurrentStep('workspace');
+    setCurrentStep('head-table');
   };
 
   const handleSkipImport = () => {
-    setViewMode('floorplan');
-    setCurrentStep('workspace');
+    setCurrentStep('head-table');
   };
 
   const rsvpCounts = parseResult
@@ -353,177 +323,7 @@ export default function ImportWizard() {
         </div>
       )}
 
-      {showHeadTableModal && (
-        <HeadTableConfigModal
-          onConfirm={handleHeadTableConfirm}
-          onSkip={handleSkipHeadTable}
-        />
-      )}
     </div>
-    </div>
-  );
-}
-
-// ─── HeadTableConfigModal ─────────────────────────────────────────────────────
-
-function HeadTableConfigModal({
-  onConfirm,
-  onSkip,
-}: {
-  onConfirm: (shape: Table['shape'], capacity: number) => void;
-  onSkip: () => void;
-}) {
-  const [shape, setShape] = useState<Table['shape']>('rectangle');
-  const [capacity, setCapacity] = useState(10);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setVisible(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  const SHAPES: Array<{
-    value: Table['shape'];
-    label: string;
-    sub: string;
-    svg: (sel: boolean) => React.ReactNode;
-  }> = [
-    {
-      value: 'circle',
-      label: 'Round',
-      sub: 'Sweetheart table',
-      svg: (sel) => (
-        <svg viewBox="0 0 60 60" width={48} height={48}>
-          <circle cx={30} cy={30} r={26}
-            fill={sel ? '#fdf3e3' : '#f9fafb'}
-            stroke={sel ? '#c9873a' : '#d1d5db'}
-            strokeWidth={2} />
-        </svg>
-      ),
-    },
-    {
-      value: 'rectangle',
-      label: 'Rectangle',
-      sub: 'Classic head table',
-      svg: (sel) => (
-        <svg viewBox="0 0 80 48" width={64} height={38}>
-          <rect x={2} y={7} width={76} height={34} rx={7}
-            fill={sel ? '#fdf3e3' : '#f9fafb'}
-            stroke={sel ? '#c9873a' : '#d1d5db'}
-            strokeWidth={2} />
-        </svg>
-      ),
-    },
-    {
-      value: 'square',
-      label: 'Square',
-      sub: 'Modern & symmetrical',
-      svg: (sel) => (
-        <svg viewBox="0 0 60 60" width={48} height={48}>
-          <rect x={3} y={3} width={54} height={54} rx={8}
-            fill={sel ? '#fdf3e3' : '#f9fafb'}
-            stroke={sel ? '#c9873a' : '#d1d5db'}
-            strokeWidth={2} />
-        </svg>
-      ),
-    },
-  ];
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ background: 'rgba(0,0,0,0.48)', backdropFilter: 'blur(5px)' }}
-    >
-      <div
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-md mx-4"
-        style={{
-          transform: visible ? 'translateY(0) scale(1)' : 'translateY(36px) scale(0.96)',
-          opacity: visible ? 1 : 0,
-          transition: 'all 0.42s cubic-bezier(0.34,1.56,0.64,1)',
-        }}
-      >
-        {/* Header */}
-        <div className="px-8 pt-8 pb-6 border-b border-cream-100">
-          <div className="text-5xl mb-3">👑</div>
-          <h2 className="font-playfair text-2xl text-gray-800 mb-1.5">
-            Set up your main table
-          </h2>
-          <p className="font-raleway text-sm text-gray-500 leading-relaxed">
-            The head table faces your guests — it's where the couple and wedding party sit.
-          </p>
-        </div>
-
-        <div className="px-8 py-6 space-y-7">
-
-          {/* Shape selector */}
-          <div>
-            <p className="font-raleway text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              Table shape
-            </p>
-            <div className="grid grid-cols-3 gap-3">
-              {SHAPES.map(({ value, label, sub, svg }) => {
-                const sel = shape === value;
-                return (
-                  <button
-                    key={value}
-                    onClick={() => setShape(value)}
-                    className={`flex flex-col items-center gap-2 px-3 py-4 rounded-2xl border-2 transition-all ${
-                      sel
-                        ? 'border-gold-500 bg-gold-50'
-                        : 'border-gray-200 bg-gray-50 hover:border-gold-300 hover:bg-gold-50/40'
-                    }`}
-                  >
-                    {svg(sel)}
-                    <div className="text-center">
-                      <p className={`font-raleway text-xs font-semibold leading-tight ${sel ? 'text-gold-700' : 'text-gray-700'}`}>
-                        {label}
-                      </p>
-                      <p className="font-raleway text-xs text-gray-400 leading-tight mt-0.5">{sub}</p>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Capacity */}
-          <div>
-            <p className="font-raleway text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              Seats at the main table
-            </p>
-            <div className="flex items-center justify-center gap-5">
-              <button
-                onClick={() => setCapacity(c => Math.max(2, c - 1))}
-                className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-100 text-xl font-bold transition-colors"
-              >−</button>
-              <div className="text-center w-16">
-                <p className="font-playfair text-5xl text-gray-800 leading-none">{capacity}</p>
-                <p className="font-raleway text-xs text-gray-400 mt-1">guests</p>
-              </div>
-              <button
-                onClick={() => setCapacity(c => Math.min(50, c + 1))}
-                className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-100 text-xl font-bold transition-colors"
-              >+</button>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="px-8 pb-8 space-y-2">
-          <button
-            onClick={() => onConfirm(shape, capacity)}
-            className="w-full py-4 bg-gold-500 hover:bg-gold-600 text-white rounded-2xl font-raleway font-semibold text-base transition-colors flex items-center justify-center gap-2"
-          >
-            Place Main Table <ChevronRight className="w-5 h-5" />
-          </button>
-          <button
-            onClick={onSkip}
-            className="w-full py-2 text-gray-400 hover:text-gray-600 font-raleway text-sm transition-colors"
-          >
-            Skip this step
-          </button>
-        </div>
-      </div>
     </div>
   );
 }

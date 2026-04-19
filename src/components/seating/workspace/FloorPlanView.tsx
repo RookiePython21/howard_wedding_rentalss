@@ -5,33 +5,26 @@ import {
 } from '../onboarding/FloorPlanTutorial';
 import { ZoomIn, ZoomOut, Maximize, Plus, Trash2, Circle, Square, RectangleHorizontal, Camera, X, Heart, Users, RotateCw, User } from 'lucide-react';
 import { useSeatingStore } from '../../../store/seatingStore';
-import { Table, Guest } from '../../../types/seating';
+import { Table, Guest, VenueElement } from '../../../types/seating';
+import { VENUE_ELEMENTS, venueColor, hexToRgba, venueDefaultSize } from '../venueElements';
+import {
+  CANVAS_W, CANVAS_H, tableDefaultSize, getTableSize,
+  autoPlaceGuestTables,
+} from '../tableLayout';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const MIN_SCALE = 0.2;
 const MAX_SCALE = 2.5;
-const CANVAS_W = 1400;
-const CANVAS_H = 1000;
 const HANDLE_SIZE = 8;
 const ROT_HANDLE_OFFSET = 32;
-
-const VENUE_ELEMENTS = [
-  { icon: '💃', label: 'Dance Floor', type: 'dance' },
-  { icon: '🍸', label: 'Bar', type: 'bar' },
-  { icon: '🚻', label: 'Restrooms', type: 'bathroom' },
-  { icon: '🎤', label: 'Stage/DJ', type: 'stage' },
-  { icon: '🚪', label: 'Entrance', type: 'entrance' },
-];
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Transform { scale: number; x: number; y: number; }
 
-interface VenueEl {
-  id: string; type: string; icon: string; label: string;
-  x: number; y: number; w: number; h: number; rotation: number;
-}
+// Historical alias — the store type is the source of truth.
+type VenueEl = VenueElement;
 
 type ResizeHandle = 'nw' | 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w';
 
@@ -53,73 +46,7 @@ const VENUE_TYPE_MAP: Record<string, string> = {
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-
-function tableDefaultSize(shape: Table['shape']): { w: number; h: number } {
-  if (shape === 'rectangle') return { w: 150, h: 95 };
-  if (shape === 'square') return { w: 105, h: 105 };
-  return { w: 110, h: 110 }; // circle
-}
-
-// Alias used by generateEquallySpacedTables
-function tableSize(shape: Table['shape']): { w: number; h: number } {
-  return tableDefaultSize(shape);
-}
-
-function getTableSize(table: Table): { w: number; h: number } {
-  const d = tableDefaultSize(table.shape);
-  return { w: table.width ?? d.w, h: table.height ?? d.h };
-}
-
-function rectsOverlap(
-  ax: number, ay: number, aw: number, ah: number,
-  bx: number, by: number, bw: number, bh: number,
-  margin = 24,
-): boolean {
-  return ax < bx + bw + margin && ax + aw + margin > bx &&
-         ay < by + bh + margin && ay + ah + margin > by;
-}
-
-function autoPlaceGuestTables(
-  count: number,
-  shape: Table['shape'],
-  capacity: number,
-  offset: number,
-  existingTables: Table[],
-  existingVenueEls: VenueEl[],
-): Table[] {
-  const { w, h } = tableDefaultSize(shape);
-  const margin = 28;
-
-  // Build list of all occupied rectangles
-  const occupied = [
-    ...existingTables.map(t => { const s = getTableSize(t); return { x: t.position.x, y: t.position.y, w: s.w, h: s.h }; }),
-    ...existingVenueEls.map(e => ({ x: e.x, y: e.y, w: e.w, h: e.h })),
-  ];
-
-  const placed: Array<{ x: number; y: number }> = [];
-
-  outer:
-  for (let row = 0; placed.length < count; row++) {
-    for (let col = 0; col < Math.floor((CANVAS_W - margin * 2) / (w + margin)); col++) {
-      if (placed.length >= count) break outer;
-      const x = margin + col * (w + margin);
-      const y = margin + row * (h + margin);
-      if (y + h > CANVAS_H - margin) break outer; // ran out of canvas space
-      const allRects = [...occupied, ...placed.map(p => ({ x: p.x, y: p.y, w, h }))];
-      if (!allRects.some(o => rectsOverlap(x, y, w, h, o.x, o.y, o.w, o.h))) {
-        placed.push({ x, y });
-      }
-    }
-  }
-
-  return placed.map((pos, i) => ({
-    id: `table-${Date.now()}-${i}`,
-    name: `Table ${offset + i + 1}`,
-    shape, capacity,
-    isHeadTable: false, isKidsTable: false,
-    guestIds: [], position: pos,
-  }));
-}
+// Table layout helpers now live in ../tableLayout.ts (shared with setup wizard).
 
 function generateEquallySpacedTables(
   count: number,
@@ -129,7 +56,7 @@ function generateEquallySpacedTables(
 ): Table[] {
   const cols = Math.ceil(Math.sqrt(count));
   const rows = Math.ceil(count / cols);
-  const { w, h } = tableSize(shape);
+  const { w, h } = tableDefaultSize(shape);
   const marginX = 100;
   const marginY = 100;
   const usableW = CANVAS_W - marginX * 2;
@@ -145,6 +72,7 @@ function generateEquallySpacedTables(
     isHeadTable: false,
     isKidsTable: false,
     guestIds: [],
+    seats: Array.from({ length: capacity }, () => null),
     position: {
       x: marginX + (i % cols) * spacingX + spacingX / 2 - w / 2,
       y: marginY + Math.floor(i / cols) * spacingY + spacingY / 2 - h / 2,
@@ -792,8 +720,8 @@ function DraggableVenueEl({
         width: '100%', height: '100%',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
-        background: isSelected ? 'rgba(201,135,58,0.06)' : 'transparent',
-        border: isSelected ? '1.5px dashed #c9873a' : '1.5px dashed transparent',
+        background: hexToRgba(venueColor(el.type), isSelected ? 0.18 : 0.1),
+        border: `${isSelected ? 2 : 1.5}px solid ${hexToRgba(venueColor(el.type), isSelected ? 0.9 : 0.55)}`,
         borderRadius: 8,
       }}>
         <div style={{ fontSize: emojiSize, lineHeight: 1 }}>{el.icon}</div>
@@ -992,10 +920,14 @@ function TableSeatingPanel({
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function FloorPlanView() {
-  const { tables, guests, updateTablePosition, updateTable, setTables, moveGuestToTable, pushHistory, showTutorial, setShowTutorial } = useSeatingStore();
+  const {
+    tables, guests, updateTablePosition, updateTable, setTables,
+    moveGuestToTable, pushHistory, showTutorial, setShowTutorial,
+    venueElements, addVenueElement, updateVenueElement, removeVenueElement,
+  } = useSeatingStore();
 
   const [transform, setTransform] = useState<Transform>({ scale: 0.5, x: 50, y: 30 });
-  const [venueEls, setVenueEls] = useState<VenueEl[]>([]);
+  const venueEls = venueElements;
   const [selectedTableId, setSelectedTableId] = useState<string | null>(null);
   const [selectedVenueElId, setSelectedVenueElId] = useState<string | null>(null);
   const [profileGuest, setProfileGuest] = useState<Guest | null>(null);
@@ -1063,11 +995,12 @@ export default function FloorPlanView() {
     setTransform({ scale, x, y });
   }, []);
 
-  // Kick off placement phase when store flag is set
+  // Kick off placement phase when store flag is set.
+  // Disabled: venue element placement now happens in ElementsSetup before
+  // the user reaches the workspace. Left in place in case we want to re-enable
+  // with updated tutorial content later.
   useEffect(() => {
-    if (showTutorial && tutorialPhase === null) {
-      setTutorialPhase('placement');
-    }
+    // no-op
   }, [showTutorial]);                                     // eslint-disable-line
 
   // Fit the canvas as soon as the layout is committed (runs before paint)
@@ -1177,12 +1110,12 @@ export default function FloorPlanView() {
     activeVenueElIdRef.current = id;
 
     // Place at canvas center so it's always in view
-    setVenueEls(prev => [...prev, {
+    addVenueElement({
       id, type: elDef.type, icon: elDef.icon, label: elDef.label,
       x: Math.round((CANVAS_W - 90) / 2),
       y: Math.round((CANVAS_H - 90) / 2),
       w: 90, h: 90, rotation: 0,
-    }]);
+    });
   }, [tutorialPhase]);  // eslint-disable-line
 
   // Recompute venue element screen rect so the spotlight follows it
@@ -1214,11 +1147,11 @@ export default function FloorPlanView() {
     // Remove the spawned element if the user skips without placing
     const id = activeVenueElIdRef.current;
     if (id) {
-      setVenueEls(prev => prev.filter(v => v.id !== id));
+      removeVenueElement(id);
       activeVenueElIdRef.current = null;
     }
     advanceVenuePhase();
-  }, []);  // eslint-disable-line
+  }, [removeVenueElement]);  // eslint-disable-line
 
   function advanceVenuePhase() {
     const phase = tutorialPhaseRef.current;
@@ -1258,30 +1191,31 @@ export default function FloorPlanView() {
     const vp = viewportRef.current?.getBoundingClientRect();
     const cx = vp ? (vp.width / 2 - transform.x) / transform.scale : 400;
     const cy = vp ? (vp.height / 2 - transform.y) / transform.scale : 300;
-    setVenueEls(prev => [...prev, {
+    const { w, h } = el.defaultSize ?? venueDefaultSize(type);
+    addVenueElement({
       id: `vel-${Date.now()}`, type, icon: el.icon, label: el.label,
       x: cx + (Math.random() - 0.5) * 100,
       y: cy + (Math.random() - 0.5) * 80,
-      w: 90, h: 90, rotation: 0,
-    }]);
+      w, h, rotation: 0,
+    });
   };
 
   const moveVenueEl = useCallback((id: string, pos: { x: number; y: number }) => {
-    setVenueEls(prev => prev.map(el => el.id === id ? { ...el, ...pos } : el));
-  }, []);
+    updateVenueElement(id, pos);
+  }, [updateVenueElement]);
 
   const removeVenueEl = useCallback((id: string) => {
-    setVenueEls(prev => prev.filter(el => el.id !== id));
+    removeVenueElement(id);
     setSelectedVenueElId(prev => prev === id ? null : prev);
-  }, []);
+  }, [removeVenueElement]);
 
   const resizeVenueEl = useCallback((id: string, dims: { w: number; h: number; x: number; y: number }) => {
-    setVenueEls(prev => prev.map(el => el.id === id ? { ...el, ...dims } : el));
-  }, []);
+    updateVenueElement(id, dims);
+  }, [updateVenueElement]);
 
   const rotateVenueEl = useCallback((id: string, rotation: number) => {
-    setVenueEls(prev => prev.map(el => el.id === id ? { ...el, rotation } : el));
-  }, []);
+    updateVenueElement(id, { rotation });
+  }, [updateVenueElement]);
 
   const handleUnassignGuest = (guestId: string) => {
     moveGuestToTable(guestId, null);
@@ -1416,9 +1350,27 @@ export default function FloorPlanView() {
         <div className="w-56 flex-shrink-0 border-l border-cream-200 bg-cream-50 overflow-y-auto" onMouseDown={e => e.stopPropagation()}>
           <div className="p-3 space-y-4">
 
+            {/* ── Venue Elements ── */}
+            <div data-tutorial="right-panel-venue">
+              <p className="font-playfair text-sm text-gray-700 mb-2">Venue Elements</p>
+              <p className="font-raleway text-xs text-gray-400 mb-2">Click to place on canvas</p>
+              <div className="space-y-0.5">
+                {VENUE_ELEMENTS.map(el => (
+                  <button key={el.type} onClick={() => addVenueEl(el.type)}
+                    className="w-full flex items-center gap-2 px-2.5 py-1.5 text-left rounded-lg hover:bg-cream-100 transition-colors">
+                    <span className="text-base">{el.icon}</span>
+                    <span className="font-raleway text-sm text-gray-600">{el.label}</span>
+                    <Plus size={11} className="ml-auto text-gray-300" />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-t border-cream-200" />
+
             {/* ── Table Creator ── */}
             <div data-tutorial="right-panel-tables">
-              <p className="font-playfair text-sm text-gray-700 mb-2">Tables</p>
+              <p className="font-playfair text-sm text-gray-700 mb-2">Add More Tables</p>
 
               <div className="mb-2">
                 <label className="font-raleway text-xs text-gray-500 block mb-1">Shape</label>
@@ -1482,24 +1434,6 @@ export default function FloorPlanView() {
                   </span>
                 </div>
               )}
-            </div>
-
-            <div className="border-t border-cream-200" />
-
-            {/* ── Venue Elements ── */}
-            <div data-tutorial="right-panel-venue">
-              <p className="font-playfair text-sm text-gray-700 mb-2">Venue Elements</p>
-              <p className="font-raleway text-xs text-gray-400 mb-2">Click to place on canvas</p>
-              <div className="space-y-0.5">
-                {VENUE_ELEMENTS.map(el => (
-                  <button key={el.type} onClick={() => addVenueEl(el.type)}
-                    className="w-full flex items-center gap-2 px-2.5 py-1.5 text-left rounded-lg hover:bg-cream-100 transition-colors">
-                    <span className="text-base">{el.icon}</span>
-                    <span className="font-raleway text-sm text-gray-600">{el.label}</span>
-                    <Plus size={11} className="ml-auto text-gray-300" />
-                  </button>
-                ))}
-              </div>
             </div>
 
             <div className="border-t border-cream-200" />

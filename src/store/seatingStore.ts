@@ -9,6 +9,11 @@ import {
   HistorySnapshot,
   VenueElement,
 } from '../types/seating';
+import {
+  saveChartToCloud,
+  loadChartFromCloud,
+  CloudChartPayload,
+} from '../services/cloudSync';
 
 const MAX_HISTORY = 50;
 const STORAGE_KEY = 'seating_chart_state';
@@ -80,6 +85,14 @@ interface SeatingState {
   loadFromStorage: () => void;
   saveToStorage: () => void;
   reset: () => void;
+
+  // Cloud persistence
+  cloudSaving: boolean;
+  cloudLoading: boolean;
+  cloudLastSavedAt: number | null;
+  cloudError: string | null;
+  saveToCloud: (uid: string, email: string | null) => Promise<void>;
+  loadFromCloud: (uid: string) => Promise<boolean>;
 }
 
 // Ensure table.seats is a fixed-length array matching capacity.
@@ -128,6 +141,10 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
   past: [],
   future: [],
   showTutorial: false,
+  cloudSaving: false,
+  cloudLoading: false,
+  cloudLastSavedAt: null,
+  cloudError: null,
 
   pushHistory: () => {
     const state = get();
@@ -464,5 +481,55 @@ export const useSeatingStore = create<SeatingState>((set, get) => ({
       future: [],
       showTutorial: false,
     });
+  },
+
+  saveToCloud: async (uid, email) => {
+    const s = get();
+    set({ cloudSaving: true, cloudError: null });
+    try {
+      const payload: CloudChartPayload = {
+        guests: s.guests,
+        tables: s.tables,
+        venueElements: s.venueElements,
+        relationships: s.relationships,
+        versions: s.versions,
+        currentStep: s.currentStep,
+        viewMode: s.viewMode,
+      };
+      await saveChartToCloud(uid, email, payload);
+      set({ cloudSaving: false, cloudLastSavedAt: Date.now() });
+    } catch (e) {
+      set({ cloudSaving: false, cloudError: (e as Error).message });
+      throw e;
+    }
+  },
+
+  loadFromCloud: async (uid) => {
+    set({ cloudLoading: true, cloudError: null });
+    try {
+      const data = await loadChartFromCloud(uid);
+      if (!data) {
+        set({ cloudLoading: false });
+        return false;
+      }
+      const tables = data.tables.map(normalizeTable);
+      set({
+        guests: data.guests,
+        tables,
+        venueElements: data.venueElements,
+        relationships: data.relationships,
+        versions: data.versions,
+        currentStep: data.currentStep,
+        viewMode: data.viewMode,
+        past: [],
+        future: [],
+        cloudLoading: false,
+      });
+      saveToLS({ ...get() });
+      return true;
+    } catch (e) {
+      set({ cloudLoading: false, cloudError: (e as Error).message });
+      throw e;
+    }
   },
 }));

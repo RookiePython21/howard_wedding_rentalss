@@ -3,6 +3,7 @@ import {
   Undo2, Redo2, Save, Shuffle, LayoutList, Map, Download, RotateCcw, History
 } from 'lucide-react';
 import { useSeatingStore } from '../../../store/seatingStore';
+import SaveProgressButton from '../SaveProgressButton';
 
 interface ToolbarProps {
   onExport: () => void;
@@ -140,6 +141,9 @@ export default function Toolbar({ onExport, onVersionsOpen }: ToolbarProps) {
       )}
 
       <div className="ml-auto flex items-center gap-2">
+        {/* Cloud Save */}
+        <SaveProgressButton compact />
+
         {/* Reset */}
         {showConfirmReset ? (
           <div className="flex items-center gap-1">

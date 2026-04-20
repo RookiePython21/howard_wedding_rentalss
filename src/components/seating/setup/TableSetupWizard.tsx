@@ -15,7 +15,7 @@ const SHAPES: Array<{ value: Table['shape']; label: string; Icon: LucideIcon }> 
 export default function TableSetupWizard() {
   const {
     guests, tables, venueElements,
-    setTables, setCurrentStep, setViewMode,
+    setTables, setGuests, setCurrentStep, setViewMode,
   } = useSeatingStore();
 
   const headTable = useMemo(() => tables.find(t => t.isHeadTable) ?? null, [tables]);
@@ -24,10 +24,23 @@ export default function TableSetupWizard() {
   const confirmedGuests = guests.filter(g => g.rsvpStatus !== 'No');
   const remainingGuests = Math.max(0, confirmedGuests.length - headTableSeated);
 
-  const [shape, setShape] = useState<Table['shape']>('circle');
-  const [capacity, setCapacity] = useState(8);
+  // If the user navigated back, seed the form from the existing guest tables
+  // so the controls reflect the current floor plan.
+  const existingGuestTables = useMemo(
+    () => tables.filter(t => !t.isHeadTable),
+    [tables],
+  );
+
+  const [shape, setShape] = useState<Table['shape']>(
+    existingGuestTables[0]?.shape ?? 'circle',
+  );
+  const [capacity, setCapacity] = useState(
+    existingGuestTables[0]?.capacity ?? 8,
+  );
   const [tableCount, setTableCount] = useState(() =>
-    Math.max(1, Math.ceil(remainingGuests / 8) || 5)
+    existingGuestTables.length > 0
+      ? existingGuestTables.length
+      : Math.max(1, Math.ceil(remainingGuests / 8) || 5),
   );
 
   const [announcement, setAnnouncement] = useState<{ text: string; subtext?: string; icon?: React.ReactNode } | null>({
@@ -40,31 +53,70 @@ export default function TableSetupWizard() {
   const capacityOk = totalCapacity >= confirmedGuests.length;
 
   const handleFinish = () => {
-    const existingOther = tables.filter(t => !t.isHeadTable);
-    const offset = existingOther.length;
-    let newTables = autoPlaceGuestTables(
-      tableCount,
-      shape,
-      capacity,
-      offset,
-      tables,
-      venueElements,
-    );
+    const existingOther = existingGuestTables;
+    const headOnly = tables.filter(t => t.isHeadTable);
+    const unseated: string[] = [];
+
+    // Keep up to `tableCount` of the existing tables; drop the rest and release
+    // their guests back to the pool. For kept tables, apply the new shape and
+    // resize seats (guests in seats beyond the new capacity are also released).
+    const kept: Table[] = [];
+    existingOther.forEach((t, i) => {
+      if (i >= tableCount) {
+        for (const gid of t.guestIds) unseated.push(gid);
+        return;
+      }
+      const seats = [...t.seats];
+      if (capacity < seats.length) {
+        for (let s = capacity; s < seats.length; s++) {
+          if (seats[s]) unseated.push(seats[s]!);
+        }
+        seats.length = capacity;
+      } else {
+        while (seats.length < capacity) seats.push(null);
+      }
+      const releasedSet = new Set(unseated);
+      kept.push({
+        ...t,
+        shape,
+        capacity,
+        seats,
+        guestIds: t.guestIds.filter(id => !releasedSet.has(id)),
+      });
+    });
+
+    // If user asked for more tables than exist, auto-place the remainder so
+    // they don't overlap the head table, kept tables, or venue elements.
+    const toAdd = Math.max(0, tableCount - kept.length);
+    const added = toAdd > 0
+      ? autoPlaceGuestTables(
+          toAdd,
+          shape,
+          capacity,
+          kept.length,
+          [...headOnly, ...kept],
+          venueElements,
+        )
+      : [];
 
     // Re-number so Table 1 is closest to the head table, Table 2 next, etc.
-    // autoPlaceGuestTables returns in scan order (reading-left-to-right); we
-    // want proximity order to match how the guided-seating walk introduces them.
+    let finalTables = [...kept, ...added];
     if (headTable) {
-      newTables = [...newTables]
+      finalTables = [...finalTables]
         .sort((a, b) =>
           Math.hypot(a.position.x - headTable.position.x, a.position.y - headTable.position.y) -
           Math.hypot(b.position.x - headTable.position.x, b.position.y - headTable.position.y)
         )
-        .map((t, i) => ({ ...t, name: `Table ${offset + i + 1}` }));
+        .map((t, i) => ({ ...t, name: `Table ${i + 1}` }));
     }
 
-    // Preserve existing tables (head table + any previously-created guest tables).
-    setTables([...tables, ...newTables]);
+    // Release guests from dropped tables/seats back to the unseated pool.
+    if (unseated.length > 0) {
+      const releasedSet = new Set(unseated);
+      setGuests(guests.map(g => (releasedSet.has(g.id) ? { ...g, tableId: null } : g)));
+    }
+
+    setTables([...headOnly, ...finalTables]);
     setViewMode('floorplan');
     setCurrentStep('seat');
   };

@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSeatingStore } from '../../store/seatingStore';
+import { useAuth } from '../../hooks/useAuth';
+import { loadChartFromCloud } from '../../services/cloudSync';
 import ImportWizard from './import/ImportWizard';
 import HeadTableSetup from './setup/HeadTableSetup';
 import ElementsSetup from './setup/ElementsSetup';
@@ -10,6 +12,8 @@ import FloorPlanView from './workspace/FloorPlanView';
 import Toolbar from './workspace/Toolbar';
 import ExportModal from './export/ExportModal';
 import VersionsModal from './VersionsModal';
+import SaveProgressButton from './SaveProgressButton';
+import ResumeChartPrompt from './ResumeChartPrompt';
 
 // ─── Error Boundary ───────────────────────────────────────────────────────────
 // Prevents any render error from wiping the entire page white.
@@ -61,16 +65,38 @@ class ErrorBoundary extends React.Component<
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 function SeatingChartInner() {
-  const { currentStep, viewMode, loadFromStorage } = useSeatingStore();
+  const { currentStep, viewMode, loadFromStorage, setCurrentStep } = useSeatingStore();
   const [showExport, setShowExport] = useState(false);
   const [showVersions, setShowVersions] = useState(false);
+  const [showResumePrompt, setShowResumePrompt] = useState(false);
+  const { user } = useAuth();
+  const checkedCloudFor = useRef<string | null>(null);
 
   useEffect(() => {
     loadFromStorage();
   }, []);
 
+  // When a user signs in, check whether they have a cloud-saved chart and
+  // offer to resume it. Only prompt once per signed-in UID per session.
+  useEffect(() => {
+    if (!user) { checkedCloudFor.current = null; return; }
+    if (checkedCloudFor.current === user.uid) return;
+    checkedCloudFor.current = user.uid;
+    loadChartFromCloud(user.uid)
+      .then((data) => { if (data) setShowResumePrompt(true); })
+      .catch(() => { /* silent — save still works */ });
+  }, [user]);
+
   return (
     <div className="flex flex-col h-full bg-white">
+      {/* Persistent header: save progress across every step */}
+      <div className="flex-shrink-0 border-b border-cream-200 bg-white px-4 py-2 flex items-center justify-between gap-3">
+        <div className="font-playfair text-sm text-gray-500">
+          {currentStep === 'workspace' ? 'Your seating chart' : 'Building your chart'}
+        </div>
+        <SaveProgressButton />
+      </div>
+
       {/* Step Indicator (pre-workspace steps only) */}
       {currentStep !== 'workspace' && (
         <div className="flex-shrink-0 border-b border-cream-200 bg-cream-50 px-6 py-2.5">
@@ -86,6 +112,7 @@ function SeatingChartInner() {
                     label={labels[i]}
                     active={currentIdx === i}
                     done={currentIdx > i}
+                    onClick={currentIdx > i ? () => setCurrentStep(s) : undefined}
                   />
                   {i < order.length - 1 && <div className="flex-1 h-px bg-gray-200" />}
                 </React.Fragment>
@@ -115,6 +142,9 @@ function SeatingChartInner() {
 
       {showExport && <ExportModal onClose={() => setShowExport(false)} />}
       {showVersions && <VersionsModal onClose={() => setShowVersions(false)} />}
+      {showResumePrompt && user && (
+        <ResumeChartPrompt uid={user.uid} onClose={() => setShowResumePrompt(false)} />
+      )}
     </div>
   );
 }
@@ -127,19 +157,32 @@ export default function SeatingChartApp() {
   );
 }
 
-function StepBadge({ n, label, active, done }: { n: number; label: string; active: boolean; done: boolean }) {
+function StepBadge({ n, label, active, done, onClick }: { n: number; label: string; active: boolean; done: boolean; onClick?: () => void }) {
+  const clickable = !!onClick;
+  const Wrapper: React.ElementType = clickable ? 'button' : 'div';
   return (
-    <div className="flex items-center gap-2 flex-shrink-0">
+    <Wrapper
+      onClick={onClick}
+      type={clickable ? 'button' : undefined}
+      title={clickable ? `Back to ${label}` : undefined}
+      className={`flex items-center gap-2 flex-shrink-0 rounded-full group ${
+        clickable ? 'cursor-pointer hover:opacity-90' : ''
+      }`}
+    >
       <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-raleway font-semibold transition-colors ${
         active ? 'bg-gold-500 text-white' :
-        done ? 'bg-gold-200 text-gold-700' :
+        done ? `bg-gold-200 text-gold-700 ${clickable ? 'group-hover:bg-gold-300' : ''}` :
         'bg-gray-200 text-gray-400'
       }`}>
         {done ? '✓' : n}
       </div>
-      <span className={`font-raleway text-sm hidden sm:block ${active ? 'text-gold-600 font-medium' : 'text-gray-400'}`}>
+      <span className={`font-raleway text-sm hidden sm:block transition-colors ${
+        active ? 'text-gold-600 font-medium' :
+        done && clickable ? 'text-gold-700 group-hover:text-gold-800 group-hover:underline' :
+        'text-gray-400'
+      }`}>
         {label}
       </span>
-    </div>
+    </Wrapper>
   );
 }

@@ -14,6 +14,10 @@ import ExportModal from './export/ExportModal';
 import VersionsModal from './VersionsModal';
 import SaveProgressButton from './SaveProgressButton';
 import ResumeChartPrompt from './ResumeChartPrompt';
+import WelcomePrompt from './WelcomePrompt';
+import AuthModal from './AuthModal';
+
+const WELCOME_DISMISSED_KEY = 'seating_welcome_dismissed';
 
 // ─── Error Boundary ───────────────────────────────────────────────────────────
 // Prevents any render error from wiping the entire page white.
@@ -69,12 +73,23 @@ function SeatingChartInner() {
   const [showExport, setShowExport] = useState(false);
   const [showVersions, setShowVersions] = useState(false);
   const [showResumePrompt, setShowResumePrompt] = useState(false);
-  const { user } = useAuth();
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [showAuthFromWelcome, setShowAuthFromWelcome] = useState(false);
+  const { user, initializing } = useAuth();
   const checkedCloudFor = useRef<string | null>(null);
 
   useEffect(() => {
     loadFromStorage();
   }, []);
+
+  // Show the welcome/resume prompt on first mount when no user is signed in.
+  // Dismissal is remembered for the rest of the tab session.
+  useEffect(() => {
+    if (initializing) return;
+    if (user) return;
+    if (sessionStorage.getItem(WELCOME_DISMISSED_KEY) === '1') return;
+    setShowWelcome(true);
+  }, [initializing, user]);
 
   // When a user signs in, check whether they have a cloud-saved chart and
   // offer to resume it. Only prompt once per signed-in UID per session.
@@ -86,6 +101,11 @@ function SeatingChartInner() {
       .then((data) => { if (data) setShowResumePrompt(true); })
       .catch(() => { /* silent — save still works */ });
   }, [user]);
+
+  const dismissWelcome = () => {
+    sessionStorage.setItem(WELCOME_DISMISSED_KEY, '1');
+    setShowWelcome(false);
+  };
 
   return (
     <div className="flex flex-col h-full bg-white">
@@ -144,6 +164,29 @@ function SeatingChartInner() {
       {showVersions && <VersionsModal onClose={() => setShowVersions(false)} />}
       {showResumePrompt && user && (
         <ResumeChartPrompt uid={user.uid} onClose={() => setShowResumePrompt(false)} />
+      )}
+
+      {showWelcome && !showAuthFromWelcome && (
+        <WelcomePrompt
+          onSignIn={() => setShowAuthFromWelcome(true)}
+          onStartFresh={dismissWelcome}
+        />
+      )}
+
+      {showAuthFromWelcome && (
+        <AuthModal
+          mode="resume"
+          onClose={() => {
+            setShowAuthFromWelcome(false);
+            dismissWelcome();
+          }}
+          onAuthed={() => {
+            setShowAuthFromWelcome(false);
+            dismissWelcome();
+            // The signed-in effect will detect a cloud chart and surface the
+            // ResumeChartPrompt automatically.
+          }}
+        />
       )}
     </div>
   );

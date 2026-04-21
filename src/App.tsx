@@ -14,6 +14,8 @@ import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import SeatingChartTool from './pages/SeatingChartTool'
+import Shop from './pages/Shop'
+import Success from './pages/Success'
 
 function Home() {
   return (
@@ -44,6 +46,8 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/seating-chart-tool" element={<SeatingChartTool />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </BrowserRouter>
   )

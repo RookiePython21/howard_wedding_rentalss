@@ -81,11 +81,14 @@ export default function Shop() {
   )
 }
 
+const MAX_QTY = 999
+
 function ProductCard({ product, reversed }: { product: ShopProduct; reversed: boolean }) {
   const { initiateCheckout, loading, error } = useCheckout()
-  const [qty, setQty] = useState(1)
+  const [qtyRaw, setQtyRaw] = useState('1')
   const [activeImg, setActiveImg] = useState(0)
 
+  const qty = Math.max(1, Math.min(MAX_QTY, parseInt(qtyRaw, 10) || 1))
   const canBuy = Boolean(product.priceId)
 
   const handleBuy = () => {
@@ -158,17 +161,29 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
           </label>
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setQty((n) => Math.max(1, n - 1))}
+              onClick={() => setQtyRaw(String(Math.max(1, qty - 1)))}
               disabled={qty <= 1 || loading}
               className="w-10 h-10 rounded-sm border border-cream-200 text-[#2c1f0e] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed"
               aria-label="Decrease quantity"
             >
               <Minus size={14} />
             </button>
-            <span className="font-playfair text-2xl text-[#2c1f0e] w-12 text-center">{qty}</span>
-            <button
-              onClick={() => setQty((n) => Math.min(99, n + 1))}
+            <input
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={MAX_QTY}
+              value={qtyRaw}
+              onChange={(e) => setQtyRaw(e.target.value.replace(/[^0-9]/g, ''))}
+              onBlur={() => setQtyRaw(String(qty))}
+              onFocus={(e) => e.target.select()}
               disabled={loading}
+              className="font-playfair text-2xl text-[#2c1f0e] w-20 h-10 text-center border border-cream-200 rounded-sm bg-white focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[#c9a96e]/20 disabled:opacity-40 disabled:cursor-not-allowed [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              aria-label="Quantity"
+            />
+            <button
+              onClick={() => setQtyRaw(String(Math.min(MAX_QTY, qty + 1)))}
+              disabled={qty >= MAX_QTY || loading}
               className="w-10 h-10 rounded-sm border border-cream-200 text-[#2c1f0e] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed"
               aria-label="Increase quantity"
             >

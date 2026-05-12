@@ -6,7 +6,12 @@ export async function createCheckoutSession(data: CheckoutRequest): Promise<Chec
   const response = await fetch(`${API_BASE}/checkout`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      priceId: data.priceId,
+      quantity: data.quantity,
+      guestNames: data.guestNames,
+      checkoutMetadata: data.checkoutMetadata,
+    }),
   })
 
   if (!response.ok) {

@@ -5,12 +5,17 @@ export function useCheckout() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  async function initiateCheckout(priceId: string, quantity = 1) {
+  async function initiateCheckout(
+    priceId: string,
+    quantity = 1,
+    guestNames?: string[],
+    checkoutMetadata?: Record<string, string>,
+  ) {
     setLoading(true)
     setError(null)
 
     try {
-      const { url } = await createCheckoutSession({ priceId, quantity })
+      const { url } = await createCheckoutSession({ priceId, quantity, guestNames, checkoutMetadata })
       window.location.href = url
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')

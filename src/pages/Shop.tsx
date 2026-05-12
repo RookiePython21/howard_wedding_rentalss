@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import { ShoppingBag, Loader2, AlertCircle, Minus, Plus } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { ShoppingBag, Loader2, AlertCircle, Minus, Plus, Upload } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import GuestListUploadModal from '../components/shop/GuestListUploadModal'
+import ChartRequiredForFoamBoardModal from '../components/shop/ChartRequiredForFoamBoardModal'
 import { useCheckout } from '../hooks/useCheckout'
+import { useSeatingStore } from '../store/seatingStore'
+import { canPurchaseFoamBoard } from '../utils/seatingChartEligibility'
+
+type ShopProductId = 'placecards' | 'foam-board'
 
 interface ShopProduct {
-  id: string
+  id: ShopProductId
   name: string
   tagline: string
   description: string
   priceId: string | undefined
   priceDisplay: string | undefined
   images: { src: string; alt: string }[]
+  requiresGuestList?: boolean
 }
 
 const PRODUCTS: ShopProduct[] = [
@@ -27,23 +34,28 @@ const PRODUCTS: ShopProduct[] = [
       { src: '/images/placecard.jpg', alt: 'Name placeholder on a wedding table setting' },
       { src: '/images/placecard_wedding.png', alt: 'Wedding place card styled for the reception' },
     ],
+    requiresGuestList: true,
   },
   {
     id: 'foam-board',
     name: 'Seating Chart Foam Board',
     tagline: 'Custom-printed seating chart for your venue entry',
     description:
-      'A polished, printed foam board that welcomes guests and shows them where to sit. Choose a list layout or include a QR code linked to your digital chart — generated right from our Seating Chart Tool.',
+      'A polished, printed foam board for your welcome table: your floor-plan layout with table numbers on each table, plus a clear seating-by-table list underneath — everything guests need at a glance, with no phones required. Build your layout in our Seating Chart Tool, then order your board here.',
     priceId: import.meta.env.VITE_STRIPE_PRICE_ID_FOAM_BOARD,
     priceDisplay: import.meta.env.VITE_STRIPE_PRICE_DISPLAY_FOAM_BOARD,
     images: [
-      { src: '/images/seating_chart_foam_board_list.png', alt: 'Seating chart foam board — list layout' },
-      { src: '/images/seating_chart_foam_board_qr.png', alt: 'Seating chart foam board — QR code layout' },
+      { src: '/images/seating_chart_foam_board_list.png', alt: 'Seating chart foam board with floor plan and table list' },
     ],
   },
 ]
 
 export default function Shop() {
+  const loadFromStorage = useSeatingStore(s => s.loadFromStorage)
+  useEffect(() => {
+    loadFromStorage()
+  }, [loadFromStorage])
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -85,15 +97,42 @@ const MAX_QTY = 999
 
 function ProductCard({ product, reversed }: { product: ShopProduct; reversed: boolean }) {
   const { initiateCheckout, loading, error } = useCheckout()
+  const { guests, tables } = useSeatingStore()
   const [qtyRaw, setQtyRaw] = useState('1')
   const [activeImg, setActiveImg] = useState(0)
+  const [guestListOpen, setGuestListOpen] = useState(false)
+  const [foamChartRequiredOpen, setFoamChartRequiredOpen] = useState(false)
 
   const qty = Math.max(1, Math.min(MAX_QTY, parseInt(qtyRaw, 10) || 1))
   const canBuy = Boolean(product.priceId)
+  const requiresGuestList = Boolean(product.requiresGuestList)
+  const isFoamBoard = product.id === 'foam-board'
 
   const handleBuy = () => {
     if (!product.priceId) return
+    if (requiresGuestList) {
+      setGuestListOpen(true)
+      return
+    }
+    if (isFoamBoard) {
+      if (!canPurchaseFoamBoard(guests, tables)) {
+        setFoamChartRequiredOpen(true)
+        return
+      }
+      const seated = guests.filter(g => g.tableId !== null).length
+      initiateCheckout(product.priceId, qty, undefined, {
+        product: 'foam_board',
+        tables: String(tables.length),
+        guests_seated: String(seated),
+      })
+      return
+    }
     initiateCheckout(product.priceId, qty)
+  }
+
+  const handleGuestListConfirm = (names: string[]) => {
+    if (!product.priceId || names.length === 0) return
+    initiateCheckout(product.priceId, names.length, names)
   }
 
   return (
@@ -115,7 +154,7 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
           <div className="flex gap-3 mt-3">
             {product.images.map((img, i) => (
               <button
-                key={img.src}
+                key={`${product.id}-img-${i}`}
                 onClick={() => setActiveImg(i)}
                 className={`flex-1 overflow-hidden rounded-sm border transition-all ${
                   activeImg === i
@@ -154,7 +193,8 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
           )}
         </div>
 
-        {/* Quantity */}
+        {/* Quantity (hidden for products where qty is derived from a guest list) */}
+        {!requiresGuestList && (
         <div className="mb-6">
           <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
             Quantity
@@ -191,6 +231,18 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
             </button>
           </div>
         </div>
+        )}
+
+        {requiresGuestList && (
+          <div className="mb-6 p-4 bg-cream-100 border border-cream-200 rounded-sm">
+            <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-2">
+              How it works
+            </p>
+            <p className="font-raleway text-xs text-[#6b5744] leading-relaxed">
+              Upload your guest list (.xlsx or .csv). We'll show you every name for review — once you confirm spelling, you'll be sent to checkout. One card is printed per name.
+            </p>
+          </div>
+        )}
 
         {/* Buy button */}
         <button
@@ -203,6 +255,11 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
             <>
               <Loader2 size={16} className="animate-spin" />
               Redirecting to checkout…
+            </>
+          ) : requiresGuestList && canBuy ? (
+            <>
+              <Upload size={16} />
+              Upload Guest List & Buy
             </>
           ) : (
             <>
@@ -225,6 +282,23 @@ function ProductCard({ product, reversed }: { product: ShopProduct; reversed: bo
           </p>
         )}
       </div>
+
+      {requiresGuestList && (
+        <GuestListUploadModal
+          isOpen={guestListOpen}
+          onClose={() => setGuestListOpen(false)}
+          onConfirm={handleGuestListConfirm}
+          pricePerCardDisplay={product.priceDisplay}
+          submitting={loading}
+        />
+      )}
+
+      {isFoamBoard && (
+        <ChartRequiredForFoamBoardModal
+          isOpen={foamChartRequiredOpen}
+          onClose={() => setFoamChartRequiredOpen(false)}
+        />
+      )}
     </div>
   )
 }

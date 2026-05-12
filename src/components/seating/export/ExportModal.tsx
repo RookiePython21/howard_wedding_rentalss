@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
-import { X, Printer, QrCode, FileText, Table } from 'lucide-react';
+import { X, Printer, LayoutGrid, FileText, Table, ShoppingBag, Loader2, AlertCircle } from 'lucide-react';
 import { useSeatingStore } from '../../../store/seatingStore';
-import QRCodeGenerator from './QRCodeGenerator';
+import { useCheckout } from '../../../hooks/useCheckout';
+import { openFoamBoardPrintPreview } from './FoamBoardPrintLayout';
+import ChartRequiredForFoamBoardModal from '../../shop/ChartRequiredForFoamBoardModal';
+import { canPurchaseFoamBoard } from '../../../utils/seatingChartEligibility';
+
+type TabId = 'chart' | 'placecards' | 'csv' | 'foam-board';
 
 interface ExportModalProps {
   onClose: () => void;
 }
 
 export default function ExportModal({ onClose }: ExportModalProps) {
-  const { guests, tables } = useSeatingStore();
-  const [showQR, setShowQR] = useState(false);
+  const { guests, tables, venueElements } = useSeatingStore();
+  const [selectedTab, setSelectedTab] = useState<TabId | null>(null);
+  const [foamChartGateOpen, setFoamChartGateOpen] = useState(false);
+  const { initiateCheckout, loading: checkoutLoading, error: checkoutError } = useCheckout();
+
+  const placecardsPriceId = import.meta.env.VITE_STRIPE_PRICE_ID_PLACECARDS;
+  const placecardsPriceDisplay = import.meta.env.VITE_STRIPE_PRICE_DISPLAY_PLACECARDS;
+  const foamBoardPriceId = import.meta.env.VITE_STRIPE_PRICE_ID_FOAM_BOARD;
+  const foamBoardPriceDisplay = import.meta.env.VITE_STRIPE_PRICE_DISPLAY_FOAM_BOARD;
 
   const seatedGuests = guests.filter(g => g.tableId !== null);
   const unseatedGuests = guests.filter(g => g.tableId === null);
@@ -165,15 +177,39 @@ export default function ExportModal({ onClose }: ExportModalProps) {
     URL.revokeObjectURL(url);
   };
 
-  if (showQR) {
-    return <QRCodeGenerator tables={tables} guests={guests} onClose={() => setShowQR(false)} />;
-  }
+  const handleBuyPlacecards = () => {
+    if (!placecardsPriceId) return;
+    const names = guests.map(g => g.name.trim()).filter(Boolean);
+    if (names.length === 0) return;
+    initiateCheckout(placecardsPriceId, names.length, names);
+  };
+
+  const handlePrintFoamBoardLayout = () => {
+    openFoamBoardPrintPreview(guests, tables, venueElements);
+  };
+
+  const handleBuyFoamBoard = () => {
+    if (!foamBoardPriceId) return;
+    if (!canPurchaseFoamBoard(guests, tables)) {
+      setFoamChartGateOpen(true);
+      return;
+    }
+    const seated = guests.filter(g => g.tableId !== null).length;
+    initiateCheckout(foamBoardPriceId, 1, undefined, {
+      product: 'foam_board',
+      tables: String(tables.length),
+      guests_seated: String(seated),
+    });
+  };
+
+  const toggleTab = (id: TabId) => setSelectedTab(prev => (prev === id ? null : id));
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg">
+    <>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-cream-200 flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-cream-200 flex items-center justify-between sticky top-0 bg-white z-10">
           <div>
             <h2 className="font-playfair text-2xl text-gray-800">Export Seating Chart</h2>
             <p className="font-raleway text-sm text-gray-500">
@@ -187,46 +223,128 @@ export default function ExportModal({ onClose }: ExportModalProps) {
 
         {/* Options */}
         <div className="p-5 space-y-3">
-          {/* Seating Chart */}
           <ExportOption
             icon={<Printer size={22} className="text-gold-600" />}
             title="Printable Seating Chart"
             description="Full seating chart by table — great for the venue coordinator."
-            action="Print / Save as PDF"
-            onClick={handlePrintChart}
+            isSelected={selectedTab === 'chart'}
+            onSelect={() => toggleTab('chart')}
             color="gold"
-          />
+          >
+            <div className="flex justify-end">
+              <button
+                onClick={handlePrintChart}
+                className="px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors"
+              >
+                Print / Save as PDF
+              </button>
+            </div>
+          </ExportOption>
 
-          {/* Place Cards */}
           <ExportOption
             icon={<Table size={22} className="text-blue-600" />}
             title="Place Cards"
             description="3-up printable cards with guest name and table number."
-            action="Print Place Cards"
-            onClick={handlePrintPlaceCards}
+            isSelected={selectedTab === 'placecards'}
+            onSelect={() => toggleTab('placecards')}
             color="blue"
-          />
+          >
+            <img
+              src="/images/placecard.jpg"
+              alt="Printed wedding place card preview"
+              className="w-full h-48 object-cover rounded-lg border border-cream-200 mb-4"
+            />
+            <div className="flex flex-wrap gap-2 justify-end">
+              <button
+                onClick={handlePrintPlaceCards}
+                className="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded-lg text-sm font-raleway font-medium transition-colors"
+              >
+                Print at Home (Free)
+              </button>
+              {placecardsPriceId && (
+                <button
+                  onClick={handleBuyPlacecards}
+                  disabled={checkoutLoading || guests.length === 0}
+                  className="flex items-center gap-2 px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {checkoutLoading ? <Loader2 size={14} className="animate-spin" /> : <ShoppingBag size={14} />}
+                  Buy Now{placecardsPriceDisplay ? ` (${placecardsPriceDisplay} each)` : ''}
+                </button>
+              )}
+            </div>
+            {placecardsPriceId && guests.length > 0 && (
+              <p className="font-raleway text-xs text-gray-500 mt-3 text-right">
+                Buy Now prints one card per guest ({guests.length} {guests.length === 1 ? 'name' : 'names'} from your seating chart).
+              </p>
+            )}
+          </ExportOption>
 
-          {/* CSV */}
           <ExportOption
             icon={<FileText size={22} className="text-green-600" />}
             title="Table Assignment List (CSV)"
             description="Spreadsheet with guest names, tables, and RSVP status."
-            action="Download CSV"
-            onClick={handleExportCSV}
+            isSelected={selectedTab === 'csv'}
+            onSelect={() => toggleTab('csv')}
             color="green"
-          />
+          >
+            <div className="flex justify-end">
+              <button
+                onClick={handleExportCSV}
+                className="px-4 py-2 bg-green-100 text-green-700 hover:bg-green-200 rounded-lg text-sm font-raleway font-medium transition-colors"
+              >
+                Download CSV
+              </button>
+            </div>
+          </ExportOption>
 
-          {/* QR Codes */}
           <ExportOption
-            icon={<QrCode size={22} className="text-purple-600" />}
-            title="QR Memory Codes ⭐"
-            description="Per-table QR codes guests scan to see who's at their table + stories."
-            action="Generate QR Codes"
-            onClick={() => setShowQR(true)}
+            icon={<LayoutGrid size={22} className="text-purple-600" />}
+            title="Seating Chart Foam Board"
+            description="Floor-plan layout with table numbers and a seating-by-table list — print a proof at home, or order a printed board."
+            isSelected={selectedTab === 'foam-board'}
+            onSelect={() => toggleTab('foam-board')}
             color="purple"
-          />
+          >
+            <img
+              src="/images/seating_chart_foam_board_list.png"
+              alt="Seating chart foam board preview"
+              className="w-full h-48 object-cover rounded-lg border border-cream-200 mb-4"
+            />
+            <p className="font-raleway text-xs text-gray-500 mb-3">
+              Preview matches what we print: your chart layout on top, guest names by table below.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-end">
+              <button
+                type="button"
+                onClick={handlePrintFoamBoardLayout}
+                className="flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-800 hover:bg-purple-200 rounded-lg text-sm font-raleway font-medium transition-colors"
+              >
+                <Printer size={14} />
+                Print / Save as PDF
+              </button>
+              {foamBoardPriceId ? (
+                <button
+                  type="button"
+                  onClick={handleBuyFoamBoard}
+                  disabled={checkoutLoading}
+                  className="flex items-center gap-2 px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {checkoutLoading ? <Loader2 size={14} className="animate-spin" /> : <ShoppingBag size={14} />}
+                  Buy Now{foamBoardPriceDisplay ? ` (${foamBoardPriceDisplay})` : ''}
+                </button>
+              ) : (
+                <p className="font-raleway text-xs text-gray-500 self-center">Printed board: available soon</p>
+              )}
+            </div>
+          </ExportOption>
         </div>
+
+        {checkoutError && (
+          <div className="mx-5 mb-3 flex items-start gap-2 p-3 bg-red-50 border border-red-200 rounded-lg">
+            <AlertCircle size={15} className="text-red-400 mt-0.5 shrink-0" />
+            <p className="font-raleway text-xs text-red-600 leading-relaxed">{checkoutError}</p>
+          </div>
+        )}
 
         {unseatedGuests.length > 0 && (
           <div className="mx-5 mb-5 p-3 bg-yellow-50 border border-yellow-200 rounded-xl">
@@ -238,6 +356,11 @@ export default function ExportModal({ onClose }: ExportModalProps) {
         )}
       </div>
     </div>
+    <ChartRequiredForFoamBoardModal
+      isOpen={foamChartGateOpen}
+      onClose={() => setFoamChartGateOpen(false)}
+    />
+    </>
   );
 }
 
@@ -245,37 +368,49 @@ function ExportOption({
   icon,
   title,
   description,
-  action,
-  onClick,
+  isSelected,
+  onSelect,
   color,
+  children,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
-  action: string;
-  onClick: () => void;
+  isSelected: boolean;
+  onSelect: () => void;
   color: 'gold' | 'blue' | 'green' | 'purple';
+  children?: React.ReactNode;
 }) {
-  const buttonColors = {
-    gold: 'bg-gold-100 text-gold-700 hover:bg-gold-200',
-    blue: 'bg-blue-100 text-blue-700 hover:bg-blue-200',
-    green: 'bg-green-100 text-green-700 hover:bg-green-200',
-    purple: 'bg-purple-100 text-purple-700 hover:bg-purple-200',
+  const selectedStyles = {
+    gold: 'border-gold-400 bg-gold-50/40',
+    blue: 'border-blue-400 bg-blue-50/40',
+    green: 'border-green-400 bg-green-50/40',
+    purple: 'border-purple-400 bg-purple-50/40',
   };
 
   return (
-    <div className="flex items-center gap-4 p-4 border border-cream-200 rounded-xl hover:border-cream-300 hover:bg-cream-50 transition-colors">
-      <div className="flex-shrink-0">{icon}</div>
-      <div className="flex-1 min-w-0">
-        <p className="font-raleway font-semibold text-gray-700 text-sm">{title}</p>
-        <p className="font-raleway text-xs text-gray-400">{description}</p>
-      </div>
+    <div
+      className={`border rounded-xl transition-colors ${
+        isSelected
+          ? selectedStyles[color]
+          : 'border-cream-200 hover:border-cream-300 hover:bg-cream-50'
+      }`}
+    >
       <button
-        onClick={onClick}
-        className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-raleway font-medium transition-colors ${buttonColors[color]}`}
+        type="button"
+        onClick={onSelect}
+        className="w-full flex items-center gap-4 p-4 text-left"
+        aria-expanded={isSelected}
       >
-        {action}
+        <div className="flex-shrink-0">{icon}</div>
+        <div className="flex-1 min-w-0">
+          <p className="font-raleway font-semibold text-gray-700 text-sm">{title}</p>
+          <p className="font-raleway text-xs text-gray-400">{description}</p>
+        </div>
       </button>
+      {isSelected && children && (
+        <div className="px-4 pb-4 pt-1 border-t border-cream-200/60">{children}</div>
+      )}
     </div>
   );
 }

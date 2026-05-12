@@ -32,6 +32,9 @@ export interface FAQItem {
 export interface CheckoutRequest {
   priceId: string
   quantity: number
+  guestNames?: string[]
+  /** Merged into Stripe session / payment_intent metadata (short string values). */
+  checkoutMetadata?: Record<string, string>
 }
 
 export interface CheckoutResponse {

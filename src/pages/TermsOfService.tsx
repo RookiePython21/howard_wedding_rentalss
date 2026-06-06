@@ -1,9 +1,14 @@
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { SEO } from '../components/SEO'
 
 export default function TermsOfService() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Terms of Service"
+        description="Review the Howard Wedding Rentals terms of service, including rental agreements, payment terms, and cancellation policies."
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
 

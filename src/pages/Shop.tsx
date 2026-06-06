@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ShoppingBag, Loader2, AlertCircle, Minus, Plus, Upload } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { SEO } from '../components/SEO'
 import GuestListUploadModal from '../components/shop/GuestListUploadModal'
 import ChartRequiredForFoamBoardModal from '../components/shop/ChartRequiredForFoamBoardModal'
 import { useCheckout } from '../hooks/useCheckout'
@@ -58,6 +59,10 @@ export default function Shop() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Shop Wedding Stationery"
+        description="Order custom printed name place cards and personalized seating chart foam boards from Howard Wedding Rentals, delivered to your venue."
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
         {/* Hero banner */}

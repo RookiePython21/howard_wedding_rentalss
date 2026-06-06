@@ -1,10 +1,15 @@
 import { Phone, Mail, Facebook, Clock } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { SEO } from '../components/SEO'
 
 export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Contact Us"
+        description="Book your church pew rental or ask us anything. Call (270) 903-5890 or email contact@howardweddingrentals.com. Serving Owensboro, KY and a 30-mile radius."
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
 

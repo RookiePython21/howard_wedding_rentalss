@@ -33,3 +33,6 @@ pnpm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
+
+# Sitemap (generated artifact, not tracked in source control)
+public/sitemap.csv

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Menu, X, Phone, ArrowLeft, ChevronDown } from 'lucide-react'
 import SeatingChartApp from '../components/seating/SeatingChartApp'
+import { SEO } from '../components/SEO'
 
 const NAV_LINKS = [
   { label: 'About',   href: '#benefits' },
@@ -22,6 +23,10 @@ export default function SeatingChartTool() {
 
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-white">
+      <SEO
+        title="Free Seating Chart Tool"
+        description="Design your wedding reception layout with our free drag-and-drop seating chart tool. Arrange tables, assign guests, and export your floor plan."
+      />
 
       {/* ── Slim top bar ─────────────────────────────────────────── */}
       <div className="flex-shrink-0 bg-white border-b border-gray-100 shadow-sm z-40">

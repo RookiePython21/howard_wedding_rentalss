@@ -1,9 +1,14 @@
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { SEO } from '../components/SEO'
 
 export default function AboutUs() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="About Us"
+        description="Learn about Howard Wedding Rentals, a family-owned church pew rental service in Western Kentucky. We deliver, place, and retrieve solid hardwood pews for weddings of all sizes."
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
 

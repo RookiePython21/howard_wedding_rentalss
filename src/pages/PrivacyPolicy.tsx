@@ -1,9 +1,14 @@
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { SEO } from '../components/SEO'
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Privacy Policy"
+        description="Read the Howard Wedding Rentals privacy policy to understand how we collect, use, and protect your personal information."
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
 

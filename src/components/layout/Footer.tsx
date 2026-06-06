@@ -54,6 +54,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services" className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors">
                   Contact
                 </Link>

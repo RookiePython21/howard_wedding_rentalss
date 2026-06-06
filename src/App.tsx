@@ -16,6 +16,9 @@ import TermsOfService from './pages/TermsOfService'
 import SeatingChartTool from './pages/SeatingChartTool'
 import Shop from './pages/Shop'
 import Success from './pages/Success'
+import Services from './pages/Services'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 function Home() {
   return (
@@ -48,6 +51,9 @@ export default function App() {
         <Route path="/seating-chart-tool" element={<SeatingChartTool />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   )

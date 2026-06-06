@@ -11,6 +11,8 @@ const NAV_LINKS = [
 ]
 
 const PAGE_LINKS = [
+  { label: 'Services', to: '/services' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Shop', to: '/shop' },
   { label: 'Seating Chart Tool', to: '/seating-chart-tool' },
 ]

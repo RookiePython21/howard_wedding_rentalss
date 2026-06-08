@@ -1,0 +1,44 @@
+{
+  "domain": "howardweddingrentals.com",
+  "target_country": "us",
+  "phase": {
+    "current": 1,
+    "phases": {
+      "1": { "label": "Months 1-3", "kd_ceiling": 25, "min_volume": 100 },
+      "2": { "label": "Months 4-6", "kd_ceiling": 40, "min_volume": 150 },
+      "3": { "label": "Month 7+",   "kd_ceiling": 55, "min_volume": 200 }
+    }
+  },
+  "scoring": {
+    "weight_volume": 0.30,
+    "weight_traffic_potential": 0.25,
+    "weight_kd_inverse": 0.25,
+    "weight_pillar_alignment": 0.20,
+    "volume_normalization_base": 5000,
+    "min_score_threshold": 20
+  },
+  "guardrails": {
+    "inclusion_required_any": [
+      "wedding", "bridal", "bride", "ceremony", "reception", "seating", "pew",
+      "place card", "seating chart", "aisle", "venue", "vow", "guest list",
+      "table number", "rental", "owensboro", "kentucky", "western ky", "foam board"
+    ],
+    "exclusion_any": [
+      "divorce", "funeral", "church service", "mass", "sunday", "corporate", "office",
+      "birthday", "baby shower", "quinceañera", "restaurant", "school", "theater",
+      "stadium", "photoshop", "illustrator", "figma", "excel macro", "wholesale",
+      "manufacturer", "factory", "bulk order", "lawyer", "attorney", "real estate"
+    ]
+  },
+  "content_cadence": {
+    "target_articles_per_week": 2,
+    "research_run_interval_days": 14,
+    "last_research_run": "2026-06-08",
+    "next_research_run": "2026-06-22"
+  },
+  "ahrefs": {
+    "competitor_domains": [],
+    "competitor_identification_done": true,
+    "site_explorer_target": "howardweddingrentals.com"
+  }
+}

@@ -12,9 +12,6 @@ dist-ssr/
 .env.local
 .env.*.local
 
-# Claude Code
-.claude/
-
 # Editor directories
 .vscode/
 .idea/

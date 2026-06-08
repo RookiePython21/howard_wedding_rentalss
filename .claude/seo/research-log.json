@@ -1,0 +1,22 @@
+{
+  "_comment": "Audit trail of every keyword research run. One entry per run — used to debug queue state and verify deduplication history.",
+  "runs": [
+    {
+      "run_id": "research-run-001",
+      "started_at": "2026-06-08T20:55:00Z",
+      "completed_at": "2026-06-08T21:30:00Z",
+      "trigger": "manual",
+      "phase_at_time": 1,
+      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "raw_keywords_found": 160,
+      "keywords_after_guardrail": 10,
+      "keywords_after_dedup": 6,
+      "keywords_added_to_queue": 6,
+      "cluster_siblings_updated": 0,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "sms_sent": true,
+      "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+    }
+  ]
+}

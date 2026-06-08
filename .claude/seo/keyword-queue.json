@@ -1,0 +1,197 @@
+{
+  "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped).",
+  "_schema_version": "1.0",
+  "last_updated": "2026-06-08",
+  "queue": [
+    {
+      "id": "kw-001",
+      "keyword": "church pew",
+      "pillar_id": "church-pew-rentals",
+      "volume": 5400,
+      "traffic_potential": 600,
+      "kd": 2,
+      "parent_topic": "church pew",
+      "search_intent": "informational — searcher wants to understand what church pews are; top-of-funnel opportunity to introduce church pew rental services for weddings",
+      "serp_features": ["shopping_ads"],
+      "priority_score": 76.0,
+      "phase_eligible": 1,
+      "cluster_siblings": ["what is a church pew"],
+      "suggested_slug": "what-is-a-church-pew",
+      "suggested_angle": "Definitive guide to church pews — what they are, their history, and how couples can rent authentic solid hardwood pews for their ceremony instead of standard folding chairs",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/services",
+        "https://howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.amazon.com/church-pew-bench/s?k=church+pew+bench",
+        "https://www.mckaychurchgoods.com/type/pews-benches/",
+        "https://www.churchinteriors.com/pews/"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "published",
+      "article_slug": "what-is-a-church-pew",
+      "published_date": "2026-06-08"
+    },
+    {
+      "id": "kw-002",
+      "keyword": "wedding name tags",
+      "pillar_id": "place-cards",
+      "volume": 200,
+      "traffic_potential": 6200,
+      "kd": 22,
+      "parent_topic": "wedding name tags",
+      "search_intent": "commercial — bride shopping for name tags or place cards to help guests identify themselves at the reception",
+      "serp_features": ["shopping_ads"],
+      "priority_score": 49.2,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-name-tags-vs-place-cards",
+      "suggested_angle": "Clarify the difference between wedding name tags and place cards — when each makes sense, what guests actually prefer, and how to order printed place cards that double as keepsakes",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.minted.com/wedding-place-cards",
+        "https://www.paperculture.com/eco/wedding-name-cards-place-cards-c-450.html",
+        "https://margoandbees.com/c/en/usd/0/55/place_cards_/_table_cards-2.html"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-003",
+      "keyword": "wedding place cards with meal choice",
+      "pillar_id": "place-cards",
+      "volume": 250,
+      "traffic_potential": 250,
+      "kd": 0,
+      "parent_topic": "wedding place cards with meal choice",
+      "search_intent": "transactional — bride planning a plated dinner needs place cards that clearly indicate each guest's meal selection to the caterer",
+      "serp_features": [],
+      "priority_score": 47.75,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-place-cards-meal-choice",
+      "suggested_angle": "How to create wedding place cards that show each guest's meal selection — design tips, what to print, how caterers use them, and ordering options including custom printed cards",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.zazzle.com/meal+choice+wedding+place+cards",
+        "https://www.etsy.com/market/place_cards_with_meal_choice",
+        "https://weddings.staples.com/Reception/Place-Table-and-Menu-Cards/3254-TWSN64024CVP-Cuisine-Choice-Place-Card--Variable-Print.pro"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-004",
+      "keyword": "free seating chart maker",
+      "pillar_id": "seating-chart-tool",
+      "volume": 900,
+      "traffic_potential": 2400,
+      "kd": 9,
+      "parent_topic": "free seating chart maker",
+      "search_intent": "navigational/transactional — bride wants a free online tool to build her wedding seating chart without paying for software",
+      "serp_features": [],
+      "priority_score": 46.7,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "free-wedding-seating-chart-maker",
+      "suggested_angle": "Roundup of the best free seating chart maker tools — compare Canva, SeatPlan, and other options, then explain why Howard's drag-and-drop tool is purpose-built for weddings (not classrooms)",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://howardweddingrentals.com/blog/wedding-seating-chart-template",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.seatplanning.com/free-seating-chart",
+        "https://www.canva.com/create/seating-charts/",
+        "https://seatplan.io/"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-005",
+      "keyword": "place cards for table",
+      "pillar_id": "place-cards",
+      "volume": 350,
+      "traffic_potential": 2600,
+      "kd": 20,
+      "parent_topic": "place cards for table",
+      "search_intent": "commercial — shopper (likely a bride or event planner) looking to buy place cards for a seated dinner table setting",
+      "serp_features": ["shopping_ads", "people_also_ask"],
+      "priority_score": 40.1,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "place-cards-for-wedding-tables",
+      "suggested_angle": "What to know before buying place cards for wedding tables — sizes, fold styles, printing options, and why custom printed cards are worth the upgrade over blank card stock",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.amazon.com/place-cards/s?k=place+cards",
+        "https://weddings.staples.com/Reception/Place-Table-and-Menu-Cards/index.cat",
+        "https://www.minted.com/wedding-place-cards"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-006",
+      "keyword": "wedding ceremony chair layout template",
+      "pillar_id": "church-pew-rentals",
+      "volume": 100,
+      "traffic_potential": 100,
+      "kd": 3,
+      "parent_topic": "wedding ceremony chair layout template",
+      "search_intent": "informational — bride planning her ceremony seating arrangement and looking for a visual template to share with her venue coordinator",
+      "serp_features": ["people_also_ask"],
+      "priority_score": 36.4,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-ceremony-chair-layout-template",
+      "suggested_angle": "Free wedding ceremony chair layout guide — standard row configurations, how many chairs per row, pew vs. chair comparisons, and a printable template to review with your venue",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/services",
+        "https://howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://creately.com/diagram/example/jqvvprlw4/wedding-ceremony-seating-template",
+        "https://www.pinterest.com/pin/wedding-ceremony-seating-template--75646468735677909/",
+        "https://planning.wedding/seating-chart"
+      ],
+      "added_date": "2026-06-08",
+      "source_run": "research-run-001",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    }
+  ]
+}

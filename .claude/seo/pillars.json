@@ -1,0 +1,89 @@
+{
+  "_comment": "One entry per business service/product. Add new entries here when a service launches, then run .claude/routines/new-pillar.md to seed its keyword queue.",
+  "pillars": [
+    {
+      "id": "church-pew-rentals",
+      "label": "Church Pew Rentals",
+      "description": "Solid hardwood church pew rental with delivery, placement/setup, and teardown — Owensboro KY and ~30-mile radius",
+      "service_url": "https://howardweddingrentals.com/services",
+      "price_anchor": "$25/pew, delivery included",
+      "seed_terms": [
+        "church pew rental",
+        "pew rental wedding",
+        "wooden pews wedding",
+        "ceremony seating rental",
+        "rustic wedding ceremony seating",
+        "church bench rental wedding",
+        "outdoor pew rental kentucky"
+      ],
+      "alignment_score": 3,
+      "articles_published": 2,
+      "articles_queued": 0,
+      "status": "active",
+      "created_at": "2026-06-08"
+    },
+    {
+      "id": "place-cards",
+      "label": "Name Place Cards",
+      "description": "Custom printed guest name place cards — shop product ordered online",
+      "service_url": "https://howardweddingrentals.com/shop",
+      "price_anchor": null,
+      "seed_terms": [
+        "wedding place cards",
+        "custom place cards wedding",
+        "printed place cards",
+        "wedding name cards",
+        "escort cards vs place cards",
+        "place card ideas wedding",
+        "table place cards wedding"
+      ],
+      "alignment_score": 3,
+      "articles_published": 1,
+      "articles_queued": 0,
+      "status": "active",
+      "created_at": "2026-06-08"
+    },
+    {
+      "id": "seating-chart-boards",
+      "label": "Seating Chart Foam Boards",
+      "description": "Custom-printed seating chart display boards for wedding receptions — shop product",
+      "service_url": "https://howardweddingrentals.com/shop",
+      "price_anchor": null,
+      "seed_terms": [
+        "wedding seating chart board",
+        "seating chart foam board",
+        "large seating chart display",
+        "printed seating chart sign",
+        "seating chart poster wedding",
+        "custom seating chart board",
+        "wedding seating board display"
+      ],
+      "alignment_score": 3,
+      "articles_published": 3,
+      "articles_queued": 0,
+      "status": "active",
+      "created_at": "2026-06-08"
+    },
+    {
+      "id": "seating-chart-tool",
+      "label": "Free Seating Chart Tool",
+      "description": "Drag-and-drop wedding seating chart builder — free lead magnet at /seating-chart-tool",
+      "service_url": "https://howardweddingrentals.com/seating-chart-tool",
+      "price_anchor": "free",
+      "seed_terms": [
+        "free seating chart maker",
+        "seating chart tool online",
+        "drag and drop seating chart",
+        "wedding seating planner free",
+        "how to make a wedding seating chart",
+        "seating chart template free",
+        "online wedding seating chart creator"
+      ],
+      "alignment_score": 2,
+      "articles_published": 2,
+      "articles_queued": 0,
+      "status": "active",
+      "created_at": "2026-06-08"
+    }
+  ]
+}

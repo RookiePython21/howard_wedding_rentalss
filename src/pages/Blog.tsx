@@ -6,13 +6,12 @@ import Footer from '../components/layout/Footer'
 import { SEO } from '../components/SEO'
 import { getPosts } from '../services/blog'
 import type { BlogPost } from '../services/blog'
-import type { DocumentSnapshot } from 'firebase/firestore'
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [loadingMore, setLoadingMore] = useState(false)
-  const [lastDoc, setLastDoc] = useState<DocumentSnapshot | null>(null)
+  const [lastDoc, setLastDoc] = useState<null>(null)
   const [hasMore, setHasMore] = useState(false)
 
   useEffect(() => {

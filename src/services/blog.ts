@@ -1,15 +1,3 @@
-import {
-  collection,
-  query,
-  where,
-  orderBy,
-  limit,
-  startAfter,
-  getDocs,
-  DocumentSnapshot,
-} from 'firebase/firestore'
-import { db } from './firebase'
-
 export interface BlogPost {
   id: string
   title: string
@@ -23,41 +11,58 @@ export interface BlogPost {
   published: boolean
 }
 
+const rawFiles = import.meta.glob('../content/blog/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>
+
+function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {
+  const lines = raw.split('\n')
+  if (lines[0].trim() !== '---') return { meta: {}, body: raw }
+  const closeIdx = lines.findIndex((l, i) => i > 0 && l.trim() === '---')
+  if (closeIdx === -1) return { meta: {}, body: raw }
+  const meta: Record<string, string> = {}
+  for (const line of lines.slice(1, closeIdx)) {
+    const colon = line.indexOf(':')
+    if (colon === -1) continue
+    meta[line.slice(0, colon).trim()] = line.slice(colon + 1).trim()
+  }
+  return { meta, body: lines.slice(closeIdx + 1).join('\n').trim() }
+}
+
+let _posts: BlogPost[] | null = null
+
+function loadPosts(): BlogPost[] {
+  if (_posts) return _posts
+  _posts = Object.entries(rawFiles)
+    .map(([path, raw]) => {
+      const { meta, body } = parseFrontmatter(raw)
+      const id = path.split('/').pop()?.replace('.md', '') ?? path
+      return {
+        id,
+        title: meta.title ?? '',
+        slug: meta.slug ?? '',
+        excerpt: meta.excerpt ?? '',
+        content: body,
+        coverImage: meta.coverImage || undefined,
+        publishedAt: new Date(meta.publishedAt ?? '2026-01-01'),
+        author: meta.author ?? 'Howard Wedding Rentals',
+        tags: meta.tags ? meta.tags.split(',').map((t) => t.trim()) : [],
+        published: true,
+      }
+    })
+    .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+  return _posts
+}
+
 export async function getPosts(
   pageSize = 10,
-  lastDoc?: DocumentSnapshot
-): Promise<{ posts: BlogPost[]; lastDoc: DocumentSnapshot | null }> {
-  const ref = collection(db, 'blog-posts')
-  const constraints = [
-    where('published', '==', true),
-    orderBy('publishedAt', 'desc'),
-    limit(pageSize),
-  ]
-  if (lastDoc) constraints.push(startAfter(lastDoc) as any)
-
-  const snapshot = await getDocs(query(ref, ...constraints as any))
-  const posts = snapshot.docs.map((d) => ({
-    id: d.id,
-    ...d.data(),
-    publishedAt: d.data().publishedAt?.toDate() ?? new Date(),
-  })) as BlogPost[]
-
-  return {
-    posts,
-    lastDoc: snapshot.docs.length > 0 ? snapshot.docs[snapshot.docs.length - 1] : null,
-  }
+  _cursor?: unknown
+): Promise<{ posts: BlogPost[]; lastDoc: null }> {
+  return { posts: loadPosts().slice(0, pageSize), lastDoc: null }
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const ref = collection(db, 'blog-posts')
-  const snapshot = await getDocs(
-    query(ref, where('slug', '==', slug), where('published', '==', true), limit(1))
-  )
-  if (snapshot.empty) return null
-  const d = snapshot.docs[0]
-  return {
-    id: d.id,
-    ...d.data(),
-    publishedAt: d.data().publishedAt?.toDate() ?? new Date(),
-  } as BlogPost
+  return loadPosts().find((p) => p.slug === slug) ?? null
 }

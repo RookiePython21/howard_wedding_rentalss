@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, User, Loader2 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
-import { SEO } from '../components/SEO'
+import { SEO, SITE_URL } from '../components/SEO'
 import { getPostBySlug } from '../services/blog'
 import type { BlogPost as BlogPostType } from '../services/blog'
 
@@ -50,9 +50,42 @@ export default function BlogPost() {
     )
   }
 
+  const postUrl = `${SITE_URL}/blog/${post.slug}`
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        image: post.coverImage || `${SITE_URL}/images/pew1.jpg`,
+        datePublished: post.publishedAt.toISOString(),
+        author: { '@type': 'Person', name: post.author },
+        publisher: { '@type': 'Organization', name: 'Howard Wedding Rentals', url: SITE_URL },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+        url: postUrl,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
+        ],
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title={post.title} description={post.excerpt} />
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        image={post.coverImage}
+        url={postUrl}
+        type="article"
+        schema={schema as Record<string, unknown>}
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
 

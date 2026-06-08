@@ -218,7 +218,23 @@ run these five updates without prompting:
 5. **pillars.json**: Find the matching pillar by `pillar_id`. Increment `articles_published` by 1.
    If `articles_queued` > 0, decrement it by 1.
 
-After all five updates, print:
+6. **public/sitemap.xml**: Add a new `<url>` block for the article, inserted after the last
+   existing blog article entry (before the about/contact/legal pages at the bottom):
+   ```xml
+     <url>
+       <loc>https://howardweddingrentals.com/blog/[slug]</loc>
+       <lastmod>[today YYYY-MM-DD]</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+   ```
+
+7. **references/sitemap.csv**: Append a new row at the end of the file:
+   ```
+   https://howardweddingrentals.com/blog/[slug],[SEO title] | Howard Wedding Rentals,[meta description]
+   ```
+
+After all seven updates, print:
 ```
 Post-publication updates complete.
 Queue entry [kw-id]: queued → published
@@ -226,6 +242,8 @@ published-map.json: [n] total articles
 internal-links.md: new row added
 linked_from updated on [n] articles
 pillars.json: [pillar label] now has [n] published articles
+sitemap.xml: [n] total URLs
+sitemap.csv: new row added
 ```
 
 ---

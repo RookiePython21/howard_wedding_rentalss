@@ -5,6 +5,7 @@ excerpt: From table layout strategies to display ideas that look stunning — we
 tags: seating chart, wedding ideas, reception planning
 publishedAt: 2026-05-26
 author: Howard Wedding Rentals
+coverImage: /images/blog/wedding-seating-chart-ideas-cover.png
 ---
 
 # Wedding Seating Chart Ideas That Actually Work
@@ -18,6 +19,8 @@ The decisions are not as complicated as they feel. There is a process, there are
 ---
 
 ## Start With the Floor Plan, Not the Guest List
+
+![Escort card display with name cards hanging from a wooden frame draped in greenery and white florals at a wedding reception](/images/blog/wedding-seating-chart-ideas-body.png)
 
 Here is the move most brides skip: map your reception layout before you start thinking about who sits where.
 

@@ -5,6 +5,7 @@ excerpt: The wedding seating chart board is one of the first things guests see a
 tags: seating chart, reception planning, wedding decor
 publishedAt: 2026-05-12
 author: Howard Wedding Rentals
+coverImage: /images/blog/wedding-seating-chart-board-ideas-cover.png
 ---
 
 # Wedding Seating Chart Board Ideas (and How to Get Yours Done)
@@ -20,6 +21,8 @@ The good news? This one is manageable. You have options — from a simple foam b
 ---
 
 ## What Is a Wedding Seating Chart Board?
+
+![Custom printed foam board seating chart on a wooden easel at a wedding reception entrance](/images/blog/wedding-seating-chart-board-ideas-body.png)
 
 A wedding seating chart board is a physical display — usually placed on an easel near the reception entrance — that shows guests their assigned table. Think of it as the printed version of all that planning you have already done in your spreadsheet or seating tool.
 

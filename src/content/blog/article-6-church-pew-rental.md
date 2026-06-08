@@ -5,6 +5,7 @@ excerpt: What's included in a church pew rental — solid hardwood pews, deliver
 tags: church pews, ceremony seating, pew rental
 publishedAt: 2026-06-08
 author: Howard Wedding Rentals
+coverImage: /images/blog/church-pew-rental-for-wedding-cover.png
 ---
 
 # Renting Church Pews for Your Wedding: What to Expect
@@ -18,6 +19,8 @@ Church pew rentals are not the most talked-about wedding detail. But couples who
 ---
 
 ## What Does a Church Pew Rental Include?
+
+![Close-up of a solid hardwood church pew end decorated with white florals and satin ribbon for a wedding ceremony](/images/blog/church-pew-rental-for-wedding-body.png)
 
 When you rent church pews from Howard Wedding Rentals, here is what is included — no add-ons, no surprises:
 

@@ -5,6 +5,7 @@ excerpt: Free wedding seating chart templates you can download, customize, and p
 tags: seating chart, wedding planning, templates
 publishedAt: 2026-05-19
 author: Howard Wedding Rentals
+coverImage: /images/blog/wedding-seating-chart-template-cover.png
 ---
 
 # Free Wedding Seating Chart Templates (and the Easier Option Most Brides Miss)
@@ -20,6 +21,8 @@ This guide walks through the most common seating chart template formats, what to
 ---
 
 ## What a Seating Chart Template Actually Is
+
+![Wedding seating chart printed on premium paper beside a small floral arrangement on a rustic wooden table](/images/blog/wedding-seating-chart-template-body.png)
 
 Let's clear something up, because people search for "seating chart template" wanting two different things.
 

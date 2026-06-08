@@ -5,6 +5,7 @@ excerpt: Everything you need to know about wedding place cards — what to write
 tags: place cards, wedding stationery, reception planning
 publishedAt: 2026-06-05
 author: Howard Wedding Rentals
+coverImage: /images/blog/wedding-place-cards-guide-cover.png
 ---
 
 # Wedding Place Cards: Names, Table Numbers, and What to Order
@@ -18,6 +19,8 @@ The good news: this is one of the most straightforward decisions in the whole pl
 ---
 
 ## What Are Wedding Place Cards?
+
+![Close-up of a tented wedding name place card on a white linen napkin with a small white floral sprig and candle in soft background](/images/blog/wedding-place-cards-guide-body.png)
 
 A wedding place card is a small card placed at each individual seat at the reception tables. It shows the guest's name — and sometimes their table number or a meal selection indicator — so they know exactly where to sit once they find their table.
 

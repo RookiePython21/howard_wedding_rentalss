@@ -5,6 +5,7 @@ excerpt: A calm, step-by-step guide to making your wedding seating chart — fro
 tags: seating chart, wedding planning, how-to
 publishedAt: 2026-06-02
 author: Howard Wedding Rentals
+coverImage: /images/blog/how-to-make-a-wedding-seating-chart-cover.png
 ---
 
 # How to Make a Wedding Seating Chart (Step by Step)
@@ -16,6 +17,8 @@ Here is the actual process — calm, sequential, and manageable when you break i
 ---
 
 ## Step 1 — Wait Until RSVPs Are Closed
+
+![Overhead flat-lay of a wedding reception floor plan sketch on kraft paper with table markers, guest list, and pencils on a rustic wooden desk](/images/blog/how-to-make-a-wedding-seating-chart-body.png)
 
 Do not start assigning seats until your guest list is final.
 

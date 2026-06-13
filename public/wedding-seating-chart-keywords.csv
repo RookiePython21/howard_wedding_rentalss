@@ -1,12 +1,4 @@
 Group Category,Keyword,Search Volume,Keyword Difficulty,SERP Features,Top 3 Ranking Pages
-Generic / Broad Terms,table,113000,22,organic_shopping | image_th | image | news | question | video_th | sitelink,N/A — requires SERP lookup
-Generic / Broad Terms,tables,22000,7,organic_shopping | image_th | image | sitelink | video_th,N/A — requires SERP lookup
-Generic / Broad Terms,guest,22000,16,ai_overview | ai_overview_sitelink | image_th | question | video_th | image,N/A — requires SERP lookup
-Generic / Broad Terms,reception,15000,14,ai_overview | ai_overview_sitelink | image_th | question | local_pack | video_th | news | image,N/A — requires SERP lookup
-Generic / Broad Terms,guests,3600,13,ai_overview | ai_overview_sitelink | question | video_th | image,N/A — requires SERP lookup
-Generic / Broad Terms,last minute,3600,26,sitelink | question | video_th,N/A — requires SERP lookup
-Generic / Broad Terms,big day,600,18,question | image | video_th | image_th,N/A — requires SERP lookup
-Generic / Broad Terms,wedding wire website,250,6,sitelink | question,N/A — requires SERP lookup
 Wedding Planning General,wedding reception,11000,6,ai_overview | ai_overview_sitelink | image_th | local_pack | question | news | video_th | image | sitelink,N/A — requires SERP lookup
 Wedding Planning General,wedding ceremony,8500,26,ai_overview | ai_overview_sitelink | image_th | question | local_pack | video_th | news | image,N/A — requires SERP lookup
 Wedding Planning General,wedding party,5100,13,ai_overview | ai_overview_sitelink | image_th | question | image | video_th,N/A — requires SERP lookup
@@ -65,7 +57,6 @@ Seating Chart Templates,seating arrangement template,250,5,image | question | pa
 Seating Chart Templates,wedding seating chart template excel,250,2,ai_overview | ai_overview_sitelink | image_th,N/A — requires SERP lookup
 Seating Chart Templates,wedding table seating chart template,200,14,image_th | sitelink | image | organic_shopping,N/A — requires SERP lookup
 Table Seating Charts,table seating chart,800,23,image | organic_shopping | image_th | question | paid_bottom | paid_sitelink | sitelink | video_th,N/A — requires SERP lookup
-Table Seating Charts,table setting chart,600,21,image | question | image_th | video_th | sitelink,N/A — requires SERP lookup
 Table Seating Charts,wedding table seating chart,450,17,image | sitelink | question | organic_shopping | image_th,N/A — requires SERP lookup
 Table Seating Charts,table seating chart wedding,250,30,image | sitelink | image_th | organic_shopping | question | news | video_th,N/A — requires SERP lookup
 Table Seating Charts,wedding table layout,250,23,paid_top | paid_sitelink | image | question,N/A — requires SERP lookup
@@ -99,10 +90,3 @@ Wedding Table Furniture & Decor,head table,450,0,ai_overview | question | organi
 Wedding Table Furniture & Decor,table number,400,0,ai_overview | ai_overview_sitelink | image_th | organic_shopping | image | news,N/A — requires SERP lookup
 Alphabetical Seating Charts,alphabetical wedding seating chart,200,0,organic_shopping | image_th | question | sitelink | news | video_th,N/A — requires SERP lookup
 Alphabetical Seating Charts,wedding seating chart alphabetical,200,0,shopping | image_th | paid_top | paid_sitelink | image | sitelink | organic_shopping | question | news | video_th,N/A — requires SERP lookup
-DIY Wedding Craft Materials,rotary cutter,7200,6,ai_overview | ai_overview_sitelink | image_th | organic_shopping | question | video_th | news | sitelink | image,N/A — requires SERP lookup
-DIY Wedding Craft Materials,foam core,3900,5,ai_overview | ai_overview_sitelink | image_th | organic_shopping | question | discussion | news | paid_bottom | video_th | sitelink | image,N/A — requires SERP lookup
-DIY Wedding Craft Materials,card ideas,3900,1,image | question | paid_bottom | paid_sitelink | video_th | sitelink,N/A — requires SERP lookup
-DIY Wedding Craft Materials,laser cut wood,1700,3,image | question | video_th | organic_shopping | image_th | paid_bottom | paid_sitelink | knowledge_panel | sitelink,N/A — requires SERP lookup
-DIY Wedding Craft Materials,card display,1100,1,shopping | image_th | paid_top | organic_shopping | sitelink | image | question | paid_bottom | paid_sitelink | video_th,N/A — requires SERP lookup
-DIY Wedding Craft Materials,self healing mat,600,0,organic_shopping | image_th | question | discussion | image | news | video_th | paid_bottom,N/A — requires SERP lookup
-DIY Wedding Craft Materials,cut wood,500,0,ai_overview | organic_shopping | image_th | question | video_th | image,N/A — requires SERP lookup

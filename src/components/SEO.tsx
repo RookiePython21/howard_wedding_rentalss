@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-export const SITE_URL = 'https://howardweddingrentals.com'
+export const SITE_URL = 'https://www.howardweddingrentals.com'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/pew1.jpg`
 
 interface SEOProps {

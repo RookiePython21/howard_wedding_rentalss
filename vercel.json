@@ -1,3 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "howardweddingrentals.com" }],
+      "destination": "https://www.howardweddingrentals.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }

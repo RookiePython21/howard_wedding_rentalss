@@ -28,6 +28,18 @@ export default function SeatingChartTool() {
         description="Design your wedding reception layout with our free drag-and-drop seating chart tool. Arrange tables, assign guests, and export your floor plan."
       />
 
+      {/* Accessible heading + intro — present in the HTML for crawlers and
+          screen readers without altering the full-screen tool layout. */}
+      <h1 className="sr-only">Free Wedding Seating Chart Tool</h1>
+      <p className="sr-only">
+        Plan your wedding reception layout with Howard Wedding Rentals' free
+        drag-and-drop seating chart tool. Add round or rectangular tables, assign
+        each guest to a seat, rearrange your floor plan in seconds, and export the
+        finished chart as a PDF or image to share with your venue, caterer, and
+        wedding party. No account or sign-up is required to start designing your
+        perfect seating arrangement.
+      </p>
+
       {/* ── Slim top bar ─────────────────────────────────────────── */}
       <div className="flex-shrink-0 bg-white border-b border-gray-100 shadow-sm z-40">
 

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { SEO } from './components/SEO'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
@@ -23,6 +24,10 @@ import BlogPost from './pages/BlogPost'
 function Home() {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Wedding Church Pew Rentals"
+        description="Elegant wooden church pew rentals for your perfect wedding day. Delivery, setup, and teardown included."
+      />
       <Navbar />
       <main>
         <Hero />

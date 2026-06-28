@@ -66,3 +66,15 @@ export async function getPosts(
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   return loadPosts().find((p) => p.slug === slug) ?? null
 }
+
+// Synchronous accessors. Posts are bundled at build time (import.meta.glob with
+// eager: true), so they are available on the very first render. Seeding React
+// state from these keeps the initial client render identical to the prerendered
+// HTML, which is required for clean hydration (and removes the loading flash).
+export function getPostsSync(pageSize = 10): BlogPost[] {
+  return loadPosts().slice(0, pageSize)
+}
+
+export function getPostBySlugSync(slug: string): BlogPost | null {
+  return loadPosts().find((p) => p.slug === slug) ?? null
+}

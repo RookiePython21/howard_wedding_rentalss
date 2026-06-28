@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
 
 const PEW_PRICE = 25
@@ -28,10 +28,15 @@ export default function Pricing() {
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
   const [locationError, setLocationError] = useState('')
   const [locationChecking, setLocationChecking] = useState(false)
+  const lastGeoCall = useRef<number>(0)
 
   async function checkLocationRadius() {
     const trimmed = location.trim()
     if (!trimmed) { setLocationError(''); return }
+
+    const now = Date.now()
+    if (now - lastGeoCall.current < 3000) return
+    lastGeoCall.current = now
 
     setLocationChecking(true)
     setLocationError('')

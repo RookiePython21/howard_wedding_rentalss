@@ -1,41 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, Calendar, User, Loader2 } from 'lucide-react'
+import { ArrowLeft, Calendar, User } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { SEO, SITE_URL } from '../components/SEO'
-import { getPostBySlug } from '../services/blog'
-import type { BlogPost as BlogPostType } from '../services/blog'
+import { getPostBySlugSync } from '../services/blog'
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
-  const [post, setPost] = useState<BlogPostType | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [notFound, setNotFound] = useState(false)
+  // Resolve synchronously — the post is bundled at build time, so it is present
+  // in the very first render and in the prerendered HTML (clean hydration).
+  const [post] = useState(() => (slug ? getPostBySlugSync(slug) : null))
 
-  useEffect(() => {
-    if (!slug) return
-    getPostBySlug(slug).then((result) => {
-      if (!result) setNotFound(true)
-      else setPost(result)
-      setLoading(false)
-    })
-  }, [slug])
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 flex items-center justify-center">
-          <Loader2 size={32} className="text-[#c9a96e] animate-spin" />
-        </main>
-        <Footer />
-      </div>
-    )
-  }
-
-  if (notFound || !post) {
+  if (!post) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />

@@ -4,10 +4,36 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   apiVersion: '2024-06-20',
 })
 
+const rateMap = new Map<string, { count: number; windowStart: number }>()
+const RATE_LIMIT = 5
+const WINDOW_MS = 60_000
+
+function getClientIp(req: any): string {
+  const fwd = req.headers['x-forwarded-for']
+  return (typeof fwd === 'string' ? fwd.split(',')[0].trim() : (req.socket?.remoteAddress as string | undefined)) ?? 'unknown'
+}
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateMap.get(ip)
+  if (!entry || now - entry.windowStart > WINDOW_MS) {
+    rateMap.set(ip, { count: 1, windowStart: now })
+    return true
+  }
+  if (entry.count >= RATE_LIMIT) return false
+  entry.count++
+  return true
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     return res.status(405).json({ message: 'Method not allowed' })
+  }
+
+  const ip = getClientIp(req)
+  if (!checkRateLimit(ip)) {
+    return res.status(429).json({ message: 'Too many requests. Please try again in a minute.' })
   }
 
   if (!process.env.STRIPE_SECRET_KEY) {

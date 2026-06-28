@@ -1,34 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, ArrowRight, Loader2 } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { SEO } from '../components/SEO'
-import { getPosts } from '../services/blog'
+import { getPostsSync } from '../services/blog'
 import type { BlogPost } from '../services/blog'
 
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([])
-  const [loading, setLoading] = useState(true)
+  // Seed synchronously so the first render (and the prerendered HTML) already
+  // contains every post — no loading spinner, no hydration mismatch.
+  const [posts, setPosts] = useState<BlogPost[]>(() => getPostsSync(10))
   const [loadingMore, setLoadingMore] = useState(false)
-  const [lastDoc, setLastDoc] = useState<null>(null)
-  const [hasMore, setHasMore] = useState(false)
-
-  useEffect(() => {
-    getPosts(10).then(({ posts, lastDoc }) => {
-      setPosts(posts)
-      setLastDoc(lastDoc)
-      setHasMore(posts.length === 10)
-      setLoading(false)
-    })
-  }, [])
+  const [hasMore, setHasMore] = useState(() => getPostsSync(10).length === 10)
 
   async function loadMore() {
-    if (!lastDoc) return
     setLoadingMore(true)
-    const { posts: more, lastDoc: next } = await getPosts(10, lastDoc)
+    const more = getPostsSync(posts.length + 10).slice(posts.length)
     setPosts((prev) => [...prev, ...more])
-    setLastDoc(next)
     setHasMore(more.length === 10)
     setLoadingMore(false)
   }
@@ -65,11 +54,7 @@ export default function Blog() {
 
         {/* Post grid */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-          {loading ? (
-            <div className="flex justify-center py-20">
-              <Loader2 size={32} className="text-[#c9a96e] animate-spin" />
-            </div>
-          ) : posts.length === 0 ? (
+          {posts.length === 0 ? (
             <div className="text-center py-20">
               <p className="font-playfair text-2xl text-[#2c1f0e] mb-3">No posts yet</p>
               <p className="font-raleway text-[#6b5744] text-sm">

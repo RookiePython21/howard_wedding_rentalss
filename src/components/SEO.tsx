@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { useLocation } from 'react-router-dom'
 
 export const SITE_URL = 'https://www.howardweddingrentals.com'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/pew1.jpg`
@@ -15,8 +16,10 @@ interface SEOProps {
 export function SEO({ title, description, image, url, type = 'website', schema }: SEOProps) {
   const fullTitle = `${title} | Howard Wedding Rentals`
   const ogImage = image || DEFAULT_OG_IMAGE
-  const canonical =
-    url ?? (typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : SITE_URL)
+  // Derive the canonical from the router path so it is deterministic at build
+  // time (prerendering) — never tied to window.location / the dev or preview host.
+  const { pathname } = useLocation()
+  const canonical = url ?? `${SITE_URL}${pathname}`
 
   return (
     <Helmet>

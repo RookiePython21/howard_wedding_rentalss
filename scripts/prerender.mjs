@@ -16,10 +16,46 @@
  * duplicate-without-canonical, orphan pages, missing H1, and low word count.
  */
 import { preview } from 'vite'
-import puppeteer from 'puppeteer'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+/**
+ * Resolve a headless Chrome to drive.
+ *
+ * Locally we use the full `puppeteer` package, which downloads a complete
+ * Chromium that relies on the host's system shared libraries (present on a
+ * normal dev machine).
+ *
+ * On Vercel (and other serverless build containers) those libraries — e.g.
+ * libnspr4.so — are NOT installed, so that same Chromium fails to launch with
+ * "cannot open shared object file". There we instead drive `puppeteer-core`
+ * with `@sparticuz/chromium`, a self-contained Chromium build that ships the
+ * libraries it needs and is designed for exactly these environments.
+ */
+async function resolveBrowser() {
+  if (process.env.VERCEL) {
+    const chromium = (await import('@sparticuz/chromium')).default
+    const puppeteer = (await import('puppeteer-core')).default
+    return {
+      puppeteer,
+      launchOptions: {
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: true,
+      },
+    }
+  }
+  const puppeteer = (await import('puppeteer')).default
+  return {
+    puppeteer,
+    launchOptions: {
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    },
+  }
+}
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
@@ -70,10 +106,8 @@ async function run() {
   const server = await preview({ preview: { port: PORT, strictPort: true } })
   const base = `http://localhost:${PORT}`
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  })
+  const { puppeteer, launchOptions } = await resolveBrowser()
+  const browser = await puppeteer.launch(launchOptions)
 
   const failures = []
   console.log(`[prerender] rendering ${ROUTES.length} routes…`)

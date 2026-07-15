@@ -17,6 +17,23 @@
       "competitor_domains_identified": [],
       "sms_sent": true,
       "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+    },
+    {
+      "run_id": "research-run-002",
+      "started_at": "2026-07-15T00:00:00Z",
+      "completed_at": "2026-07-15T00:45:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "raw_keywords_found": 383,
+      "keywords_after_guardrail": 26,
+      "keywords_after_dedup": 13,
+      "keywords_added_to_queue": 7,
+      "cluster_siblings_updated": 1,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "notes": "Competitor identification already done (skipped Step 1). Added kw-007..kw-013: table numbers, seating chart printable, church pews, foam board near me, table seating chart wedding, where to print place cards for wedding, standard foam board size. 'template for seating chart' merged as a cluster sibling of kw-008 (seating chart printable) via shared parent_topic 'seating chart template'. Several keywords passed mechanical guardrail/dedup checks but were manually excluded as off-topic or brand-misaligned before scoring: 'reception tables' and 'place cards' (parent topic already covered by published wedding-place-cards-guide), 'signs wedding' and 'arch wedding' (generic wedding decor, not tied to any pillar product), 'free seating chart maker for teachers' (classroom audience, not bridal), and 'how to make a seating chart' (near-duplicate of published how-to-make-a-wedding-seating-chart, cannibalization risk). Several other candidates were discarded because their parent_topic matched a PUBLISHED article's primary_keyword with no corresponding queue entry to attach as a cluster sibling (e.g. 'wedding place cards ideas', 'wedding name place cards', 'table place cards', 'seating chart examples', 'seating chart' — parent topics already owned by published content)."
     }
   ]
 }

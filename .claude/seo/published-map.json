@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-07-21",
   "articles": [
     {
       "slug": "what-is-a-church-pew",
@@ -134,6 +134,27 @@
         "https://howardweddingrentals.com/blog/what-is-a-church-pew"
       ],
       "queue_id": null
+    },
+    {
+      "slug": "wedding-name-tags-vs-place-cards",
+      "title": "Wedding Name Tags vs. Place Cards: Which Do You Need?",
+      "url": "https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding name tags",
+      "secondary_keywords": [],
+      "published_date": "2026-07-21",
+      "last_updated": "2026-07-21",
+      "tags": ["place cards", "wedding stationery", "reception planning", "wedding name tags"],
+      "excerpt": "Wedding name tags and place cards solve different problems. Here's the difference, and how to pick the right one for your reception.",
+      "links_to": [
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/services",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-002"
     }
   ]
 }

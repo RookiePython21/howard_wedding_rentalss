@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped).",
   "_schema_version": "1.0",
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-07-22",
   "queue": [
     {
       "id": "kw-001",
@@ -12,10 +12,14 @@
       "kd": 2,
       "parent_topic": "church pew",
       "search_intent": "informational — searcher wants to understand what church pews are; top-of-funnel opportunity to introduce church pew rental services for weddings",
-      "serp_features": ["shopping_ads"],
+      "serp_features": [
+        "shopping_ads"
+      ],
       "priority_score": 76.0,
       "phase_eligible": 1,
-      "cluster_siblings": ["what is a church pew"],
+      "cluster_siblings": [
+        "what is a church pew"
+      ],
       "suggested_slug": "what-is-a-church-pew",
       "suggested_angle": "Definitive guide to church pews — what they are, their history, and how couples can rent authentic solid hardwood pews for their ceremony instead of standard folding chairs",
       "internal_link_targets": [
@@ -35,6 +39,264 @@
       "published_date": "2026-06-08"
     },
     {
+      "id": "kw-007",
+      "keyword": "table numbers",
+      "pillar_id": "place-cards",
+      "volume": 3400,
+      "traffic_potential": 2100,
+      "kd": 0,
+      "parent_topic": "wedding table numbers",
+      "search_intent": "commercial — bride shopping for table number cards or signs for reception tables, a natural companion purchase alongside place cards and seating charts",
+      "serp_features": [
+        "organic_shopping",
+        "image_th",
+        "image",
+        "sitelink",
+        "video_th"
+      ],
+      "priority_score": 75.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-table-numbers-guide",
+      "suggested_angle": "What to know about wedding table numbers — styles, sizes, and how to order custom printed numbers that match your place cards and seating chart display",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.minted.com/category/wedding/table-numbers",
+        "https://blushandlumber.com/collections/table-numbers"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-008",
+      "keyword": "foam board near me",
+      "pillar_id": "seating-chart-boards",
+      "volume": 1100,
+      "traffic_potential": 5100,
+      "kd": 1,
+      "parent_topic": "dollar tree foam board",
+      "search_intent": "local/transactional — bride or DIYer searching for a nearby craft or office store to buy blank foam board for a DIY seating chart project",
+      "serp_features": [
+        "local_pack",
+        "organic_shopping",
+        "image_th",
+        "question",
+        "video_th",
+        "image"
+      ],
+      "priority_score": 75.6,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "foam-board-for-wedding-seating-chart",
+      "suggested_angle": "Save the trip to the craft store — what size and thickness of foam board works for a wedding seating chart, and why a custom-printed board beats a blank one from the store",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-seating-chart-board-ideas",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.dollartree.com/readi-board-white-foam-boards/809955"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-009",
+      "keyword": "place cards",
+      "pillar_id": "place-cards",
+      "volume": 4100,
+      "traffic_potential": 5900,
+      "kd": 20,
+      "parent_topic": "escort cards",
+      "search_intent": "commercial/transactional — broad top-of-funnel shopper researching place cards for any event, an entry point to introduce Howard's custom wedding place card products",
+      "serp_features": [
+        "organic_shopping",
+        "image_th",
+        "local_pack",
+        "question",
+        "image",
+        "video_th",
+        "sitelink"
+      ],
+      "priority_score": 74.6,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "place-cards-guide",
+      "suggested_angle": "Broad, definitive guide to place cards — what they are, when you need them, and how to order custom printed ones, positioned to capture top-of-funnel searchers before narrowing to wedding-specific options",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-010",
+      "keyword": "seating chart printable",
+      "pillar_id": "seating-chart-boards",
+      "volume": 150,
+      "traffic_potential": 4000,
+      "kd": 2,
+      "parent_topic": "seating chart template",
+      "search_intent": "informational — bride wants a free printable seating chart template she can download and fill in herself, before discovering a done-for-her display board option",
+      "serp_features": [
+        "image"
+      ],
+      "priority_score": 63.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "printable-wedding-seating-chart",
+      "suggested_angle": "Free printable seating chart download plus guidance on when a printed template is enough versus when a custom foam board display looks better at the reception",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-seating-chart-template",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.canva.com/seating-charts/templates/",
+        "https://www.staples.com/services/printing/offers/wedding-seating-maps/"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-011",
+      "keyword": "church pews",
+      "pillar_id": "church-pew-rentals",
+      "volume": 2000,
+      "traffic_potential": 1100,
+      "kd": 1,
+      "parent_topic": "church pews",
+      "search_intent": "commercial/transactional — bride comparing church pew styles and pricing for her ceremony before deciding to rent",
+      "serp_features": [
+        "ai_overview",
+        "ai_overview_sitelink",
+        "image_th",
+        "paid_top",
+        "organic_shopping",
+        "question",
+        "sitelink",
+        "image",
+        "paid_bottom",
+        "paid_sitelink",
+        "video_th"
+      ],
+      "priority_score": 61.5,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "church-pews-for-weddings",
+      "suggested_angle": "A buyer's guide to church pews for wedding ceremonies — comparing styles, wood types, and capacity, then showing how renting beats buying for a one-day event",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/services",
+        "https://howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.churchinteriors.com/pews/"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-012",
+      "keyword": "table seating chart wedding",
+      "pillar_id": "seating-chart-boards",
+      "volume": 250,
+      "traffic_potential": 4500,
+      "kd": 17,
+      "parent_topic": "seating chart",
+      "search_intent": "commercial/transactional — bride organizing which guests sit at which reception table, looking for layout guidance and a tool to assign tables",
+      "serp_features": [
+        "image",
+        "organic_shopping",
+        "question",
+        "news",
+        "video_th"
+      ],
+      "priority_score": 52.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-table-seating-chart-guide",
+      "suggested_angle": "How to build a table-by-table wedding seating chart — assigning guests to tables, common layout mistakes, and how the free drag-and-drop tool makes table assignments easier than a spreadsheet",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.weddingwire.com/wedding-planning/wedding-seating-tables.html",
+        "https://www.pinterest.com/dessygroup/seating-charts/",
+        "https://www.zazzle.com/c/wedding+seating+charts"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-013",
+      "keyword": "where to print place cards for wedding",
+      "pillar_id": "place-cards",
+      "volume": 100,
+      "traffic_potential": 1000,
+      "kd": 0,
+      "parent_topic": "placement cards for weddings",
+      "search_intent": "transactional/local — bride ready to order printed place cards and comparing local print shops vs online options",
+      "serp_features": [
+        "sitelink",
+        "discussion",
+        "local_pack",
+        "organic_shopping",
+        "image_th"
+      ],
+      "priority_score": 50.6,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "where-to-print-wedding-place-cards",
+      "suggested_angle": "Compare where brides can print wedding place cards — local print shops, big box stores, and online options — then make the case for custom printed cards ordered directly through Howard's shop",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://photo.walgreens.com/store/wedding-placecards",
+        "https://weddings.staples.com/Reception/Place-Table-and-Menu-Cards/3254-TWSN60824VP-Signature-Names-Place-Card--Variable-Print.pro",
+        "https://www.reddit.com/r/weddingplanning/comments/dj95ik/place_cards_where_did_you_get_them/"
+      ],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
       "id": "kw-002",
       "keyword": "wedding name tags",
       "pillar_id": "place-cards",
@@ -43,7 +305,9 @@
       "kd": 22,
       "parent_topic": "wedding name tags",
       "search_intent": "commercial — bride shopping for name tags or place cards to help guests identify themselves at the reception",
-      "serp_features": ["shopping_ads"],
+      "serp_features": [
+        "shopping_ads"
+      ],
       "priority_score": 49.2,
       "phase_eligible": 1,
       "cluster_siblings": [],
@@ -130,6 +394,41 @@
       "published_date": null
     },
     {
+      "id": "kw-014",
+      "keyword": "standard foam board size",
+      "pillar_id": "seating-chart-boards",
+      "volume": 150,
+      "traffic_potential": 40,
+      "kd": 0,
+      "parent_topic": "foam core board sizes",
+      "search_intent": "informational — someone researching standard foam board dimensions, relevant to brides figuring out what size seating chart board they need for their guest count",
+      "serp_features": [
+        "ai_overview",
+        "ai_overview_sitelink",
+        "image_th",
+        "image",
+        "question",
+        "organic_shopping",
+        "sitelink"
+      ],
+      "priority_score": 46.1,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "standard-foam-board-sizes-seating-chart",
+      "suggested_angle": "Standard foam board sizes explained, with a simple formula for picking the right seating chart board size based on guest count",
+      "internal_link_targets": [
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/blog/wedding-seating-chart-board-ideas",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-07-22",
+      "source_run": "research-run-002",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
       "id": "kw-005",
       "keyword": "place cards for table",
       "pillar_id": "place-cards",
@@ -138,7 +437,10 @@
       "kd": 20,
       "parent_topic": "place cards for table",
       "search_intent": "commercial — shopper (likely a bride or event planner) looking to buy place cards for a seated dinner table setting",
-      "serp_features": ["shopping_ads", "people_also_ask"],
+      "serp_features": [
+        "shopping_ads",
+        "people_also_ask"
+      ],
       "priority_score": 40.1,
       "phase_eligible": 1,
       "cluster_siblings": [],
@@ -170,7 +472,9 @@
       "kd": 3,
       "parent_topic": "wedding ceremony chair layout template",
       "search_intent": "informational — bride planning her ceremony seating arrangement and looking for a visual template to share with her venue coordinator",
-      "serp_features": ["people_also_ask"],
+      "serp_features": [
+        "people_also_ask"
+      ],
       "priority_score": 36.4,
       "phase_eligible": 1,
       "cluster_siblings": [],

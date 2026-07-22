@@ -17,6 +17,23 @@
       "competitor_domains_identified": [],
       "sms_sent": true,
       "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+    },
+    {
+      "run_id": "research-run-002",
+      "started_at": "2026-07-22T12:35:00Z",
+      "completed_at": "2026-07-22T13:17:29Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "raw_keywords_found": 367,
+      "keywords_after_guardrail": 19,
+      "keywords_after_dedup": 10,
+      "keywords_added_to_queue": 8,
+      "cluster_siblings_updated": 0,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "notes": "Competitor identification already done (skipped Step 1). Parent-topic dedup (Check F) dropped 4 candidates with no existing queue entry to attach as cluster siblings: 'wedding place cards ideas', 'wedding name place cards', and 'table place cards' (parent_topic 'wedding place cards', already a published primary keyword), and 'seating chart examples' (parent_topic 'wedding seating chart ideas', also already published). Of the 10 remaining after Check F, 2 were dropped on editorial review despite passing mechanical guardrails: 'free seating chart maker for teachers' (parent_topic 'classroom desk arrangement generator' — genuinely a K-12 classroom-seating query surfaced via the shared 'seating chart maker' seed term, not a wedding intent, and not caught by the exclusion list's literal 'school' substring check), and 'how to make a seating chart' (near-duplicate of the already-published 'how-to-make-a-wedding-seating-chart' article — differs only by omitting the word 'wedding' and would cannibalize that page rather than target a distinct query). Net 8 keywords added to queue: kw-007 through kw-014."
     }
   ]
 }

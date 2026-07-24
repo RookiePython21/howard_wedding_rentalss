@@ -8,7 +8,7 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Contact Us"
-        description="Book your church pew rental or ask us anything. Call (270) 903-5890 or email contact@howardweddingrentals.com. Serving Owensboro, KY and a 30-mile radius."
+        description="Book your church pew rental or ask us anything. Call (270) 903-5890 or email contact@howardweddingrentals.com. Serving Owensboro, KY and surrounding areas."
       />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">

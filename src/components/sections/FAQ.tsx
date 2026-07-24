@@ -24,7 +24,7 @@ const faqs = [
     id: 'distance',
     question: 'How far do you travel for deliveries?',
     answer:
-      'Our Intimate package covers up to 5 miles, the Classic covers up to 25 miles, and the Grand package covers up to 50 miles. For venues beyond those ranges, contact us — we often make exceptions for larger orders.',
+      'We serve Owensboro, KY and the surrounding areas, and we\'re happy to travel farther for your wedding. For venues within a short drive, delivery is included; for those farther out, a travel fee applies based on the drive time. Enter your venue in our quote calculator for an instant estimate, or give us a call and we\'ll confirm it for you.',
   },
   {
     id: 'count',

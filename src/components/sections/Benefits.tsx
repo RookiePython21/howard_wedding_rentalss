@@ -39,11 +39,8 @@ export default function Benefits() {
           <h2 className="section-title mb-4">
             The Howard Difference
           </h2>
-          <div className="gold-divider" />
-          <p className="section-subtitle mt-6 max-w-2xl mx-auto">
-            We believe every couple deserves a ceremony as beautiful as their love story. That's why we go above and beyond with every rental.
-          </p>
         </div>
+     
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

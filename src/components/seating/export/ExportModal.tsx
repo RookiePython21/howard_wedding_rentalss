@@ -2,9 +2,30 @@ import React, { useState } from 'react';
 import { X, Printer, LayoutGrid, FileText, Table, ShoppingBag, Loader2, AlertCircle } from 'lucide-react';
 import { useSeatingStore } from '../../../store/seatingStore';
 import { useCheckout } from '../../../hooks/useCheckout';
+import { useAuth } from '../../../hooks/useAuth';
+import { saveLead } from '../../../services/cloudSync';
 import { openFoamBoardPrintPreview } from './FoamBoardPrintLayout';
 import ChartRequiredForFoamBoardModal from '../../shop/ChartRequiredForFoamBoardModal';
 import { canPurchaseFoamBoard } from '../../../utils/seatingChartEligibility';
+
+const LEAD_EMAIL_KEY = 'hwr_lead_email';
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function readStoredLeadEmail(): string | null {
+  try {
+    return localStorage.getItem(LEAD_EMAIL_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeLeadEmail(email: string) {
+  try {
+    localStorage.setItem(LEAD_EMAIL_KEY, email);
+  } catch {
+    /* localStorage unavailable — not fatal */
+  }
+}
 
 type TabId = 'chart' | 'placecards' | 'csv' | 'foam-board';
 
@@ -14,9 +35,16 @@ interface ExportModalProps {
 
 export default function ExportModal({ onClose }: ExportModalProps) {
   const { guests, tables, venueElements } = useSeatingStore();
+  const { user } = useAuth();
   const [selectedTab, setSelectedTab] = useState<TabId | null>(null);
   const [foamChartGateOpen, setFoamChartGateOpen] = useState(false);
+  const [storedEmail, setStoredEmail] = useState<string | null>(() => readStoredLeadEmail());
+  const [chartEmail, setChartEmail] = useState('');
+  const [chartEmailError, setChartEmailError] = useState<string | null>(null);
   const { initiateCheckout, loading: checkoutLoading, error: checkoutError } = useCheckout();
+
+  // Email we already have on file — skip the gate when present.
+  const knownEmail = storedEmail ?? user?.email ?? null;
 
   const placecardsPriceId = import.meta.env.VITE_STRIPE_PRICE_ID_PLACECARDS;
   const placecardsPriceDisplay = import.meta.env.VITE_STRIPE_PRICE_DISPLAY_PLACECARDS;
@@ -88,6 +116,38 @@ export default function ExportModal({ onClose }: ExportModalProps) {
     printWindow.document.close();
     printWindow.focus();
     setTimeout(() => printWindow.print(), 500);
+  };
+
+  // Best-effort lead capture — never blocks the print if Firestore is unavailable.
+  const recordChartLead = (email: string) => {
+    saveLead(email, {
+      source: 'printable-seating-chart',
+      guestCount: guests.length,
+      tableCount: tables.length,
+    }).catch((err) => console.error('Lead capture failed', err));
+  };
+
+  // Gated entry point for the Printable Seating Chart "Print / Save as PDF" button.
+  const handlePrintChartClick = () => {
+    if (knownEmail) {
+      recordChartLead(knownEmail);
+      handlePrintChart();
+    }
+    // Otherwise the inline email form is shown; submit runs handleChartEmailSubmit.
+  };
+
+  const handleChartEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const email = chartEmail.trim();
+    if (!EMAIL_REGEX.test(email)) {
+      setChartEmailError('Please enter a valid email address.');
+      return;
+    }
+    setChartEmailError(null);
+    recordChartLead(email);
+    storeLeadEmail(email);
+    setStoredEmail(email);
+    handlePrintChart();
   };
 
   const handlePrintPlaceCards = () => {
@@ -231,14 +291,47 @@ export default function ExportModal({ onClose }: ExportModalProps) {
             onSelect={() => toggleTab('chart')}
             color="gold"
           >
-            <div className="flex justify-end">
-              <button
-                onClick={handlePrintChart}
-                className="px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors"
-              >
-                Print / Save as PDF
-              </button>
-            </div>
+            {knownEmail ? (
+              <div className="flex justify-end">
+                <button
+                  onClick={handlePrintChartClick}
+                  className="px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors"
+                >
+                  Print / Save as PDF
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleChartEmailSubmit} className="space-y-2">
+                <label htmlFor="chart-email" className="block font-raleway text-xs text-gray-500">
+                  Enter your email to print or save your seating chart.
+                </label>
+                <div className="flex flex-col sm:flex-row gap-2 sm:items-start">
+                  <div className="flex-1">
+                    <input
+                      id="chart-email"
+                      type="email"
+                      value={chartEmail}
+                      onChange={(e) => {
+                        setChartEmail(e.target.value);
+                        if (chartEmailError) setChartEmailError(null);
+                      }}
+                      placeholder="you@example.com"
+                      autoComplete="email"
+                      className="w-full px-3 py-2 border border-cream-300 rounded-lg text-sm font-raleway focus:outline-none focus:ring-2 focus:ring-gold-300 focus:border-gold-400"
+                    />
+                    {chartEmailError && (
+                      <p className="mt-1 font-raleway text-xs text-red-600">{chartEmailError}</p>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-gold-100 text-gold-700 hover:bg-gold-200 rounded-lg text-sm font-raleway font-medium transition-colors whitespace-nowrap"
+                  >
+                    Print / Save as PDF
+                  </button>
+                </div>
+              </form>
+            )}
           </ExportOption>
 
           <ExportOption

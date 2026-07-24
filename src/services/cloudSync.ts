@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from './firebase';
 import {
   Guest,
@@ -22,6 +22,19 @@ export interface CloudChartPayload {
 
 // One chart per user — saved at users/{uid}/charts/primary.
 const chartDoc = (uid: string) => doc(db, 'users', uid, 'charts', 'primary');
+
+// Lead-capture write — collected at email-gated export points for future upsells.
+// Best-effort: callers should swallow errors so a failed write never blocks the export.
+export async function saveLead(
+  email: string,
+  meta: { source: string; guestCount: number; tableCount: number },
+) {
+  await addDoc(collection(db, 'leads'), {
+    email: email.trim().toLowerCase(),
+    ...meta,
+    createdAt: serverTimestamp(),
+  });
+}
 
 export async function saveChartToCloud(
   uid: string,

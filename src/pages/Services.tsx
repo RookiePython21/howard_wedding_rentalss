@@ -98,9 +98,9 @@ export default function Services() {
                 <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
                   Pricing
                 </h3>
-                <p className="font-playfair text-3xl text-[#2c1f0e] mb-1">$25 <span className="text-lg font-raleway font-normal text-[#9b836e]">/ pew</span></p>
+                <p className="font-playfair text-3xl text-[#2c1f0e] mb-1">$50 <span className="text-lg font-raleway font-normal text-[#9b836e]">/ pew</span></p>
                 <p className="font-raleway text-sm text-[#6b5744]">Up to 14 pews available</p>
-                <p className="font-raleway text-sm text-[#6b5744] mt-1">30-mile radius from Owensboro, KY</p>
+                <p className="font-raleway text-sm text-[#6b5744] mt-1">Serving Owensboro, KY &amp; surrounding areas</p>
                 <p className="font-raleway text-xs text-[#9b836e] mt-2">
                   Travel &amp; installation fees vary — determined during your coordination call.
                 </p>

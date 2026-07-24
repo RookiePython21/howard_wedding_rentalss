@@ -1,24 +1,23 @@
 import { useState, useRef } from 'react'
 import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
 
-const PEW_PRICE = 25
+const PEW_PRICE = 50
 const MAX_PEWS = 14
 
-const OWENSBORO_LAT = 37.7719
-const OWENSBORO_LNG = -87.1112
-const MAX_RADIUS_MILES = 30
+// Single fixed departure point: 9643 KY-2157, Whitesville, KY 42378 (KY-2157 / McCamish Rd).
+const ORIGIN_LAT = 37.734848
+const ORIGIN_LNG = -86.852473
 
-function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
-  const R = 3958.8
-  const dLat = ((lat2 - lat1) * Math.PI) / 180
-  const dLng = ((lng2 - lng1) * Math.PI) / 180
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2)
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+// Travel fee: for trips whose round-trip driving exceeds FREE_TRAVEL_HOURS, we charge a
+// base fee plus an hourly rate on the *billable* hours. Billable hours = one-way drive time
+// multiplied by 4, because the crew makes two round trips (drop-off + pick-up).
+const BASE_TRAVEL_FEE = 300
+const PER_HOUR_RATE = 150
+const ROUND_TRIP_MULTIPLIER = 4
+const FREE_TRAVEL_HOURS = 1
+
+function formatUSD(n: number): string {
+  return `$${Math.round(n).toLocaleString()}`
 }
 
 export default function Pricing() {
@@ -26,50 +25,70 @@ export default function Pricing() {
   const [weddingDate, setWeddingDate] = useState('2026-09-01')
   const [location, setLocation] = useState('')
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
-  const [locationError, setLocationError] = useState('')
+  const [driveHours, setDriveHours] = useState<number | null>(null) // one-way driving time, in hours
+  const [estimateFailed, setEstimateFailed] = useState(false)
   const [locationChecking, setLocationChecking] = useState(false)
   const lastGeoCall = useRef<number>(0)
 
-  async function checkLocationRadius() {
+  async function computeTravel() {
     const trimmed = location.trim()
-    if (!trimmed) { setLocationError(''); return }
+    if (!trimmed) { setDriveHours(null); setEstimateFailed(false); return }
 
     const now = Date.now()
     if (now - lastGeoCall.current < 3000) return
     lastGeoCall.current = now
 
     setLocationChecking(true)
-    setLocationError('')
+    setEstimateFailed(false)
 
     try {
-      const res = await fetch(
+      // 1. Geocode the venue (free Nominatim).
+      const geoRes = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(trimmed)}&format=json&limit=1`,
         { headers: { 'Accept-Language': 'en' } }
       )
-      const data = await res.json()
-      if (!data.length) {
-        setLocationError("We couldn't find that location. Please try a city name, venue, or full address.")
+      const geoData = await geoRes.json()
+      if (!geoData.length) {
+        setEstimateFailed(true)
+        setDriveHours(null)
         return
       }
-      const miles = haversineDistance(
-        OWENSBORO_LAT, OWENSBORO_LNG,
-        parseFloat(data[0].lat), parseFloat(data[0].lon)
+      const destLat = parseFloat(geoData[0].lat)
+      const destLng = parseFloat(geoData[0].lon)
+
+      // 2. Driving time from our origin to the venue (free OSRM public server; lng,lat order).
+      const routeRes = await fetch(
+        `https://router.project-osrm.org/route/v1/driving/${ORIGIN_LNG},${ORIGIN_LAT};${destLng},${destLat}?overview=false`
       )
-      if (miles > MAX_RADIUS_MILES) {
-        setLocationError(
-          `We're sorry — that location appears to be about ${Math.round(miles)} miles from Owensboro, KY, which is outside our 30-mile service area. Please give us a call at 270.903.5890 to discuss your options.`
-        )
-      } else {
-        setLocationError('')
+      const routeData = await routeRes.json()
+      if (routeData.code !== 'Ok' || !routeData.routes?.length) {
+        setEstimateFailed(true)
+        setDriveHours(null)
+        return
       }
+      setDriveHours(routeData.routes[0].duration / 3600)
     } catch {
-      setLocationError('')
+      // Network/routing failure — fall back to pew total + "confirm by phone".
+      setEstimateFailed(true)
+      setDriveHours(null)
     } finally {
       setLocationChecking(false)
     }
   }
 
+  // Derived pricing (recomputes on render, so changing the pew count updates the total
+  // instantly without re-fetching the drive time).
   const pewTotal = pewCount * PEW_PRICE
+  const billableHours = driveHours != null ? driveHours * ROUND_TRIP_MULTIPLIER : null
+  let travelFee = 0
+  let total = pewTotal
+  if (billableHours != null && billableHours > FREE_TRAVEL_HOURS) {
+    const travelFormula = BASE_TRAVEL_FEE + PER_HOUR_RATE * billableHours
+    total = Math.max(pewTotal, travelFormula)
+    travelFee = total - pewTotal
+  }
+  const travelWins = total > pewTotal
+  const isLocal = billableHours != null && billableHours <= FREE_TRAVEL_HOURS
 
   return (
     <section id="pricing" className="py-20 sm:py-28 bg-[#f5edd8]/30">
@@ -82,7 +101,7 @@ export default function Pricing() {
           <h2 className="section-title mb-4">Get Your Custom Quote</h2>
           <div className="gold-divider" />
           <p className="section-subtitle mt-6 max-w-xl mx-auto">
-            Pews are <span className="text-[#2c1f0e] font-semibold">$25 each</span>, plus travel/installation fees based on your location. Fill out the fields below and give us a call — we'll confirm availability and finalize your quote.
+            Pews are <span className="text-[#2c1f0e] font-semibold">${PEW_PRICE} each</span>. Venues over an hour of round-trip driving add a travel fee based on drive time — enter your details below for an instant estimate, then give us a call to finalize.
           </p>
         </div>
 
@@ -153,7 +172,7 @@ export default function Pricing() {
               Where is the wedding located?
             </label>
             <p className="font-raleway text-xs text-[#9b836e] mb-4">
-              We serve locations within 30 miles of Owensboro, KY
+              Enter your venue for an instant travel estimate
             </p>
             <div className="relative">
               <MapPin size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e]" />
@@ -163,18 +182,18 @@ export default function Pricing() {
               <input
                 type="text"
                 value={location}
-                onChange={(e) => { setLocation(e.target.value); setLocationError('') }}
-                onBlur={checkLocationRadius}
+                onChange={(e) => { setLocation(e.target.value); setEstimateFailed(false); setDriveHours(null) }}
+                onBlur={computeTravel}
                 placeholder="City, venue name, or address"
-                className={`w-full pl-10 pr-4 py-3 border rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none transition-colors bg-[#fdfcf8] ${
-                  locationError ? 'border-red-300 focus:border-red-400' : 'border-cream-200 focus:border-[#c9a96e]'
-                }`}
+                className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
               />
             </div>
-            {locationError && (
-              <div className="flex items-start gap-2 mt-3 p-3 bg-red-50 border border-red-200 rounded-sm">
-                <AlertCircle size={15} className="text-red-400 mt-0.5 shrink-0" />
-                <p className="font-raleway text-xs text-red-600 leading-relaxed">{locationError}</p>
+            {estimateFailed && (
+              <div className="flex items-start gap-2 mt-3 p-3 bg-[#f5edd8]/50 border border-cream-200 rounded-sm">
+                <AlertCircle size={15} className="text-[#c9a96e] mt-0.5 shrink-0" />
+                <p className="font-raleway text-xs text-[#6b5744] leading-relaxed">
+                  We couldn't estimate the travel time automatically — no problem. Give us a call and we'll confirm your travel fee in a moment.
+                </p>
               </div>
             )}
           </div>
@@ -224,26 +243,54 @@ export default function Pricing() {
 
           {/* Price summary */}
           <div className="border-t border-cream-200 pt-7">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-3">
               <span className="font-raleway text-sm text-[#6b5744]">
-                {pewCount} pew{pewCount !== 1 ? 's' : ''} × $25
+                {pewCount} pew{pewCount !== 1 ? 's' : ''} × ${PEW_PRICE}
               </span>
-              <span className="font-playfair text-xl text-[#2c1f0e] font-bold">${pewTotal}</span>
+              <span className="font-raleway text-sm text-[#2c1f0e] font-semibold">{formatUSD(pewTotal)}</span>
             </div>
-            <div className="flex items-center justify-between mb-6">
-              <span className="font-raleway text-sm text-[#6b5744]">Travel fee</span>
-              <span className="font-raleway text-sm text-[#9b836e] italic">Based on location</span>
+
+            <div className="flex items-center justify-between">
+              <span className="font-raleway text-sm text-[#6b5744]">Travel &amp; setup</span>
+              <span className="font-raleway text-sm">
+                {locationChecking ? (
+                  <span className="text-[#9b836e] italic">Calculating…</span>
+                ) : estimateFailed ? (
+                  <span className="text-[#9b836e] italic">Confirmed by phone</span>
+                ) : billableHours == null ? (
+                  <span className="text-[#9b836e] italic">Enter location to estimate</span>
+                ) : isLocal ? (
+                  <span className="text-[#6b5744]">Included (local)</span>
+                ) : (
+                  <span className="text-[#2c1f0e] font-semibold">{formatUSD(travelFee)}</span>
+                )}
+              </span>
             </div>
+            {billableHours != null && !isLocal && (
+              <p className="font-raleway text-xs text-[#9b836e] mt-1">
+                ≈ {billableHours.toFixed(1)} hrs driving · two round trips (drop-off + pick-up)
+              </p>
+            )}
+
+            <div className="flex items-center justify-between border-t border-cream-200 pt-4 mt-4 mb-2">
+              <span className="font-raleway text-sm text-[#6b5744] font-semibold">Estimated total</span>
+              <span className="font-playfair text-2xl text-[#2c1f0e] font-bold">{formatUSD(total)}</span>
+            </div>
+            {travelWins && (
+              <p className="font-raleway text-xs text-[#9b836e] mb-4">
+                Your travel rate is greater than the pew subtotal, so the travel rate applies.
+              </p>
+            )}
 
             <a
               href="tel:2709035890"
-              className="btn-gold w-full flex items-center justify-center gap-2 py-4 text-sm"
+              className="btn-gold w-full flex items-center justify-center gap-2 py-4 text-sm mt-4"
             >
               <Phone size={16} />
               Call to Confirm — 270.903.5890
             </a>
             <p className="text-center font-raleway text-xs text-[#9b836e] mt-4">
-              We'll confirm availability, finalize your travel fee, and hold your date.
+              This is an estimate — we'll confirm your travel fee, finalize details, and hold your date.
             </p>
           </div>
         </div>

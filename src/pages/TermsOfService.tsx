@@ -22,7 +22,7 @@ export default function TermsOfService() {
               Terms of Service
             </h1>
             <div className="w-12 h-0.5 bg-[#c9a96e] mx-auto mb-4" />
-            <p className="font-raleway text-sm text-white/50">Last updated: April 2026</p>
+            <p className="font-raleway text-sm text-white/50">Last updated: July 2026</p>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default function TermsOfService() {
             <div>
               <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">2. Rental Services</h2>
               <p>
-                Howard Wedding Rentals provides church pew rentals for wedding ceremonies and events. Our services include delivery, placement (if requested), and post-event retrieval. Pews are rented at <strong>$25 per pew</strong>, with a maximum of 14 pews per booking. Travel fees are assessed separately based on venue location.
+                Howard Wedding Rentals provides church pew rentals for wedding ceremonies and events. Our services include delivery, placement (if requested), and post-event retrieval. Pews are rented at <strong>$50 per pew</strong>, with a maximum of 14 pews per booking. Travel fees are assessed separately based on venue location.
               </p>
             </div>
 

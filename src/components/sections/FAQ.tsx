@@ -37,6 +37,7 @@ const faqs = [
     question: 'Do you require a deposit to reserve?',
     answer:
       'Yes, we require a 20% deposit to reserve your date. The remaining balance is due 30 days before your wedding. We accept all major credit cards and ACH bank transfer.',
+  },
 ]
 
 export default function FAQ() {

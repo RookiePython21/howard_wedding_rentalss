@@ -82,7 +82,7 @@ These two items solve different problems and are easy to confuse.
 
 **Table number cards** sit at the center of each table — or on a stand near the table — and identify the table itself. Guests look at the seating chart board to find their table number, walk to that table, and the table number card confirms they are in the right place.
 
-Most couples use both. The [seating chart display board](https://howardweddingrentals.com/shop) at the entrance points guests to the right table; the table number card confirms the table; the place card shows them their specific seat. Each piece does one thing.
+Most couples use both. The [seating chart display board](https://www.howardweddingrentals.com/shop) at the entrance points guests to the right table; the table number card confirms the table; the place card shows them their specific seat. Each piece does one thing.
 
 ---
 
@@ -94,7 +94,7 @@ Here is the honest comparison.
 
 **Custom printed:** You provide the guest list and your design preferences. The cards arrive printed, cut, and ready to place. No late nights with a paper trimmer. Consistent quality across every card.
 
-[Howard Wedding Rentals prints custom name place cards](https://howardweddingrentals.com/shop) for weddings — clean, readable, and matched to your aesthetic. If you need both place cards and a seating chart foam board, we print both so the design stays consistent.
+[Howard Wedding Rentals prints custom name place cards](https://www.howardweddingrentals.com/shop) for weddings — clean, readable, and matched to your aesthetic. If you need both place cards and a seating chart foam board, we print both so the design stays consistent.
 
 [IMAGE: Custom printed wedding name place cards in a clean, elegant font laid out on a reception table with floral centerpiece — alt: "custom printed wedding name place cards at reception table setting with floral centerpiece"]
 
@@ -128,4 +128,4 @@ Technically, yes — but it creates a logistical problem. Without a seating char
 
 Place cards are a small detail with a disproportionate impact on how smoothly your reception flows. Get the names right, use a legible style, and order enough extras.
 
-If you need custom printed name place cards, a seating chart foam board, or both, [our shop](https://howardweddingrentals.com/shop) handles the printing so you have one less thing to manage. And if you have not finished your seating assignments yet, the [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) is the fastest way to get there. Questions? [We are easy to reach](https://howardweddingrentals.com/contact).
+If you need custom printed name place cards, a seating chart foam board, or both, [our shop](https://www.howardweddingrentals.com/shop) handles the printing so you have one less thing to manage. And if you have not finished your seating assignments yet, the [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) is the fastest way to get there. Questions? [We are easy to reach](https://www.howardweddingrentals.com/contact).

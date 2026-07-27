@@ -130,7 +130,7 @@ A few things worth being careful about:
 
 **Nicknames.** Use what the person actually goes by. Your uncle who has been "Bud" for fifty years does not want to find "Raymond" at his seat.
 
-If you want the full breakdown on wording, sizing, and display, [our complete guide to wedding place cards](https://howardweddingrentals.com/blog/wedding-place-cards-guide) covers all of it in one place.
+If you want the full breakdown on wording, sizing, and display, [our complete guide to wedding place cards](https://www.howardweddingrentals.com/blog/wedding-place-cards-guide) covers all of it in one place.
 
 ---
 
@@ -140,7 +140,7 @@ Sequence matters here more than anything else.
 
 **1. Close RSVPs.** Nothing gets printed before this.
 
-**2. Build the seating chart.** You can't print place cards without knowing who sits where. [The free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) handles the layout and gives you an export you can hand straight to your printer and your caterer.
+**2. Build the seating chart.** You can't print place cards without knowing who sits where. [The free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) handles the layout and gives you an export you can hand straight to your printer and your caterer.
 
 **3. Verify the name list.** Read it out loud. Spelling errors hide from your eyes but not from your ears.
 
@@ -174,8 +174,8 @@ You do not need four kinds of cards. Most weddings need a seating chart display 
 
 Limiting your choices here saves real mental energy for the decisions that actually change how the day feels.
 
-When your list is ready, [our shop](https://howardweddingrentals.com/shop) prints custom name place cards and seating chart foam boards from the names you've already finalized — no design software, no back-and-forth proofs.
+When your list is ready, [our shop](https://www.howardweddingrentals.com/shop) prints custom name place cards and seating chart foam boards from the names you've already finalized — no design software, no back-and-forth proofs.
 
-Not sure which setup fits your reception? [Send us a note](https://howardweddingrentals.com/contact) and describe your dinner service and guest count. We'll tell you straight what you actually need — and what you can skip.
+Not sure which setup fits your reception? [Send us a note](https://www.howardweddingrentals.com/contact) and describe your dinner service and guest count. We'll tell you straight what you actually need — and what you can skip.
 
 Pick one, order it, and move on.

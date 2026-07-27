@@ -12,6 +12,14 @@ Usage:
     --cover-prompt "Rows of custom printed foam board seating charts on wooden easels..." \
     --body-prompt "Close-up of wedding place settings with name cards on linen..."
 
+If one of the two images fails (the model sometimes answers with text instead of an
+image), reword that prompt and rerun with --skip-existing so the image that already
+succeeded is not regenerated and re-billed:
+
+  python .claude/skills/article-writer/scripts/generate-images.py \
+    --slug "wedding-seating-chart-board-ideas" \
+    --cover-prompt "..." --body-prompt "<reworded>" --skip-existing
+
 Run from the project root so that public/images/blog/ resolves correctly.
 """
 
@@ -33,7 +41,13 @@ except ImportError:
 from google import genai
 
 
-def generate_image(client: genai.Client, prompt: str, output_path: str) -> None:
+def generate_image(
+    client: genai.Client, prompt: str, output_path: str, skip_existing: bool = False
+) -> None:
+    if skip_existing and os.path.exists(output_path):
+        print(f"  Skipping:   {os.path.basename(output_path)} (already exists)")
+        return
+
     print(f"  Generating: {os.path.basename(output_path)}")
     print(f"  Prompt:     {prompt[:120]}{'...' if len(prompt) > 120 else ''}")
 
@@ -76,6 +90,12 @@ def main() -> None:
     parser.add_argument("--slug", required=True, help="Article slug (used for output filenames)")
     parser.add_argument("--cover-prompt", required=True, help="Prompt for the cover/hero image")
     parser.add_argument("--body-prompt", required=True, help="Prompt for the inline body image")
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip any image whose output file already exists. Use when retrying after one of the "
+        "two images failed, so the successful one is not regenerated and re-billed.",
+    )
     args = parser.parse_args()
 
     output_dir = os.path.join("public", "images", "blog")
@@ -99,9 +119,9 @@ def main() -> None:
 
     print(f"\nGenerating images for: {args.slug}\n")
 
-    generate_image(client, args.cover_prompt, cover_path)
+    generate_image(client, args.cover_prompt, cover_path, args.skip_existing)
     print()
-    generate_image(client, args.body_prompt, body_path)
+    generate_image(client, args.body_prompt, body_path, args.skip_existing)
 
     print(f"\nDone.")
     print(f"  Cover: /images/blog/{args.slug}-cover.png")

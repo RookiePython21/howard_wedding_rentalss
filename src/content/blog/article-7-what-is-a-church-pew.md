@@ -84,13 +84,13 @@ Your action: pull up your current RSVP count and run that math right now. It tak
 
 Yes — and it's more straightforward than most couples expect.
 
-[Our pew rental service](https://howardweddingrentals.com/services) covers the full process: we deliver solid hardwood pews to your venue, set them up in your chosen layout, and come back after the ceremony to break them down and retrieve them. You don't lift a finger.
+[Our pew rental service](https://www.howardweddingrentals.com/services) covers the full process: we deliver solid hardwood pews to your venue, set them up in your chosen layout, and come back after the ceremony to break them down and retrieve them. You don't lift a finger.
 
 That's worth pausing on. A lot of couples assume renting pews means sourcing them yourself, arranging transport, figuring out setup, and then dealing with teardown while you're trying to enjoy your reception. That's not how it works here. The rental includes all of it.
 
 The pews are solid hardwood — not laminate, not veneer. They look exactly as good in person as they do in photos, which matters when your photographer is going to spend half the ceremony shooting down the aisle.
 
-If you want a deeper look at how the process works — what to expect from delivery, how far in advance to book, and what questions to ask your venue about setup logistics — [this guide to church pew rentals for weddings](https://howardweddingrentals.com/blog/church-pew-rental-for-wedding) covers it all.
+If you want a deeper look at how the process works — what to expect from delivery, how far in advance to book, and what questions to ask your venue about setup logistics — [this guide to church pew rentals for weddings](https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding) covers it all.
 
 ---
 
@@ -125,6 +125,6 @@ Yes. Solid hardwood handles a ceremony window outdoors without issue. Plan for d
 
 Here's what's actually limited: your date. Everything else — the layout, the style, the number of pews — can be figured out once you know availability.
 
-If you've been circling the idea of church pews and want to know whether your venue and date work, the easiest next step is just to ask. [Reach out and we'll check your date](https://howardweddingrentals.com/contact) — no pressure, no commitment, just a straightforward answer so you can move forward or move on.
+If you've been circling the idea of church pews and want to know whether your venue and date work, the easiest next step is just to ask. [Reach out and we'll check your date](https://www.howardweddingrentals.com/contact) — no pressure, no commitment, just a straightforward answer so you can move forward or move on.
 
 Your ceremony is worth a few minutes to get right.

@@ -80,7 +80,7 @@ Here is the honest breakdown.
 
 Decision fatigue is real, and the week before your wedding is not the time to add a craft project. For most couples, the custom printed option is worth the extra cost — not because DIY cannot look great, but because your time and mental energy in that final week are worth protecting.
 
-Howard Wedding Rentals prints [custom seating chart foam boards](https://howardweddingrentals.com/shop) sized and designed for your wedding. No design degree required.
+Howard Wedding Rentals prints [custom seating chart foam boards](https://www.howardweddingrentals.com/shop) sized and designed for your wedding. No design degree required.
 
 ---
 
@@ -93,7 +93,7 @@ Before anything goes to a printer, you need:
 - Table assignments for every guest
 - Finalized table names or numbers
 
-If that is not done yet, start there. Our [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) lets you drag and drop guests into tables, adjust the layout, and export a clean, print-ready list. It is free, and it removes the spreadsheet chaos that makes this step feel harder than it is.
+If that is not done yet, start there. Our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) lets you drag and drop guests into tables, adjust the layout, and export a clean, print-ready list. It is free, and it removes the spreadsheet chaos that makes this step feel harder than it is.
 
 Once your assignments are final, you are ready to design or order.
 
@@ -145,6 +145,6 @@ Order at least two to three weeks before your wedding. That gives you time for r
 
 Your seating chart board is one of the last pieces to finalize and one of the easiest to get right when you have a clear plan.
 
-Finalize your seating with our [free drag-and-drop seating chart tool](https://howardweddingrentals.com/seating-chart-tool), then order your [custom printed foam board](https://howardweddingrentals.com/shop) from Howard Wedding Rentals. We handle the printing so you can focus on everything else.
+Finalize your seating with our [free drag-and-drop seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool), then order your [custom printed foam board](https://www.howardweddingrentals.com/shop) from Howard Wedding Rentals. We handle the printing so you can focus on everything else.
 
-Questions about sizing, timing, or design? [Reach out any time](https://howardweddingrentals.com/contact) — we are glad to help.
+Questions about sizing, timing, or design? [Reach out any time](https://www.howardweddingrentals.com/contact) — we are glad to help.

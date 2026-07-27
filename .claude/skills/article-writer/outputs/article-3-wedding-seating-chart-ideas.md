@@ -75,7 +75,7 @@ A few specific situations worth addressing:
 
 The seating chart board is the physical version of all your planning — the display guests see when they walk into the reception. Here are the formats that work well.
 
-**Foam board on an easel** is the most practical and popular option. It is lightweight, customizable, and easy to transport to any venue. Custom printed versions arrive ready to display. [Howard Wedding Rentals](https://howardweddingrentals.com/shop) prints foam boards designed to match your wedding.
+**Foam board on an easel** is the most practical and popular option. It is lightweight, customizable, and easy to transport to any venue. Custom printed versions arrive ready to display. [Howard Wedding Rentals](https://www.howardweddingrentals.com/shop) prints foam boards designed to match your wedding.
 
 **Mirror with vinyl lettering.** A leaning mirror etched with table assignments is glamorous and photographs beautifully. Heavy, so plan your display surface ahead of time.
 
@@ -95,7 +95,7 @@ The seating chart board is the physical version of all your planning — the dis
 
 The single most practical thing you can do: do not order or design the physical display until your seating assignments are completely locked.
 
-Use a digital tool during the planning phase. Our [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) lets you build out your full table layout, drag guests between tables as things change, and export a final alphabetical list when everything is confirmed. No spreadsheet juggling required.
+Use a digital tool during the planning phase. Our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) lets you build out your full table layout, drag guests between tables as things change, and export a final alphabetical list when everything is confirmed. No spreadsheet juggling required.
 
 Once the list is final, send it to your printer or designer. Trying to finalize a physical display while assignments are still shifting is how brides end up reprinting at Staples at 10 PM the night before the wedding.
 
@@ -142,4 +142,4 @@ The head table works best adjacent to — not on — the dance floor, with a dir
 
 The seating chart is not the part of your wedding that will go wrong if you plan it carefully. It is the part that gets done, crossed off, and forgotten — in the best possible way.
 
-Build your layout and assign your guests with the [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool). When you are ready to print the display, we have [custom foam boards](https://howardweddingrentals.com/shop) ready to go. And if you have questions about any of it, [we are here](https://howardweddingrentals.com/contact).
+Build your layout and assign your guests with the [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool). When you are ready to print the display, we have [custom foam boards](https://www.howardweddingrentals.com/shop) ready to go. And if you have questions about any of it, [we are here](https://www.howardweddingrentals.com/contact).

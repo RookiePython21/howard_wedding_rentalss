@@ -22,15 +22,15 @@ detail you don't have, leave a clearly marked `[CONFIRM: ...]` placeholder rathe
 ## The pages you can link to
 | Page | URL | Best to link when the post is about... |
 |---|---|---|
-| Home | https://howardweddingrentals.com/ | A general brand mention; rarely needed mid-article |
-| About | https://howardweddingrentals.com/about | Trust, the family story, "who delivers your pews" |
-| Contact | https://howardweddingrentals.com/contact | Any booking CTA, questions, checking availability/date |
-| Services | https://howardweddingrentals.com/services | Pew rentals, what's included, ceremony seating, décor |
-| Shop | https://howardweddingrentals.com/shop | Place cards, seating chart foam boards, stationery |
-| Blog | https://howardweddingrentals.com/blog | "More tips," related reading (use sparingly) |
-| Seating Chart Tool | https://howardweddingrentals.com/seating-chart-tool | Seating, floor plans, guest assignments, reception layout |
-| Privacy Policy | https://howardweddingrentals.com/privacy-policy | Almost never inside a blog post |
-| Terms of Service | https://howardweddingrentals.com/terms-of-service | Almost never inside a blog post |
+| Home | https://www.howardweddingrentals.com/ | A general brand mention; rarely needed mid-article |
+| About | https://www.howardweddingrentals.com/about | Trust, the family story, "who delivers your pews" |
+| Contact | https://www.howardweddingrentals.com/contact | Any booking CTA, questions, checking availability/date |
+| Services | https://www.howardweddingrentals.com/services | Pew rentals, what's included, ceremony seating, décor |
+| Shop | https://www.howardweddingrentals.com/shop | Place cards, seating chart foam boards, stationery |
+| Blog | https://www.howardweddingrentals.com/blog | "More tips," related reading (use sparingly) |
+| Seating Chart Tool | https://www.howardweddingrentals.com/seating-chart-tool | Seating, floor plans, guest assignments, reception layout |
+| Privacy Policy | https://www.howardweddingrentals.com/privacy-policy | Almost never inside a blog post |
+| Terms of Service | https://www.howardweddingrentals.com/terms-of-service | Almost never inside a blog post |
 
 ---
 
@@ -57,13 +57,13 @@ for the most up-to-date list — the table below is updated by Stage 5 of the ar
 
 | Article | URL | Link when writing about... |
 |---|---|---|
-| Wedding Seating Chart Board Ideas | https://howardweddingrentals.com/blog/wedding-seating-chart-board-ideas | Display options for seating charts, foam boards, acrylic, chalkboard, mirror styles |
-| Wedding Seating Chart Template | https://howardweddingrentals.com/blog/wedding-seating-chart-template | Templates, free downloads, designing a seating chart layout from scratch |
-| Wedding Seating Chart Ideas | https://howardweddingrentals.com/blog/wedding-seating-chart-ideas | Creative display styles, reception layout concepts, non-standard seating chart formats |
-| How to Make a Wedding Seating Chart | https://howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart | Step-by-step seating chart process, assigning guests to tables, using the free tool |
-| Wedding Place Cards Guide | https://howardweddingrentals.com/blog/wedding-place-cards-guide | Place cards, escort cards, table number display, name card wording |
-| Church Pew Rental for Wedding | https://howardweddingrentals.com/blog/church-pew-rental-for-wedding | Pew rental details, ceremony seating options, what is included, outdoor pew setup |
-| What Is a Church Pew? | https://howardweddingrentals.com/blog/what-is-a-church-pew | What church pews are, pew vs. chair comparison, seating capacity math, rental process overview |
-| Free Seating Chart Maker for Weddings | https://howardweddingrentals.com/blog/free-wedding-seating-chart-maker | Free tools, software comparisons, choosing a seating chart app, exporting a floor plan |
-| Wedding Name Tags vs. Place Cards | https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards | Escort cards vs. place cards vs. name tags, which stationery a reception actually needs |
-| Wedding Place Cards With Meal Choice | https://howardweddingrentals.com/blog/wedding-place-cards-meal-choice | Meal indicators on place cards, caterer counts, dietary restrictions, plated dinner service |
+| Wedding Seating Chart Board Ideas | https://www.howardweddingrentals.com/blog/wedding-seating-chart-board-ideas | Display options for seating charts, foam boards, acrylic, chalkboard, mirror styles |
+| Wedding Seating Chart Template | https://www.howardweddingrentals.com/blog/wedding-seating-chart-template | Templates, free downloads, designing a seating chart layout from scratch |
+| Wedding Seating Chart Ideas | https://www.howardweddingrentals.com/blog/wedding-seating-chart-ideas | Creative display styles, reception layout concepts, non-standard seating chart formats |
+| How to Make a Wedding Seating Chart | https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart | Step-by-step seating chart process, assigning guests to tables, using the free tool |
+| Wedding Place Cards Guide | https://www.howardweddingrentals.com/blog/wedding-place-cards-guide | Place cards, escort cards, table number display, name card wording |
+| Church Pew Rental for Wedding | https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding | Pew rental details, ceremony seating options, what is included, outdoor pew setup |
+| What Is a Church Pew? | https://www.howardweddingrentals.com/blog/what-is-a-church-pew | What church pews are, pew vs. chair comparison, seating capacity math, rental process overview |
+| Free Seating Chart Maker for Weddings | https://www.howardweddingrentals.com/blog/free-wedding-seating-chart-maker | Free tools, software comparisons, choosing a seating chart app, exporting a floor plan |
+| Wedding Name Tags vs. Place Cards | https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards | Escort cards vs. place cards vs. name tags, which stationery a reception actually needs |
+| Wedding Place Cards With Meal Choice | https://www.howardweddingrentals.com/blog/wedding-place-cards-meal-choice | Meal indicators on place cards, caterer counts, dietary restrictions, plated dinner service |

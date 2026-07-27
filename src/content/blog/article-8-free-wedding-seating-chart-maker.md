@@ -74,7 +74,7 @@ Never underestimate this one. A spreadsheet is free, you already have it, and it
 
 This is the category built for the actual problem. Round tables by default. Guests as real objects you can pick up and move. Live counts per table.
 
-[Our free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) sits here. You add your guests, drop in tables that match your venue, drag people into seats, and export a floor plan when you're done. No account walls, no watermark on the export, no upgrade prompt halfway through.
+[Our free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) sits here. You add your guests, drop in tables that match your venue, drag people into seats, and export a floor plan when you're done. No account walls, no watermark on the export, no upgrade prompt halfway through.
 
 **The benefit:** the tool does the counting so you can spend your attention on the part only you can do — deciding who sits with whom.
 
@@ -108,7 +108,7 @@ A workable order of operations:
 
 **6. Export and share.** Send the floor plan to your coordinator and the per-table counts to your caterer. Then stop looking at it.
 
-If you want this broken down step by step with more detail on the guest-grouping logic, [our full walkthrough on making a wedding seating chart](https://howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart) picks up exactly here.
+If you want this broken down step by step with more detail on the guest-grouping logic, [our full walkthrough on making a wedding seating chart](https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart) picks up exactly here.
 
 ---
 
@@ -116,7 +116,7 @@ If you want this broken down step by step with more detail on the guest-grouping
 
 Some brides think better on paper. That's completely valid.
 
-If you'd rather sketch a layout, print it, and mark it up with a pencil at the kitchen table, [our free seating chart templates](https://howardweddingrentals.com/blog/wedding-seating-chart-template) give you a starting grid without any software at all. Plenty of people do a rough paper pass first, then move the final version into a tool for the clean export.
+If you'd rather sketch a layout, print it, and mark it up with a pencil at the kitchen table, [our free seating chart templates](https://www.howardweddingrentals.com/blog/wedding-seating-chart-template) give you a starting grid without any software at all. Plenty of people do a rough paper pass first, then move the final version into a tool for the clean export.
 
 There's no wrong entry point. Pick one, start, and move on.
 
@@ -132,7 +132,7 @@ Your chart isn't the deliverable. It's the input for three other things.
 
 **The vendor handoff.** Counts to the caterer, floor plan to the venue, name list to whoever's doing your calligraphy.
 
-If you want the display and cards handled without another round of design decisions, [our shop](https://howardweddingrentals.com/shop) prints seating chart foam boards and custom name place cards from the list you've already built. One less thing to source.
+If you want the display and cards handled without another round of design decisions, [our shop](https://www.howardweddingrentals.com/shop) prints seating chart foam boards and custom name place cards from the list you've already built. One less thing to source.
 
 ---
 
@@ -158,8 +158,8 @@ Most seating chart stress comes from staring at a list of names with no room to 
 
 So flip it. Build the empty room first. Tables, dance floor, head table. Then start dropping people in.
 
-[Open the free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) and set up your tables — it takes about five minutes and makes the rest of the job feel manageable.
+[Open the free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) and set up your tables — it takes about five minutes and makes the rest of the job feel manageable.
 
-And if you have questions about seating chart boards, place cards, or ceremony seating for the day itself, [reach out anytime](https://howardweddingrentals.com/contact). No pressure. Just a straight answer.
+And if you have questions about seating chart boards, place cards, or ceremony seating for the day itself, [reach out anytime](https://www.howardweddingrentals.com/contact). No pressure. Just a straight answer.
 
 Your reception is a celebration, not a logic puzzle.

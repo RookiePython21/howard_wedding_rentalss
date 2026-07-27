@@ -96,7 +96,7 @@ Whether you use a spreadsheet, Canva, or a drag-and-drop tool, the process is th
 
 ## Free Options You Can Use Right Now
 
-**Our free seating chart tool** at [howardweddingrentals.com/seating-chart-tool](https://howardweddingrentals.com/seating-chart-tool) does the planning and organizing work in one place. Add your tables, drag guests in, shift assignments as things change, and export a clean, print-ready list when you are done. It is free, and it works better than a static spreadsheet for any guest list above 60 or 70 people — because when your cousin cancels two days out, you drag her name out instead of hunting through rows and reformatting columns.
+**Our free seating chart tool** at [howardweddingrentals.com/seating-chart-tool](https://www.howardweddingrentals.com/seating-chart-tool) does the planning and organizing work in one place. Add your tables, drag guests in, shift assignments as things change, and export a clean, print-ready list when you are done. It is free, and it works better than a static spreadsheet for any guest list above 60 or 70 people — because when your cousin cancels two days out, you drag her name out instead of hunting through rows and reformatting columns.
 
 **Canva** has solid free wedding seating chart design templates for the display phase — once your assignments are already finalized.
 
@@ -121,7 +121,7 @@ In those situations, a drag-and-drop tool is worth using instead of or alongside
 
 Once your seating assignments are locked, you have one more step: getting the physical display made.
 
-Your options are the same as any seating chart board format: DIY (design in Canva, print at a copy shop, mount yourself) or custom printed. If you would rather not spend time formatting and trimming, [Howard Wedding Rentals prints custom seating chart foam boards](https://howardweddingrentals.com/shop) — send your finalized guest list, we handle the design and printing. And if you also need [name place cards](https://howardweddingrentals.com/shop) for each table setting, we print those too.
+Your options are the same as any seating chart board format: DIY (design in Canva, print at a copy shop, mount yourself) or custom printed. If you would rather not spend time formatting and trimming, [Howard Wedding Rentals prints custom seating chart foam boards](https://www.howardweddingrentals.com/shop) — send your finalized guest list, we handle the design and printing. And if you also need [name place cards](https://www.howardweddingrentals.com/shop) for each table setting, we print those too.
 
 The foam board format is lightweight, sharp-looking, and easy to transport to any venue.
 
@@ -130,7 +130,7 @@ The foam board format is lightweight, sharp-looking, and easy to transport to an
 ## FAQ
 
 **What is the best free wedding seating chart template?**
-For planning and organizing guests, a Google Sheets template with columns for name, table number, and dietary notes is the most flexible free option. For the day-of display design, Canva has well-designed free templates. If you want planning and export in one place, the [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) at Howard Wedding Rentals handles both without the manual data entry.
+For planning and organizing guests, a Google Sheets template with columns for name, table number, and dietary notes is the most flexible free option. For the day-of display design, Canva has well-designed free templates. If you want planning and export in one place, the [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) at Howard Wedding Rentals handles both without the manual data entry.
 
 **How far in advance should I finalize my seating chart?**
 Close your RSVP deadline at least three weeks before the wedding, then give yourself one to two weeks to finalize assignments. That leaves a buffer before your printing deadline to catch any last-minute changes — and there will be last-minute changes.
@@ -139,10 +139,10 @@ Close your RSVP deadline at least three weeks before the wedding, then give your
 Yes. Excel or Google Sheets works well for the planning and organizing phase. Once assignments are final, move to a design tool or a custom printer for the display. The spreadsheet is for logistics; the printed board is for your guests.
 
 **What is the difference between a table seating chart and individual place cards?**
-A seating chart board at the entrance tells guests their table. Individual place cards at each seat tell guests their specific chair. Most couples use both — the board at the entrance, the [place cards](https://howardweddingrentals.com/shop) at the tables.
+A seating chart board at the entrance tells guests their table. Individual place cards at each seat tell guests their specific chair. Most couples use both — the board at the entrance, the [place cards](https://www.howardweddingrentals.com/shop) at the tables.
 
 ---
 
 Your seating chart does not need to be a design project and a logistics puzzle at the same time. Handle the assignments with a free tool, handle the display with a template or a printer, and move on.
 
-Start with the [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) — no account required, no learning curve. When you are ready to print, our [shop](https://howardweddingrentals.com/shop) has custom foam boards that arrive ready to display. [Reach out](https://howardweddingrentals.com/contact) if anything comes up along the way.
+Start with the [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) — no account required, no learning curve. When you are ready to print, our [shop](https://www.howardweddingrentals.com/shop) has custom foam boards that arrive ready to display. [Reach out](https://www.howardweddingrentals.com/contact) if anything comes up along the way.

@@ -112,7 +112,7 @@ Your caterer needs two things, and they're both easy once your seating is set.
 
 **A per-table breakdown.** Table four: three beef, five chicken, two vegetarian. This drives how they load trays.
 
-Both come straight out of your seating chart. If you build your layout in [the free seating chart tool](https://howardweddingrentals.com/seating-chart-tool), you can export the arrangement and pull per-table counts from it without recounting anything by hand.
+Both come straight out of your seating chart. If you build your layout in [the free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool), you can export the arrangement and pull per-table counts from it without recounting anything by hand.
 
 **Your action:** send your caterer the per-table breakdown at the same time you send your final headcount. Most caterers want this ten to fourteen days out. Sending it together saves an email round-trip.
 
@@ -132,9 +132,9 @@ Sequence saves you from reprinting.
 
 **Order a few blanks.** Late changes happen at every wedding. A small stack of unprinted cards and a decent pen handles them without drama.
 
-For the broader picture — sizing, fold styles, wording conventions, and how place cards fit with the rest of your stationery — [our complete wedding place cards guide](https://howardweddingrentals.com/blog/wedding-place-cards-guide) covers it.
+For the broader picture — sizing, fold styles, wording conventions, and how place cards fit with the rest of your stationery — [our complete wedding place cards guide](https://www.howardweddingrentals.com/blog/wedding-place-cards-guide) covers it.
 
-And if you're still deciding what your reception actually needs, [this breakdown of name tags versus place cards](https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards) sorts out which combination fits your dinner service.
+And if you're still deciding what your reception actually needs, [this breakdown of name tags versus place cards](https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards) sorts out which combination fits your dinner service.
 
 ---
 
@@ -144,7 +144,7 @@ You can hand-letter these. Plenty of couples do, and it's lovely.
 
 But be realistic about volume. A hundred and forty cards, each with a name and a meal marker, is a genuine evening of work — and it's an evening that lands in the week you have the least of it.
 
-Custom printed cards remove that. [Our shop](https://howardweddingrentals.com/shop) prints name place cards from your finalized list, with the meal marker included in the design. You send the list, we print it, and it arrives ready to set out.
+Custom printed cards remove that. [Our shop](https://www.howardweddingrentals.com/shop) prints name place cards from your finalized list, with the meal marker included in the design. You send the list, we print it, and it arrives ready to set out.
 
 One less thing on the week-of list. That's the whole pitch.
 
@@ -175,6 +175,6 @@ Pick a marker style. Confirm it with your caterer. Build your list from your fin
 
 That's the whole job. It's an hour of work that makes your dinner service invisible in the best way.
 
-When your list is ready, [order your printed place cards here](https://howardweddingrentals.com/shop) — or [send us a message](https://howardweddingrentals.com/contact) if you want a second opinion on which marker style fits your reception.
+When your list is ready, [order your printed place cards here](https://www.howardweddingrentals.com/shop) — or [send us a message](https://www.howardweddingrentals.com/contact) if you want a second opinion on which marker style fits your reception.
 
 Your dinner should feel like a dinner. Not a roll call.

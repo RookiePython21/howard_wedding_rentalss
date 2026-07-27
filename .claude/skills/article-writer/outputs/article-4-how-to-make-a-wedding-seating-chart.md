@@ -89,7 +89,7 @@ This review takes 20 minutes and prevents the situations that become stories at 
 
 Your assignments will change at least once after you think they are final. Someone's plus-one RSVPs late. A family member has a conflict you did not know about. A table count shifts.
 
-For a seating chart for a wedding that is still in motion, a drag-and-drop digital tool is more practical than a static template. Our [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) lets you build the room layout, drop guests into tables, and move them around as things change — without reformatting a spreadsheet or redesigning a Canva file every time.
+For a seating chart for a wedding that is still in motion, a drag-and-drop digital tool is more practical than a static template. Our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) lets you build the room layout, drop guests into tables, and move them around as things change — without reformatting a spreadsheet or redesigning a Canva file every time.
 
 When your assignments are locked, export the finalized, alphabetical guest list directly from the tool and hand it off to your printer or designer.
 
@@ -102,7 +102,7 @@ If your guest count is under 60 and your list is stable, a Google Sheets templat
 Once assignments are final — genuinely final, not "close enough" — it is time to order the physical display.
 
 Decide on your format:
-- **Foam board on an easel:** practical, lightweight, easy to transport, customizable. The most popular option. [Howard Wedding Rentals](https://howardweddingrentals.com/shop) prints custom foam boards sized to your guest list.
+- **Foam board on an easel:** practical, lightweight, easy to transport, customizable. The most popular option. [Howard Wedding Rentals](https://www.howardweddingrentals.com/shop) prints custom foam boards sized to your guest list.
 - **Framed poster print:** classic and clean. Print on quality paper, frame it, set it on an easel.
 - **Mirror with vinyl lettering:** glamorous and photogenic. Heavy — confirm your venue has a surface to lean it against.
 
@@ -114,7 +114,7 @@ Order at least two weeks before the wedding, even if you think you have the timi
 
 ## The Free Seating Chart Tool Worth Knowing About
 
-If you are looking for a seating chart creator that handles the planning and the export in one place, the [free tool at Howard Wedding Rentals](https://howardweddingrentals.com/seating-chart-tool) is worth using.
+If you are looking for a seating chart creator that handles the planning and the export in one place, the [free tool at Howard Wedding Rentals](https://www.howardweddingrentals.com/seating-chart-tool) is worth using.
 
 You build your table layout, drag guests in, adjust as needed, and export a clean alphabetical list when you are ready. No account required. No learning curve. And because it is built specifically for wedding receptions — not classroom seating or conference rooms — the defaults actually make sense for your situation.
 
@@ -140,4 +140,4 @@ A seating chart board at the entrance lists all guests and their table number in
 
 Making a seating chart for your wedding is not complicated. It just requires doing things in order: close RSVPs, get the floor plan, group your guests, assign tables, review, lock in, and print.
 
-Start with the [free seating chart tool](https://howardweddingrentals.com/seating-chart-tool) — it handles the organizing so you can focus on the decisions that actually require your judgment. When you are ready for the printed display, [our shop](https://howardweddingrentals.com/shop) has custom foam boards that arrive ready to set up. Questions welcome at [any point](https://howardweddingrentals.com/contact).
+Start with the [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) — it handles the organizing so you can focus on the decisions that actually require your judgment. When you are ready for the printed display, [our shop](https://www.howardweddingrentals.com/shop) has custom foam boards that arrive ready to set up. Questions welcome at [any point](https://www.howardweddingrentals.com/contact).

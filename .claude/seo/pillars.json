@@ -5,7 +5,7 @@
       "id": "church-pew-rentals",
       "label": "Church Pew Rentals",
       "description": "Solid hardwood church pew rental with delivery, placement/setup, and teardown — Owensboro KY and ~30-mile radius",
-      "service_url": "https://howardweddingrentals.com/services",
+      "service_url": "https://www.howardweddingrentals.com/services",
       "price_anchor": "$50/pew, delivery included",
       "seed_terms": [
         "church pew rental",
@@ -26,7 +26,7 @@
       "id": "place-cards",
       "label": "Name Place Cards",
       "description": "Custom printed guest name place cards — shop product ordered online",
-      "service_url": "https://howardweddingrentals.com/shop",
+      "service_url": "https://www.howardweddingrentals.com/shop",
       "price_anchor": null,
       "seed_terms": [
         "wedding place cards",
@@ -47,7 +47,7 @@
       "id": "seating-chart-boards",
       "label": "Seating Chart Foam Boards",
       "description": "Custom-printed seating chart display boards for wedding receptions — shop product",
-      "service_url": "https://howardweddingrentals.com/shop",
+      "service_url": "https://www.howardweddingrentals.com/shop",
       "price_anchor": null,
       "seed_terms": [
         "wedding seating chart board",
@@ -59,7 +59,7 @@
         "wedding seating board display"
       ],
       "alignment_score": 3,
-      "articles_published": 3,
+      "articles_published": 2,
       "articles_queued": 0,
       "status": "active",
       "created_at": "2026-06-08"
@@ -68,7 +68,7 @@
       "id": "seating-chart-tool",
       "label": "Free Seating Chart Tool",
       "description": "Drag-and-drop wedding seating chart builder — free lead magnet at /seating-chart-tool",
-      "service_url": "https://howardweddingrentals.com/seating-chart-tool",
+      "service_url": "https://www.howardweddingrentals.com/seating-chart-tool",
       "price_anchor": "free",
       "seed_terms": [
         "free seating chart maker",

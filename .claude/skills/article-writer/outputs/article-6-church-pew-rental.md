@@ -136,7 +136,7 @@ For outdoor ceremonies, a rain plan is important regardless of seating. Most out
 We serve Owensboro and approximately a 30-mile radius throughout Western Kentucky. If you are unsure whether your venue falls within our delivery area, [reach out with your location](https://howardweddingrentals.com/contact) and we will confirm.
 
 **Are the pews available in different sizes?**
-No. All pews are 9ft long + 18 in depth and 34in tall. Seats approximately 9-10 people. 
+No. All pews are 9ft long + 18 in depth and 34in tall. Seats approximately 7-8 people. 
 
 ---
 

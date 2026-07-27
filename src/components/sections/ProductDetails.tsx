@@ -10,7 +10,7 @@ const specs = [
   {
     icon: Users,
     title: 'Capacity',
-    detail: '9-10 adults per pew',
+    detail: '7-8 adults per pew',
     sub: 'Comfortably seated with aisle spacing',
   },
   {

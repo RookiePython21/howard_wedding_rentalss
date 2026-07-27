@@ -5,7 +5,7 @@ const features = [
   'Beautiful Golden Oak wood finish — warm, classic, and photo-ready',
   'Cushioned or uncushioned seating available',
   'Decorated with ribbons, florals, or fabric per your request',
-  'Seats 4–6 adults comfortably per pew',
+  'Seats 7-8 adults comfortably per pew',
   'Available for indoor venues, outdoor gardens, farms, and beaches',
 ]
 

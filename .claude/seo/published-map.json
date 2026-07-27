@@ -1,7 +1,71 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-07-27",
   "articles": [
+    {
+      "slug": "free-wedding-seating-chart-maker",
+      "title": "Free Seating Chart Maker for Weddings: What Actually Works",
+      "url": "https://howardweddingrentals.com/blog/free-wedding-seating-chart-maker",
+      "pillar_id": "seating-chart-tool",
+      "primary_keyword": "free seating chart maker",
+      "secondary_keywords": ["free wedding seating chart maker", "online seating chart tool", "wedding seating planner free"],
+      "published_date": "2026-07-27",
+      "last_updated": "2026-07-27",
+      "tags": ["seating chart", "wedding planning", "free tools"],
+      "excerpt": "An honest look at the free seating chart maker options out there — what each one is actually good for, and which one is built for wedding receptions.",
+      "links_to": [
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://howardweddingrentals.com/blog/wedding-seating-chart-template",
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-004"
+    },
+    {
+      "slug": "wedding-name-tags-vs-place-cards",
+      "title": "Wedding Name Tags vs. Place Cards: Which Do You Actually Need?",
+      "url": "https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding name tags",
+      "secondary_keywords": ["wedding name cards", "escort cards vs place cards", "name tags for wedding reception"],
+      "published_date": "2026-07-27",
+      "last_updated": "2026-07-27",
+      "tags": ["place cards", "wedding stationery", "guest experience"],
+      "excerpt": "Wedding name tags and place cards solve different problems. Here's which one your reception actually needs — and what guests genuinely prefer.",
+      "links_to": [
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "linked_from": [
+        "https://howardweddingrentals.com/blog/wedding-place-cards-meal-choice"
+      ],
+      "queue_id": "kw-002"
+    },
+    {
+      "slug": "wedding-place-cards-meal-choice",
+      "title": "Wedding Place Cards With Meal Choice: A Simple Guide",
+      "url": "https://howardweddingrentals.com/blog/wedding-place-cards-meal-choice",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding place cards with meal choice",
+      "secondary_keywords": ["place cards with meal choice", "meal choice place cards", "place card meal indicator"],
+      "published_date": "2026-07-27",
+      "last_updated": "2026-07-27",
+      "tags": ["place cards", "wedding stationery", "reception planning"],
+      "excerpt": "How to put meal selections on your wedding place cards so your caterer can read them at a glance — and your guests never notice the system at all.",
+      "links_to": [
+        "https://howardweddingrentals.com/seating-chart-tool",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://howardweddingrentals.com/shop",
+        "https://howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-003"
+    },
     {
       "slug": "what-is-a-church-pew",
       "title": "What Is a Church Pew? Everything Couples Want to Know",
@@ -56,7 +120,9 @@
         "https://howardweddingrentals.com/shop",
         "https://howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://howardweddingrentals.com/blog/free-wedding-seating-chart-maker"
+      ],
       "queue_id": null
     },
     {
@@ -93,7 +159,9 @@
         "https://howardweddingrentals.com/shop",
         "https://howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://howardweddingrentals.com/blog/free-wedding-seating-chart-maker"
+      ],
       "queue_id": null
     },
     {
@@ -112,7 +180,10 @@
         "https://howardweddingrentals.com/seating-chart-tool",
         "https://howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://howardweddingrentals.com/blog/wedding-place-cards-meal-choice"
+      ],
       "queue_id": null
     },
     {

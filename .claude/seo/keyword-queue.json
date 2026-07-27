@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped).",
   "_schema_version": "1.0",
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-07-27",
   "queue": [
     {
       "id": "kw-001",
@@ -62,9 +62,9 @@
       ],
       "added_date": "2026-06-08",
       "source_run": "research-run-001",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "wedding-name-tags-vs-place-cards",
+      "published_date": "2026-07-27"
     },
     {
       "id": "kw-003",
@@ -93,9 +93,9 @@
       ],
       "added_date": "2026-06-08",
       "source_run": "research-run-001",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "wedding-place-cards-meal-choice",
+      "published_date": "2026-07-27"
     },
     {
       "id": "kw-004",
@@ -125,9 +125,9 @@
       ],
       "added_date": "2026-06-08",
       "source_run": "research-run-001",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "free-wedding-seating-chart-maker",
+      "published_date": "2026-07-27"
     },
     {
       "id": "kw-005",

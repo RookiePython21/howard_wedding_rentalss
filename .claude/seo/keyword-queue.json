@@ -196,6 +196,34 @@
       "skipped_date": "2026-07-27",
       "article_slug": null,
       "published_date": null
+    },
+    {
+      "id": "kw-007",
+      "keyword": "how much does a church pew weigh",
+      "pillar_id": "church-pew-rentals",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": "church pew weight",
+      "search_intent": "informational — bride or venue coordinator planning ceremony logistics wants to know if a pew can be moved/handled without professional help",
+      "serp_features": [],
+      "priority_score": null,
+      "phase_eligible": 1,
+      "cluster_siblings": ["church pew weight", "how heavy is a church pew", "weight of a wooden pew"],
+      "suggested_slug": "how-much-does-a-church-pew-weigh",
+      "suggested_angle": "Answer the literal weight question, explain what changes it (wood type, length, construction), then connect the weight to why delivery/setup/teardown should be handled by a rental service instead of DIY",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-08-02",
+      "source_run": "manual-request",
+      "status": "published",
+      "article_slug": "how-much-does-a-church-pew-weigh",
+      "published_date": "2026-08-02"
     }
   ]
 }

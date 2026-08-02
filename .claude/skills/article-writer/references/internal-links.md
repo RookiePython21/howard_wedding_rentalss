@@ -64,6 +64,7 @@ for the most up-to-date list — the table below is updated by Stage 5 of the ar
 | Wedding Place Cards Guide | https://www.howardweddingrentals.com/blog/wedding-place-cards-guide | Place cards, escort cards, table number display, name card wording |
 | Church Pew Rental for Wedding | https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding | Pew rental details, ceremony seating options, what is included, outdoor pew setup |
 | What Is a Church Pew? | https://www.howardweddingrentals.com/blog/what-is-a-church-pew | What church pews are, pew vs. chair comparison, seating capacity math, rental process overview |
+| How Much Does a Church Pew Weigh? | https://www.howardweddingrentals.com/blog/how-much-does-a-church-pew-weigh | Pew weight, moving/transport logistics, buy vs. rent, why delivery/setup matters |
 | Free Seating Chart Maker for Weddings | https://www.howardweddingrentals.com/blog/free-wedding-seating-chart-maker | Free tools, software comparisons, choosing a seating chart app, exporting a floor plan |
 | Wedding Name Tags vs. Place Cards | https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards | Escort cards vs. place cards vs. name tags, which stationery a reception actually needs |
 | Wedding Place Cards With Meal Choice | https://www.howardweddingrentals.com/blog/wedding-place-cards-meal-choice | Meal indicators on place cards, caterer counts, dietary restrictions, plated dinner service |

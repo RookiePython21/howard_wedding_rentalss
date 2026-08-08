@@ -1,5 +1,5 @@
 {
-  "_comment": "Audit trail of every keyword research run. One entry per run — used to debug queue state and verify deduplication history.",
+  "_comment": "Audit trail of every keyword research run. One entry per run \u2014 used to debug queue state and verify deduplication history.",
   "runs": [
     {
       "run_id": "research-run-001",
@@ -7,7 +7,12 @@
       "completed_at": "2026-06-08T21:30:00Z",
       "trigger": "manual",
       "phase_at_time": 1,
-      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool"
+      ],
       "raw_keywords_found": 160,
       "keywords_after_guardrail": 10,
       "keywords_after_dedup": 6,
@@ -16,7 +21,29 @@
       "keywords_discarded_low_score": 0,
       "competitor_domains_identified": [],
       "sms_sent": true,
-      "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+      "notes": "First manual run. Competitor identification returned empty \u2014 domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check \u2014 already a secondary keyword of published article wedding-seating-chart-template."
+    },
+    {
+      "run_id": "research-run-002",
+      "started_at": "2026-08-08T13:09:48Z",
+      "completed_at": "2026-08-08T13:45:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool"
+      ],
+      "raw_keywords_found": 182,
+      "keywords_after_guardrail": 27,
+      "keywords_after_dedup": 12,
+      "keywords_added_to_queue": 12,
+      "cluster_siblings_updated": 0,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "notes": "Two candidates flagged for editorial review before drafting: 'free seating chart maker for teachers' (kw-012) is classroom/teacher intent, not bridal \u2014 guardrail exclusion list has 'school' but not 'teacher'/'classroom', so it slipped through; recommend skip. 'how to make a seating chart' (kw-015) substantially overlaps published how-to-make-a-wedding-seating-chart \u2014 cannibalization risk, needs differentiated angle or should be skipped. 'foam board near me' (kw-009) is a generic local/retail query with only tangential wedding relevance, included because it matched the 'foam board' guardrail term literally. One exact duplicate keyword ('seating chart printable') surfaced from two different pillar seed terms (seating-chart-boards and seating-chart-tool); kept the higher-scoring seating-chart-boards version and dropped the duplicate, hence keywords_after_dedup/added_to_queue (12) is one less than the raw per-candidate guardrail-pass count (13)."
     }
   ]
 }

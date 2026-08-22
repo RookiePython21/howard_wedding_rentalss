@@ -17,6 +17,23 @@
       "competitor_domains_identified": [],
       "sms_sent": true,
       "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+    },
+    {
+      "run_id": "research-run-002",
+      "started_at": "2026-08-22T13:00:00Z",
+      "completed_at": "2026-08-22T13:35:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "raw_keywords_found": 377,
+      "keywords_after_guardrail": 21,
+      "keywords_after_dedup": 10,
+      "keywords_added_to_queue": 10,
+      "cluster_siblings_updated": 1,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "notes": "competitor_identification_done was already true, so Step 1 was skipped. 10 keywords passed all automated guardrail/dedup/score checks and were written to the queue; 5 were added as status=queued (seating chart, table numbers, seating chart printable, table seating chart wedding, where to print place cards for wedding). The other 5 passed the automated checks but were added as status=skipped based on evidence from Step 5 SERP sampling done in this same run: foam-board-near-me and standard-foam-board-size both surfaced generic craft/hardware-store SERPs (the 'foam board' inclusion guardrail is a false-positive substring match against a non-wedding product category); guest-list surfaced a novel/book SERP, not wedding planning; template-for-seating-chart and how-to-make-a-seating-chart both cannibalize the already-published wedding-seating-chart-template and how-to-make-a-wedding-seating-chart articles respectively (confirmed by their SERPs still being wedding-dominated, i.e. identical intent to the existing pages). 'church pews' (plural, vol 2000, kd 2) was not queued as a new entry — it is functionally the same topic as the already-published 'church pew' article (kw-001), so it was added to that entry's cluster_siblings instead. Also manually excluded before scoring (generic substring false-positives on the guardrail inclusion list, not tied to any Howard Wedding Rentals product/pillar): 'seating' (vol 3200), 'rentals' (vol 32000, real-estate intent), 'rental service' (vol 250, general equipment rental), 'reception tables' (vol 100, not a product Howard sells), 'arch wedding' (vol 350, ceremony arch decor — not a product Howard sells), 'free seating chart maker for teachers' (vol 250, classroom audience). 'wedding name place cards' and 'wedding place cards ideas' were excluded at the parent-topic dedup check — their parent_topic 'wedding place cards' matches the published wedding-place-cards-guide article, which has no queue_id to attach cluster_siblings to."
     }
   ]
 }

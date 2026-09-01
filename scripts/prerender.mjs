@@ -67,6 +67,8 @@ const STATIC_ROUTES = [
   '/about',
   '/contact',
   '/services',
+  '/chair-rentals',
+  '/table-rentals',
   '/shop',
   '/seating-chart-tool',
   '/blog',

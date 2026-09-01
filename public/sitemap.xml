@@ -11,6 +11,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.howardweddingrentals.com/chair-rentals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.howardweddingrentals.com/table-rentals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.howardweddingrentals.com/shop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

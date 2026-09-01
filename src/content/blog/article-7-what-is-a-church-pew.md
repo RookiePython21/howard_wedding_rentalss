@@ -24,7 +24,7 @@ Here's everything you need to know.
 
 A church pew is a long wooden bench, typically built from hardwood like oak or maple, designed to seat a row of people side by side. Unlike individual chairs, it's one continuous piece — no gaps, no wobble, no folding legs.
 
-Most standard pews seat up to nine adults comfortably. They're built low to the ground, with a solid flat seat, an upright back, and sometimes armrests at each end. Some have a small ledge along the back for hymnals or programs — a useful detail when you're handing out ceremony booklets.
+Most standard pews seat 5–6 adults comfortably. They're built low to the ground, with a solid flat seat, an upright back, and sometimes armrests at each end. Some have a small ledge along the back for hymnals or programs — a useful detail when you're handing out ceremony booklets.
 
 The feel is different from a chair. There's weight to it. Permanence. When guests sit down in a pew, they settle in. That's not an accident — pews were built for presence, not convenience.
 
@@ -42,7 +42,7 @@ Both seat people. That's where the similarity ends.
 
 **Church pews** bring warmth. They give a ceremony space visual weight and a sense that something real is happening here. In photos, they frame the aisle naturally. Guests don't fidget as much. Rows feel full even when they aren't.
 
-There's also a practical difference in capacity. A single pew seats up to nine adults — far more than a standard row of individual chairs in the same floor space. At a venue where space is tight, that adds up quickly.
+There's also a practical difference in capacity. A single pew seats 5–6 adults — far more than a standard row of individual chairs in the same floor space. At a venue where space is tight, that adds up quickly.
 
 The honest trade-off: pews require more coordination to move and set. They're not something you can rearrange at the last minute. If your ceremony layout is still in flux, that's worth factoring in.
 
@@ -70,11 +70,11 @@ There are a few reasons this keeps coming up.
 
 Here's the math — it's simple.
 
-Howard's solid hardwood pews seat around nine adults each. That's more than a standard folding chair row, and it means you can seat your whole guest list in fewer rows with a cleaner, more open aisle.
+Howard's solid hardwood pews seat 5–6 adults each. That's more than a standard folding chair row, and it means you can seat your whole guest list in fewer rows with a cleaner, more open aisle.
 
-**Quick calculation:** Take your ceremony guest count. Divide by nine. That's your starting pew number. Then add two or three extra for the family rows up front, where you'll want a little more breathing room.
+**Quick calculation:** Take your ceremony guest count. Divide by 5. That's your starting pew number. Then add two or three extra for the family rows up front, where you'll want a little more breathing room.
 
-Example: 100 guests ÷ 9 = 12 pews. Add 3 for front family rows. You're looking at roughly 15 pews total.
+Example: 100 guests ÷ 5 = 20 pews. Add 3 for front family rows. You're looking at roughly 23 pews total.
 
 Your action: pull up your current RSVP count and run that math right now. It takes thirty seconds and answers a question you'd otherwise spend a week second-guessing.
 

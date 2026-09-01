@@ -30,7 +30,7 @@ const faqs = [
     id: 'count',
     question: 'How many pews do I need for my guest count?',
     answer:
-      'Each pew comfortably seats 9-10 adults. As a general rule: divide your expected guest count by 10 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
+      'Each pew comfortably seats 5-6 adults. As a general rule: divide your expected guest count by 5 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
   },
   {
     id: 'deposit',

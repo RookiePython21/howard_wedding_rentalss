@@ -89,7 +89,7 @@ export default function Services() {
                   <li>9 ft long &times; 18 in deep &times; 34 in tall</li>
                   <li>Solid hardwood — oak &amp; pine construction</li>
                   <li>Finish: Golden Oak</li>
-                  <li>Seats 9–10 adults per pew</li>
+                  <li>Seats 5–6 adults per pew</li>
                   <li>Accommodates ribbons, sashes, and florals</li>
                 </ul>
               </div>
@@ -110,7 +110,113 @@ export default function Services() {
 
           <div className="w-full h-px bg-cream-200" />
 
-          {/* ── Section 2: Wedding Stationery ── */}
+          {/* ── Section 2: Chair Rentals ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                Seating for Every Guest
+              </p>
+              <h2 className="font-playfair text-3xl sm:text-4xl text-[#2c1f0e] mb-5 leading-tight">
+                Chair Rentals
+              </h2>
+              <p className="font-raleway text-[#6b5744] text-base leading-relaxed mb-6">
+                We rent folding chairs for ceremonies, receptions, and every seat in between.
+                Delivered, set up in your layout, and picked up when your event is over.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {['Delivery, setup, and pickup included', 'Arranged to match your seating layout', 'Pre-event coordination call'].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle size={17} className="text-[#c9a96e] shrink-0 mt-0.5" />
+                    <span className="font-raleway text-sm text-[#6b5744]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/chair-rentals"
+                className="inline-flex items-center gap-2 font-raleway text-sm font-semibold bg-[#2c1f0e] text-white px-7 py-3 hover:bg-[#c9a96e] transition-colors duration-300"
+              >
+                Check Chair Availability <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            <div className="bg-[#fdfcf8] border border-cream-200 rounded-sm p-8 space-y-6">
+              <div>
+                <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                  What We Offer
+                </h3>
+                <ul className="space-y-2 font-raleway text-sm text-[#6b5744]">
+                  <li>Folding chairs, event-ready and clean</li>
+                  <li>Serving Owensboro, KY &amp; surrounding areas</li>
+                </ul>
+              </div>
+              <div className="w-full h-px bg-cream-200" />
+              <div>
+                <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                  Pricing
+                </h3>
+                <p className="font-raleway text-sm text-[#6b5744]">
+                  Pricing depends on quantity, delivery distance &amp; event date — call for a quote.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full h-px bg-cream-200" />
+
+          {/* ── Section 3: Table Rentals ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                Built for Your Reception
+              </p>
+              <h2 className="font-playfair text-3xl sm:text-4xl text-[#2c1f0e] mb-5 leading-tight">
+                Table Rentals
+              </h2>
+              <p className="font-raleway text-[#6b5744] text-base leading-relaxed mb-6">
+                We rent round and rectangular tables for receptions, head tables, gift tables, and
+                more — delivered, set up in your floor plan, and picked up when the night is done.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {['Delivery, setup, and pickup included', 'Arranged to match your floor plan', 'Pre-event coordination call'].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle size={17} className="text-[#c9a96e] shrink-0 mt-0.5" />
+                    <span className="font-raleway text-sm text-[#6b5744]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/table-rentals"
+                className="inline-flex items-center gap-2 font-raleway text-sm font-semibold bg-[#2c1f0e] text-white px-7 py-3 hover:bg-[#c9a96e] transition-colors duration-300"
+              >
+                Check Table Availability <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            <div className="bg-[#fdfcf8] border border-cream-200 rounded-sm p-8 space-y-6">
+              <div>
+                <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                  What We Offer
+                </h3>
+                <ul className="space-y-2 font-raleway text-sm text-[#6b5744]">
+                  <li>Round &amp; rectangular tables</li>
+                  <li>Serving Owensboro, KY &amp; surrounding areas</li>
+                </ul>
+              </div>
+              <div className="w-full h-px bg-cream-200" />
+              <div>
+                <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
+                  Pricing
+                </h3>
+                <p className="font-raleway text-sm text-[#6b5744]">
+                  Pricing depends on quantity, delivery distance &amp; event date — call for a quote.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full h-px bg-cream-200" />
+
+          {/* ── Section 4: Wedding Stationery ── */}
           <div>
             <div className="text-center mb-12">
               <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
@@ -158,7 +264,7 @@ export default function Services() {
 
           <div className="w-full h-px bg-cream-200" />
 
-          {/* ── Section 3: Free Tools ── */}
+          {/* ── Section 5: Free Tools ── */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="bg-[#fdfcf8] border border-cream-200 rounded-sm overflow-hidden aspect-video flex items-center justify-center">
               <div

@@ -117,7 +117,7 @@ It can, if it's dragged. Lifted and set down carefully — which is exactly how 
 Not at all. Solid hardwood pews are actually a better outdoor choice than lightweight chairs, which tip and sink into soft ground. The weight that makes them hard to carry is the same weight that keeps them steady once they're placed.
 
 **How many pews does a typical ceremony need?**
-That depends on your guest count and how many you seat per row — most standard pews comfortably seat around nine adults. If you're still mapping out your layout, our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) makes it easy to plan the whole room, ceremony seating included.
+That depends on your guest count and how many you seat per row — most standard pews comfortably seat around 5–6 adults. If you're still mapping out your layout, our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) makes it easy to plan the whole room, ceremony seating included.
 
 **Is it cheaper to buy pews than rent them?**
 On paper, sometimes. Once you account for transport, extra hands to move them, and storage for something you'll use once, renting usually comes out ahead — especially when delivery and teardown are already part of the price.

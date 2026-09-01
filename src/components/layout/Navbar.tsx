@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown, ChevronUp } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const NAV_LINKS = [
@@ -11,7 +11,16 @@ const NAV_LINKS = [
 ]
 
 const PAGE_LINKS = [
-  { label: 'Services', to: '/services' },
+  {
+    label: 'Services',
+    to: '/services',
+    children: [
+      { label: 'Pew Rentals', to: '/' },
+      { label: 'Chair Rentals', to: '/chair-rentals' },
+      { label: 'Table Rentals', to: '/table-rentals' },
+      { label: 'Stationery', to: '/shop' },
+    ],
+  },
   { label: 'Blog', to: '/blog' },
   { label: 'Shop', to: '/shop' },
   { label: 'Seating Chart Tool', to: '/seating-chart-tool' },
@@ -20,6 +29,7 @@ const PAGE_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -67,16 +77,42 @@ export default function Navbar() {
               </button>
             </li>
           ))}
-          {PAGE_LINKS.map((link) => (
-            <li key={link.to}>
-              <Link
-                to={link.to}
-                className="font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {PAGE_LINKS.map((link) =>
+            link.children ? (
+              <li key={link.to} className="relative group">
+                <Link
+                  to={link.to}
+                  className="flex items-center gap-1 font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
+                >
+                  {link.label}
+                  <ChevronDown size={14} />
+                </Link>
+                <div className="absolute left-0 top-full pt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all duration-200">
+                  <ul className="bg-white shadow-lg border border-cream-200 rounded-sm py-2 min-w-[180px]">
+                    {link.children.map((child) => (
+                      <li key={child.to}>
+                        <Link
+                          to={child.to}
+                          className="block px-5 py-2.5 font-raleway text-sm text-[#2c1f0e] hover:bg-[#fdfcf8] hover:text-[#c9a96e] transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ) : (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Phone CTA */}
@@ -112,17 +148,53 @@ export default function Navbar() {
                 </button>
               </li>
             ))}
-            {PAGE_LINKS.map((link) => (
-              <li key={link.to}>
-                <Link
-                  to={link.to}
-                  onClick={() => setOpen(false)}
-                  className="w-full block py-3 font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors border-b border-cream-100"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {PAGE_LINKS.map((link) =>
+              link.children ? (
+                <li key={link.to} className="border-b border-cream-100">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={link.to}
+                      onClick={() => setOpen(false)}
+                      className="flex-1 py-3 font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                    <button
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      aria-label="Toggle services submenu"
+                      className="p-3 text-[#2c1f0e]"
+                    >
+                      {mobileServicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </button>
+                  </div>
+                  {mobileServicesOpen && (
+                    <ul className="pl-4 ml-2 border-l border-cream-200 pb-2">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <Link
+                            to={child.to}
+                            onClick={() => setOpen(false)}
+                            className="block py-2 font-raleway text-sm text-[#6b5744] hover:text-[#c9a96e] transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    onClick={() => setOpen(false)}
+                    className="w-full block py-3 font-raleway text-sm font-medium text-[#2c1f0e] hover:text-[#c9a96e] transition-colors border-b border-cream-100"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
           <a
             href="tel:2709035890"

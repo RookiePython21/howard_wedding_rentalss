@@ -18,6 +18,8 @@ import SeatingChartTool from './pages/SeatingChartTool'
 import Shop from './pages/Shop'
 import Success from './pages/Success'
 import Services from './pages/Services'
+import ChairRentals from './pages/ChairRentals'
+import TableRentals from './pages/TableRentals'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 
@@ -57,6 +59,8 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/success" element={<Success />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/chair-rentals" element={<ChairRentals />} />
+        <Route path="/table-rentals" element={<TableRentals />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>

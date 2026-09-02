@@ -5,12 +5,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 const NAV_LINKS = [
   { label: 'About', href: '#benefits' },
   { label: 'Gallery', href: '#gallery' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 const PAGE_LINKS = [
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Contact', to: '/contact' },
   {
     label: 'Services',
     to: '/services',

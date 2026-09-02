@@ -17,7 +17,7 @@ const benefits = [
     icon: Star,
     title: 'Trusted & Experienced',
     description:
-      'Over a decade of serving couples across the region. With 500+ weddings under our belt, we know exactly how to make your day seamless.',
+      'A dedicated Owensboro-based team focused on getting every detail right, from your first inquiry to the final teardown.',
   },
   {
     icon: Clock,

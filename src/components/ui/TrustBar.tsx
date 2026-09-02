@@ -16,7 +16,7 @@ export default function TrustBar({ note, dark = false }: TrustBarProps) {
         ))}
       </div>
       <p className={`font-raleway text-sm ${textColor}`}>
-        5.0 rating · 500+ Owensboro weddings served
+        5.0 rating · Serving Owensboro couples since 2023
       </p>
       {note && (
         <p className={`font-raleway text-xs ${dark ? 'text-white/50' : 'text-[#9b836e]'}`}>{note}</p>

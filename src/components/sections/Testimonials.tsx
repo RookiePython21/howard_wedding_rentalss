@@ -79,7 +79,7 @@ export default function Testimonials() {
             ))}
           </div>
           <p className="font-raleway text-white/60 text-sm">
-            5.0 average rating across 500+ weddings
+            5.0 average rating from our couples
           </p>
         </div>
       </div>

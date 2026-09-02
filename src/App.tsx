@@ -12,6 +12,7 @@ import FAQ from './components/sections/FAQ'
 import CTA from './components/sections/CTA'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
+import PricingPage from './pages/Pricing'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import SeatingChartTool from './pages/SeatingChartTool'
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/seating-chart-tool" element={<SeatingChartTool />} />

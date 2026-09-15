@@ -7,7 +7,12 @@
       "completed_at": "2026-06-08T21:30:00Z",
       "trigger": "manual",
       "phase_at_time": 1,
-      "pillars_researched": ["church-pew-rentals", "place-cards", "seating-chart-boards", "seating-chart-tool"],
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool"
+      ],
       "raw_keywords_found": 160,
       "keywords_after_guardrail": 10,
       "keywords_after_dedup": 6,
@@ -17,6 +22,28 @@
       "competitor_domains_identified": [],
       "sms_sent": true,
       "notes": "First manual run. Competitor identification returned empty — domain too new/small for Ahrefs organic competitor tracking. 'free seating chart template' dropped at dedup check — already a secondary keyword of published article wedding-seating-chart-template."
+    },
+    {
+      "run_id": "research-run-002",
+      "started_at": "2026-09-08T00:00:00Z",
+      "completed_at": "2026-09-08T00:45:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool"
+      ],
+      "raw_keywords_found": 351,
+      "keywords_after_guardrail": 32,
+      "keywords_after_dedup": 22,
+      "keywords_added_to_queue": 8,
+      "cluster_siblings_updated": 1,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "notes": "Mechanical guardrail (Step 3) passed 22 unique keywords after within-batch and cross-set dedup, but manual relevance curation discarded 13 of those before queueing, beyond what the substring inclusion/exclusion filter alone catches: 'pew' and 'rentals' and 'seating' are bare dictionary words that only match because the guardrail terms themselves ('pew', 'rental', 'seating') are substrings of them, with Ahrefs parent_topics confirming unrelated intent (e.g. 'pew' -> parent topic 'black'). 'guest list' was confirmed off-topic by its own SERP, which is dominated by the novel/show 'The Guest List' by Lucy Foley, not wedding planning content. 'foam board near me' SERP is dominated by local hardware/craft listings (Sutherlands, Office Depot) for raw foam board, not printed seating charts -- poor fit for a customer already choosing a finished product. 'free seating chart maker for teachers' and 'free classroom seating chart maker' carry classroom/education intent, not wedding intent (neither 'classroom' nor 'teacher' happen to be in the exclusion list, only 'school' is -- a gap worth adding to guardrails.exclusion_any). 'seating chart printable' and 'how to make a seating chart' are near-duplicates of the already-published wedding-seating-chart-template and how-to-make-a-wedding-seating-chart articles (which predate the queue system and have no queue_id to attach cluster_siblings to) and were dropped to avoid cannibalization. 'rental service', 'arch wedding', 'standard foam board size', and 'reception tables' matched guardrail terms by coincidence but describe products/services Howard Wedding Rentals does not offer (only the four active pillars: church pew rental, place cards, seating chart boards, seating chart tool). 'church pews' (plural of the already-published 'church pew') was added as a cluster_sibling of kw-001 instead of a new queue entry to avoid splitting ranking signal for a near-identical query. Net: 8 new queue entries (kw-008 through kw-015) and 1 cluster_siblings update."
     }
   ]
 }

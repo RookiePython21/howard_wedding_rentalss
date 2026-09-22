@@ -64,6 +64,8 @@
       "quinceañera",
       "restaurant",
       "school",
+      "classroom",
+      "teacher",
       "theater",
       "stadium",
       "photoshop",
@@ -82,8 +84,8 @@
   "content_cadence": {
     "target_articles_per_week": 2,
     "research_run_interval_days": 14,
-    "last_research_run": "2026-09-08",
-    "next_research_run": "2026-09-22"
+    "last_research_run": "2026-09-22",
+    "next_research_run": "2026-10-06"
   },
   "ahrefs": {
     "competitor_domains": [],

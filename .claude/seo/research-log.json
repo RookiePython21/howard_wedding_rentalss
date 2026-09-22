@@ -44,6 +44,29 @@
       "competitor_domains_identified": [],
       "notification_sent": true,
       "notes": "Mechanical guardrail (Step 3) passed 22 unique keywords after within-batch and cross-set dedup, but manual relevance curation discarded 13 of those before queueing, beyond what the substring inclusion/exclusion filter alone catches: 'pew' and 'rentals' and 'seating' are bare dictionary words that only match because the guardrail terms themselves ('pew', 'rental', 'seating') are substrings of them, with Ahrefs parent_topics confirming unrelated intent (e.g. 'pew' -> parent topic 'black'). 'guest list' was confirmed off-topic by its own SERP, which is dominated by the novel/show 'The Guest List' by Lucy Foley, not wedding planning content. 'foam board near me' SERP is dominated by local hardware/craft listings (Sutherlands, Office Depot) for raw foam board, not printed seating charts -- poor fit for a customer already choosing a finished product. 'free seating chart maker for teachers' and 'free classroom seating chart maker' carry classroom/education intent, not wedding intent (neither 'classroom' nor 'teacher' happen to be in the exclusion list, only 'school' is -- a gap worth adding to guardrails.exclusion_any). 'seating chart printable' and 'how to make a seating chart' are near-duplicates of the already-published wedding-seating-chart-template and how-to-make-a-wedding-seating-chart articles (which predate the queue system and have no queue_id to attach cluster_siblings to) and were dropped to avoid cannibalization. 'rental service', 'arch wedding', 'standard foam board size', and 'reception tables' matched guardrail terms by coincidence but describe products/services Howard Wedding Rentals does not offer (only the four active pillars: church pew rental, place cards, seating chart boards, seating chart tool). 'church pews' (plural of the already-published 'church pew') was added as a cluster_sibling of kw-001 instead of a new queue entry to avoid splitting ranking signal for a near-identical query. Net: 8 new queue entries (kw-008 through kw-015) and 1 cluster_siblings update."
+    },
+    {
+      "run_id": "research-run-003",
+      "started_at": "2026-09-22T00:00:00Z",
+      "completed_at": "2026-09-22T01:15:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool"
+      ],
+      "raw_keywords_found": 380,
+      "keywords_after_guardrail": 23,
+      "keywords_after_dedup": 10,
+      "keywords_added_to_queue": 0,
+      "cluster_siblings_updated": 1,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "pushed_to_main": true,
+      "notes": "Zero net-new queue entries this run — the four pillars are maturing and nearly every mechanically-passing candidate collided with an already-published or already-queued keyword, or repeated a discard already ruled on in research-run-002. Exact-dup / secondary-keyword blocks: 'church pew', 'church pews', 'place cards wedding' (secondary_keyword of wedding-place-cards-guide), 'wedding name tags' (kw-002), 'wedding escort cards' (kw-011), 'table numbers' (kw-009), 'free seating chart template' (secondary_keyword of wedding-seating-chart-template), 'place cards' (kw-010), 'seating plan software' (kw-014), 'template for seating chart' (kw-012). Preserved-skip blocks (never resurrected): 'place cards for table' (kw-005), 'wedding ceremony chair layout template' (kw-006), 'table seating chart wedding' (kw-013, already queued not skipped -- exact match). Repeat discards matching research-run-002's own prior rulings, applied again this run: 'guest list' (off-topic SERP; also kd33 now exceeds the phase-1 ceiling), 'foam board near me' (raw hardware-store intent, not a finished product buyer), 'standard foam board size' (product we don't sell), 'seating chart printable' and 'how to make a seating chart' (near-duplicates of predate-system articles with no queue_id), 'free classroom seating chart maker' and 'free seating chart maker for teachers' (classroom/teacher intent -- this run finally closes the guardrail gap flagged last run by adding 'classroom' and 'teacher' to guardrails.exclusion_any). Two new manual cannibalization calls this run, following the same no-queue_id precedent as research-run-002: 'table place cards' (vol 1200, kd 5) and 'wedding seating chart examples' (vol 100, kd 0) both carry a parent_topic that exactly matches a published article's primary_keyword (wedding-place-cards-guide and wedding-seating-chart-template respectively), neither of which has a queue_id to attach a cluster_sibling to -- discarded rather than risk splitting ranking signal. KD-ceiling fails this run (phase 1 ceiling is 25): 'wedding place cards template' (kd33), 'what are escort cards wedding' (kd44), 'seating chart examples' bare form (kd28), 'place cards' bare related-terms pull (kd26, though already queued anyway), 'free seating chart maker' bare related-terms pull (kd26, though already published anyway). One genuine cluster_sibling addition: 'sitting chart' (vol 150, kd 5) shares parent_topic 'seating chart maker' with kw-008 and was appended to its cluster_siblings array rather than creating a new entry. Net: 0 new queue entries, 1 cluster_siblings update, config.json guardrails.exclusion_any gained 'classroom' and 'teacher'."
     }
   ]
 }

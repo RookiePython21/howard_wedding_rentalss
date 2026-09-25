@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-25",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -48,7 +48,7 @@
         "wedding planning",
         "free tools"
       ],
-      "excerpt": "An honest look at the free seating chart maker options out there \u2014 what each one is actually good for, and which one is built for wedding receptions.",
+      "excerpt": "An honest look at the free seating chart maker options out there — what each one is actually good for, and which one is built for wedding receptions.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
@@ -77,7 +77,7 @@
         "wedding stationery",
         "guest experience"
       ],
-      "excerpt": "Wedding name tags and place cards solve different problems. Here's which one your reception actually needs \u2014 and what guests genuinely prefer.",
+      "excerpt": "Wedding name tags and place cards solve different problems. Here's which one your reception actually needs — and what guests genuinely prefer.",
       "links_to": [
         "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
         "https://www.howardweddingrentals.com/seating-chart-tool",
@@ -107,7 +107,7 @@
         "wedding stationery",
         "reception planning"
       ],
-      "excerpt": "How to put meal selections on your wedding place cards so your caterer can read them at a glance \u2014 and your guests never notice the system at all.",
+      "excerpt": "How to put meal selections on your wedding place cards so your caterer can read them at a glance — and your guests never notice the system at all.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
@@ -190,7 +190,7 @@
         "wedding planning",
         "templates"
       ],
-      "excerpt": "Free wedding seating chart templates you can download, customize, and print \u2014 plus the easier option most brides discover too late.",
+      "excerpt": "Free wedding seating chart templates you can download, customize, and print — plus the easier option most brides discover too late.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/shop",
@@ -245,7 +245,7 @@
         "wedding planning",
         "how-to"
       ],
-      "excerpt": "A calm, step-by-step guide to making your wedding seating chart \u2014 from your guest list to the final display.",
+      "excerpt": "A calm, step-by-step guide to making your wedding seating chart — from your guest list to the final display.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/shop",
@@ -274,7 +274,7 @@
         "wedding stationery",
         "reception planning"
       ],
-      "excerpt": "Everything you need to know about wedding place cards \u2014 what to print, how to display them, and what to order.",
+      "excerpt": "Everything you need to know about wedding place cards — what to print, how to display them, and what to order.",
       "links_to": [
         "https://www.howardweddingrentals.com/shop",
         "https://www.howardweddingrentals.com/seating-chart-tool",
@@ -304,7 +304,7 @@
         "ceremony seating",
         "pew rental"
       ],
-      "excerpt": "What is included in a church pew rental \u2014 solid hardwood pews, delivery, setup, and teardown. Here is what to expect.",
+      "excerpt": "What is included in a church pew rental — solid hardwood pews, delivery, setup, and teardown. Here is what to expect.",
       "links_to": [
         "https://www.howardweddingrentals.com/services",
         "https://www.howardweddingrentals.com/contact"
@@ -362,6 +362,30 @@
       ],
       "linked_from": [],
       "queue_id": "kw-009"
+    },
+    {
+      "slug": "what-are-place-cards",
+      "title": "What Are Place Cards? A Bride's Quick Guide",
+      "url": "https://www.howardweddingrentals.com/blog/what-are-place-cards",
+      "pillar_id": "place-cards",
+      "primary_keyword": "place cards",
+      "secondary_keywords": [],
+      "published_date": "2026-09-25",
+      "last_updated": "2026-09-25",
+      "tags": [
+        "place cards",
+        "wedding stationery",
+        "reception planning"
+      ],
+      "excerpt": "Place cards guide each wedding guest to their exact seat. Here's what they are, why they matter, and how to order the right ones.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-010"
     }
   ]
 }

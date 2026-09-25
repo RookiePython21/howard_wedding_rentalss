@@ -4,7 +4,7 @@
     {
       "id": "church-pew-rentals",
       "label": "Church Pew Rentals",
-      "description": "Solid hardwood church pew rental with delivery, placement/setup, and teardown \u2014 Owensboro KY and ~30-mile radius",
+      "description": "Solid hardwood church pew rental with delivery, placement/setup, and teardown — Owensboro KY and ~30-mile radius",
       "service_url": "https://www.howardweddingrentals.com/services",
       "price_anchor": "$50/pew, delivery included",
       "seed_terms": [
@@ -25,7 +25,7 @@
     {
       "id": "place-cards",
       "label": "Name Place Cards",
-      "description": "Custom printed guest name place cards \u2014 shop product ordered online",
+      "description": "Custom printed guest name place cards — shop product ordered online",
       "service_url": "https://www.howardweddingrentals.com/shop",
       "price_anchor": null,
       "seed_terms": [
@@ -38,7 +38,7 @@
         "table place cards wedding"
       ],
       "alignment_score": 3,
-      "articles_published": 4,
+      "articles_published": 5,
       "articles_queued": 0,
       "status": "active",
       "created_at": "2026-06-08"
@@ -46,7 +46,7 @@
     {
       "id": "seating-chart-boards",
       "label": "Seating Chart Foam Boards",
-      "description": "Custom-printed seating chart display boards for wedding receptions \u2014 shop product",
+      "description": "Custom-printed seating chart display boards for wedding receptions — shop product",
       "service_url": "https://www.howardweddingrentals.com/shop",
       "price_anchor": null,
       "seed_terms": [
@@ -67,7 +67,7 @@
     {
       "id": "seating-chart-tool",
       "label": "Free Seating Chart Tool",
-      "description": "Drag-and-drop wedding seating chart builder \u2014 free lead magnet at /seating-chart-tool",
+      "description": "Drag-and-drop wedding seating chart builder — free lead magnet at /seating-chart-tool",
       "service_url": "https://www.howardweddingrentals.com/seating-chart-tool",
       "price_anchor": "free",
       "seed_terms": [

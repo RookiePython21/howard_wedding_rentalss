@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-09-25",
+  "last_updated": "2026-09-29",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -410,6 +410,31 @@
       ],
       "linked_from": [],
       "queue_id": "kw-011"
+    },
+    {
+      "slug": "wedding-seating-chart-template-vs-tool",
+      "title": "Seating Chart Template or Tool? What Actually Works",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-seating-chart-template-vs-tool",
+      "pillar_id": "seating-chart-tool",
+      "primary_keyword": "template for seating chart",
+      "secondary_keywords": [],
+      "published_date": "2026-09-29",
+      "last_updated": "2026-09-29",
+      "tags": [
+        "seating chart",
+        "wedding planning",
+        "templates"
+      ],
+      "excerpt": "Comparing a seating chart template to a free drag-and-drop tool — which one holds up once your guest list starts shifting, and which one breaks.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-template",
+        "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-012"
     }
   ]
 }

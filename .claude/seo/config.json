@@ -61,7 +61,7 @@
       "office",
       "birthday",
       "baby shower",
-      "quinceañera",
+      "quincea\u00f1era",
       "restaurant",
       "school",
       "classroom",
@@ -84,8 +84,8 @@
   "content_cadence": {
     "target_articles_per_week": 2,
     "research_run_interval_days": 14,
-    "last_research_run": "2026-09-22",
-    "next_research_run": "2026-10-06"
+    "last_research_run": "2026-10-08",
+    "next_research_run": "2026-10-22"
   },
   "ahrefs": {
     "competitor_domains": [],

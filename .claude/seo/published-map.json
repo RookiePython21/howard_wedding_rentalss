@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-10-09",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -48,7 +48,7 @@
         "wedding planning",
         "free tools"
       ],
-      "excerpt": "An honest look at the free seating chart maker options out there — what each one is actually good for, and which one is built for wedding receptions.",
+      "excerpt": "An honest look at the free seating chart maker options out there \u2014 what each one is actually good for, and which one is built for wedding receptions.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
@@ -77,7 +77,7 @@
         "wedding stationery",
         "guest experience"
       ],
-      "excerpt": "Wedding name tags and place cards solve different problems. Here's which one your reception actually needs — and what guests genuinely prefer.",
+      "excerpt": "Wedding name tags and place cards solve different problems. Here's which one your reception actually needs \u2014 and what guests genuinely prefer.",
       "links_to": [
         "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
         "https://www.howardweddingrentals.com/seating-chart-tool",
@@ -107,7 +107,7 @@
         "wedding stationery",
         "reception planning"
       ],
-      "excerpt": "How to put meal selections on your wedding place cards so your caterer can read them at a glance — and your guests never notice the system at all.",
+      "excerpt": "How to put meal selections on your wedding place cards so your caterer can read them at a glance \u2014 and your guests never notice the system at all.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
@@ -190,7 +190,7 @@
         "wedding planning",
         "templates"
       ],
-      "excerpt": "Free wedding seating chart templates you can download, customize, and print — plus the easier option most brides discover too late.",
+      "excerpt": "Free wedding seating chart templates you can download, customize, and print \u2014 plus the easier option most brides discover too late.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/shop",
@@ -245,7 +245,7 @@
         "wedding planning",
         "how-to"
       ],
-      "excerpt": "A calm, step-by-step guide to making your wedding seating chart — from your guest list to the final display.",
+      "excerpt": "A calm, step-by-step guide to making your wedding seating chart \u2014 from your guest list to the final display.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/shop",
@@ -274,7 +274,7 @@
         "wedding stationery",
         "reception planning"
       ],
-      "excerpt": "Everything you need to know about wedding place cards — what to print, how to display them, and what to order.",
+      "excerpt": "Everything you need to know about wedding place cards \u2014 what to print, how to display them, and what to order.",
       "links_to": [
         "https://www.howardweddingrentals.com/shop",
         "https://www.howardweddingrentals.com/seating-chart-tool",
@@ -304,7 +304,7 @@
         "ceremony seating",
         "pew rental"
       ],
-      "excerpt": "What is included in a church pew rental — solid hardwood pews, delivery, setup, and teardown. Here is what to expect.",
+      "excerpt": "What is included in a church pew rental \u2014 solid hardwood pews, delivery, setup, and teardown. Here is what to expect.",
       "links_to": [
         "https://www.howardweddingrentals.com/services",
         "https://www.howardweddingrentals.com/contact"
@@ -425,7 +425,7 @@
         "wedding planning",
         "templates"
       ],
-      "excerpt": "Comparing a seating chart template to a free drag-and-drop tool — which one holds up once your guest list starts shifting, and which one breaks.",
+      "excerpt": "Comparing a seating chart template to a free drag-and-drop tool \u2014 which one holds up once your guest list starts shifting, and which one breaks.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/wedding-seating-chart-template",
@@ -475,7 +475,7 @@
         "wedding planning",
         "free tools"
       ],
-      "excerpt": "Comparing the top wedding seating plan software options — design tools, planning platforms, and spreadsheets — so you can pick one and move on.",
+      "excerpt": "Comparing the top wedding seating plan software options \u2014 design tools, planning platforms, and spreadsheets \u2014 so you can pick one and move on.",
       "links_to": [
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/blog/free-wedding-seating-chart-maker",
@@ -499,7 +499,7 @@
         "wedding stationery",
         "reception planning"
       ],
-      "excerpt": "Your place cards are designed — now you just need them printed. Here's every real option, from local shops to a no-hassle custom order.",
+      "excerpt": "Your place cards are designed \u2014 now you just need them printed. Here's every real option, from local shops to a no-hassle custom order.",
       "links_to": [
         "https://www.howardweddingrentals.com/shop",
         "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
@@ -510,6 +510,31 @@
       ],
       "linked_from": [],
       "queue_id": "kw-015"
+    },
+    {
+      "slug": "wedding-place-card-template-guide",
+      "title": "Wedding Place Cards Template: DIY or Custom-Printed?",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-place-card-template-guide",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding place cards template",
+      "secondary_keywords": [],
+      "published_date": "2026-10-09",
+      "last_updated": "2026-10-09",
+      "tags": [
+        "place cards",
+        "wedding stationery",
+        "DIY printables"
+      ],
+      "excerpt": "Trying a free wedding place cards template? Here's when DIY works, where it goes wrong, and when custom-printed cards save you the headache.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/blog/where-to-print-wedding-place-cards",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-016"
     }
   ]
 }

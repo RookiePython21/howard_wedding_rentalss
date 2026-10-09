@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-09",
   "queue": [
     {
       "id": "kw-008",
@@ -531,9 +531,9 @@
       ],
       "added_date": "2026-10-08",
       "source_run": "research-run-004",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "wedding-place-card-template-guide",
+      "published_date": "2026-10-09"
     },
     {
       "id": "kw-007",

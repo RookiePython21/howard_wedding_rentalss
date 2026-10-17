@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-10-09",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -362,6 +362,179 @@
       ],
       "linked_from": [],
       "queue_id": "kw-009"
+    },
+    {
+      "slug": "what-are-place-cards",
+      "title": "What Are Place Cards? A Bride's Quick Guide",
+      "url": "https://www.howardweddingrentals.com/blog/what-are-place-cards",
+      "pillar_id": "place-cards",
+      "primary_keyword": "place cards",
+      "secondary_keywords": [],
+      "published_date": "2026-09-25",
+      "last_updated": "2026-09-25",
+      "tags": [
+        "place cards",
+        "wedding stationery",
+        "reception planning"
+      ],
+      "excerpt": "Place cards guide each wedding guest to their exact seat. Here's what they are, why they matter, and how to order the right ones.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-010"
+    },
+    {
+      "slug": "wedding-escort-cards-guide",
+      "title": "Wedding Escort Cards: What They Are, How to Display",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-escort-cards-guide",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding escort cards",
+      "secondary_keywords": [],
+      "published_date": "2026-09-25",
+      "last_updated": "2026-09-25",
+      "tags": [
+        "escort cards",
+        "place cards",
+        "wedding stationery"
+      ],
+      "excerpt": "Wedding escort cards point guests to the right table. Here's how they differ from place cards, and how to display them well.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact",
+        "https://www.howardweddingrentals.com/shop"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-011"
+    },
+    {
+      "slug": "wedding-seating-chart-template-vs-tool",
+      "title": "Seating Chart Template or Tool? What Actually Works",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-seating-chart-template-vs-tool",
+      "pillar_id": "seating-chart-tool",
+      "primary_keyword": "template for seating chart",
+      "secondary_keywords": [],
+      "published_date": "2026-09-29",
+      "last_updated": "2026-09-29",
+      "tags": [
+        "seating chart",
+        "wedding planning",
+        "templates"
+      ],
+      "excerpt": "Comparing a seating chart template to a free drag-and-drop tool \u2014 which one holds up once your guest list starts shifting, and which one breaks.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-template",
+        "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-012"
+    },
+    {
+      "slug": "table-by-table-wedding-seating-chart",
+      "title": "How to Build a Table-by-Table Wedding Seating Chart",
+      "url": "https://www.howardweddingrentals.com/blog/table-by-table-wedding-seating-chart",
+      "pillar_id": "seating-chart-boards",
+      "primary_keyword": "table seating chart wedding",
+      "secondary_keywords": [],
+      "published_date": "2026-09-29",
+      "last_updated": "2026-09-29",
+      "tags": [
+        "seating chart",
+        "reception planning",
+        "wedding planning"
+      ],
+      "excerpt": "A step-by-step guide to organizing your wedding seating chart table by table instead of alphabetically, plus how to turn it into a display.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-board-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-ideas",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-013"
+    },
+    {
+      "slug": "best-wedding-seating-plan-software",
+      "title": "Best Wedding Seating Plan Software: Compared",
+      "url": "https://www.howardweddingrentals.com/blog/best-wedding-seating-plan-software",
+      "pillar_id": "seating-chart-tool",
+      "primary_keyword": "seating plan software",
+      "secondary_keywords": [],
+      "published_date": "2026-10-06",
+      "last_updated": "2026-10-06",
+      "tags": [
+        "seating chart",
+        "wedding planning",
+        "free tools"
+      ],
+      "excerpt": "Comparing the top wedding seating plan software options \u2014 design tools, planning platforms, and spreadsheets \u2014 so you can pick one and move on.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/blog/free-wedding-seating-chart-maker",
+        "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-014"
+    },
+    {
+      "slug": "where-to-print-wedding-place-cards",
+      "title": "Where to Print Wedding Place Cards (All Options)",
+      "url": "https://www.howardweddingrentals.com/blog/where-to-print-wedding-place-cards",
+      "pillar_id": "place-cards",
+      "primary_keyword": "where to print place cards for wedding",
+      "secondary_keywords": [],
+      "published_date": "2026-10-06",
+      "last_updated": "2026-10-06",
+      "tags": [
+        "place cards",
+        "wedding stationery",
+        "reception planning"
+      ],
+      "excerpt": "Your place cards are designed \u2014 now you just need them printed. Here's every real option, from local shops to a no-hassle custom order.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-meal-choice",
+        "https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-015"
+    },
+    {
+      "slug": "wedding-place-card-template-guide",
+      "title": "Wedding Place Cards Template: DIY or Custom-Printed?",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-place-card-template-guide",
+      "pillar_id": "place-cards",
+      "primary_keyword": "wedding place cards template",
+      "secondary_keywords": [],
+      "published_date": "2026-10-09",
+      "last_updated": "2026-10-09",
+      "tags": [
+        "place cards",
+        "wedding stationery",
+        "DIY printables"
+      ],
+      "excerpt": "Trying a free wedding place cards template? Here's when DIY works, where it goes wrong, and when custom-printed cards save you the headache.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/blog/where-to-print-wedding-place-cards",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-016"
     }
   ]
 }

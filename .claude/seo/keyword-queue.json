@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-10-09",
   "queue": [
     {
       "id": "kw-008",
@@ -20,7 +20,10 @@
       ],
       "priority_score": 100.0,
       "phase_eligible": 1,
-      "cluster_siblings": [],
+      "cluster_siblings": [
+        "sitting chart",
+        "free seating chart"
+      ],
       "suggested_slug": "wedding-seating-chart-basics",
       "suggested_angle": "A foundational 'what is a wedding seating chart and how do I make one' guide that captures the broad head-term search, then branches readers to either the free drag-and-drop tool or a custom-printed display board depending on where they are in planning \u2014 avoiding overlap with the existing how-to and template posts by focusing on the decision (DIY vs. printed board vs. digital tool) rather than execution steps.",
       "internal_link_targets": [
@@ -144,9 +147,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "what-are-place-cards",
+      "published_date": "2026-09-25"
     },
     {
       "id": "kw-011",
@@ -179,9 +182,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "wedding-escort-cards-guide",
+      "published_date": "2026-09-25"
     },
     {
       "id": "kw-012",
@@ -214,9 +217,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "wedding-seating-chart-template-vs-tool",
+      "published_date": "2026-09-29"
     },
     {
       "id": "kw-013",
@@ -233,7 +236,9 @@
       ],
       "priority_score": 53.0,
       "phase_eligible": 1,
-      "cluster_siblings": [],
+      "cluster_siblings": [
+        "seating charts wedding"
+      ],
       "suggested_slug": "table-by-table-wedding-seating-chart",
       "suggested_angle": "Step-by-step on organizing a seating chart by table (not alphabetically) \u2014 a format-specific angle distinct from the existing general how-to and ideas articles, ending with a printed display board as the natural finish.",
       "internal_link_targets": [
@@ -249,9 +254,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "table-by-table-wedding-seating-chart",
+      "published_date": "2026-09-29"
     },
     {
       "id": "kw-002",
@@ -381,9 +386,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "best-wedding-seating-plan-software",
+      "published_date": "2026-10-06"
     },
     {
       "id": "kw-015",
@@ -416,9 +421,9 @@
       ],
       "added_date": "2026-09-08",
       "source_run": "research-run-002",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "where-to-print-wedding-place-cards",
+      "published_date": "2026-10-06"
     },
     {
       "id": "kw-005",
@@ -492,6 +497,43 @@
       "skipped_date": "2026-07-27",
       "article_slug": null,
       "published_date": null
+    },
+    {
+      "id": "kw-016",
+      "keyword": "wedding place cards template",
+      "pillar_id": "place-cards",
+      "volume": 150,
+      "traffic_potential": 400,
+      "kd": 16,
+      "parent_topic": "wedding place card template",
+      "search_intent": "informational/transactional \u2014 bride looking for a free DIY template to design her own wedding place cards before deciding whether a printed template is worth the hassle versus ordering custom-printed cards.",
+      "serp_features": [
+        "image_th",
+        "question",
+        "sitelink",
+        "organic_shopping"
+      ],
+      "priority_score": 31.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-place-card-template-guide",
+      "suggested_angle": "Compare free DIY wedding place card templates (Canva, Avery, Word/Pinterest printables) against ordering custom-printed cards \u2014 covering sizing, formatting pitfalls, and printer compatibility \u2014 then route brides who'd rather skip the DIY work to a custom-printed order, cross-linking to the existing place-cards guide and print-shop article without duplicating either.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/shop",
+        "https://www.howardweddingrentals.com/blog/wedding-place-cards-guide",
+        "https://www.howardweddingrentals.com/blog/where-to-print-wedding-place-cards",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.canva.com/place-cards/templates/wedding/",
+        "https://www.pinterest.com/ideas/free-place-card-template/926927019468/",
+        "https://www.avery.com/blog/wedding-cards-guide/"
+      ],
+      "added_date": "2026-10-08",
+      "source_run": "research-run-004",
+      "status": "published",
+      "article_slug": "wedding-place-card-template-guide",
+      "published_date": "2026-10-09"
     },
     {
       "id": "kw-007",

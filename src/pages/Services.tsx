@@ -89,7 +89,7 @@ export default function Services() {
                   <li>9 ft long &times; 18 in deep &times; 34 in tall</li>
                   <li>Solid hardwood — oak &amp; pine construction</li>
                   <li>Finish: Golden Oak</li>
-                  <li>Seats 5–6 adults per pew</li>
+                  <li>Seats 6–7 adults per pew</li>
                   <li>Accommodates ribbons, sashes, and florals</li>
                 </ul>
               </div>
@@ -102,7 +102,7 @@ export default function Services() {
                 <p className="font-raleway text-sm text-[#6b5744]">Up to 14 pews available</p>
                 <p className="font-raleway text-sm text-[#6b5744] mt-1">Serving Owensboro, KY &amp; surrounding areas</p>
                 <p className="font-raleway text-xs text-[#9b836e] mt-2">
-                  Travel &amp; installation fees vary — determined during your coordination call.
+                  Travel &amp; installation fees vary — determined during your coordination call. $1,500 minimum charge.
                 </p>
               </div>
             </div>

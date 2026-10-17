@@ -1,20 +1,19 @@
 import { useState, useRef } from 'react'
 import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
-
-const PEW_PRICE = 50
-const MAX_PEWS = 14
+import {
+  PEW_PRICE,
+  MAX_PEWS,
+  MINIMUM_CHARGE,
+  GUESTS_PER_PEW_MIN,
+  GUESTS_PER_PEW_MAX,
+  GUESTS_PER_PEW_LABEL,
+  ROUND_TRIP_MULTIPLIER,
+  computeQuote,
+} from '../../config/pricing'
 
 // Single fixed departure point: 9643 KY-2157, Whitesville, KY 42378 (KY-2157 / McCamish Rd).
 const ORIGIN_LAT = 37.734848
 const ORIGIN_LNG = -86.852473
-
-// Travel fee: for trips whose round-trip driving exceeds FREE_TRAVEL_HOURS, we charge a
-// base fee plus an hourly rate on the *billable* hours. Billable hours = one-way drive time
-// multiplied by 4, because the crew makes two round trips (drop-off + pick-up).
-const BASE_TRAVEL_FEE = 300
-const PER_HOUR_RATE = 150
-const ROUND_TRIP_MULTIPLIER = 4
-const FREE_TRAVEL_HOURS = 1
 
 function formatUSD(n: number): string {
   return `$${Math.round(n).toLocaleString()}`
@@ -78,17 +77,8 @@ export default function Pricing() {
 
   // Derived pricing (recomputes on render, so changing the pew count updates the total
   // instantly without re-fetching the drive time).
-  const pewTotal = pewCount * PEW_PRICE
+  const { pewTotal, travelFee, minimumAdjustment, total, travelWins, isLocal } = computeQuote(pewCount, driveHours)
   const billableHours = driveHours != null ? driveHours * ROUND_TRIP_MULTIPLIER : null
-  let travelFee = 0
-  let total = pewTotal
-  if (billableHours != null && billableHours > FREE_TRAVEL_HOURS) {
-    const travelFormula = BASE_TRAVEL_FEE + PER_HOUR_RATE * billableHours
-    total = Math.max(pewTotal, travelFormula)
-    travelFee = total - pewTotal
-  }
-  const travelWins = total > pewTotal
-  const isLocal = billableHours != null && billableHours <= FREE_TRAVEL_HOURS
 
   return (
     <section id="pricing" className="py-20 sm:py-28 bg-[#f5edd8]/30">
@@ -101,7 +91,7 @@ export default function Pricing() {
           <h2 className="section-title mb-4">Get Your Custom Quote</h2>
           <div className="gold-divider" />
           <p className="section-subtitle mt-6 max-w-xl mx-auto">
-            Pews are <span className="text-[#2c1f0e] font-semibold">${PEW_PRICE} each</span>. Venues over an hour of round-trip driving add a travel fee based on drive time — enter your details below for an instant estimate, then give us a call to finalize.
+            Pews are <span className="text-[#2c1f0e] font-semibold">${PEW_PRICE} each</span>. Venues over an hour of round-trip driving add a travel fee based on drive time, and there is a {formatUSD(MINIMUM_CHARGE)} minimum charge — enter your details below for an instant estimate, then give us a call to finalize.
           </p>
         </div>
 
@@ -114,7 +104,7 @@ export default function Pricing() {
               How many pews do you need?
             </label>
             <p className="font-raleway text-xs text-[#9b836e] mb-4">
-              Each pew seats 5–6 adults &mdash; maximum of {MAX_PEWS} pews
+              Each pew seats {GUESTS_PER_PEW_LABEL} adults &mdash; maximum of {MAX_PEWS} pews
             </p>
             <div className="flex items-center gap-4">
               <button
@@ -133,7 +123,7 @@ export default function Pricing() {
                 +
               </button>
               <span className="font-raleway text-sm text-[#9b836e] ml-2">
-                ≈ {pewCount * 9}–{pewCount * 10} guests
+                ≈ {pewCount * GUESTS_PER_PEW_MIN}–{pewCount * GUESTS_PER_PEW_MAX} guests
               </span>
             </div>
             {/* Visual bar */}
@@ -272,6 +262,13 @@ export default function Pricing() {
               </p>
             )}
 
+            {minimumAdjustment > 0 && (
+              <div className="flex items-center justify-between mt-3">
+                <span className="font-raleway text-sm text-[#6b5744]">Minimum charge adjustment</span>
+                <span className="font-raleway text-sm text-[#2c1f0e] font-semibold">{formatUSD(minimumAdjustment)}</span>
+              </div>
+            )}
+
             <div className="flex items-center justify-between border-t border-cream-200 pt-4 mt-4 mb-2">
               <span className="font-raleway text-sm text-[#6b5744] font-semibold">Estimated total</span>
               <span className="font-playfair text-2xl text-[#2c1f0e] font-bold">{formatUSD(total)}</span>
@@ -279,6 +276,12 @@ export default function Pricing() {
             {travelWins && (
               <p className="font-raleway text-xs text-[#9b836e] mb-4">
                 Your travel rate is greater than the pew subtotal, so the travel rate applies.
+              </p>
+            )}
+
+            {minimumAdjustment > 0 && (
+              <p className="font-raleway text-xs text-[#9b836e] mb-4">
+                Every booking has a {formatUSD(MINIMUM_CHARGE)} minimum charge, so the total is raised to that amount.
               </p>
             )}
 

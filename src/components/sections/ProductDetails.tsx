@@ -10,7 +10,7 @@ const specs = [
   {
     icon: Users,
     title: 'Capacity',
-    detail: '7-8 adults per pew',
+    detail: '6-7 adults per pew',
     sub: 'Comfortably seated with aisle spacing',
   },
   {
@@ -33,7 +33,7 @@ const specs = [
   {
     icon: BarChart3,
     title: 'Availability',
-    sub: 'Accommodates up to 140 guests',
+    sub: 'Up to 14 pews (about 84-98 guests)',
   },
 ]
 

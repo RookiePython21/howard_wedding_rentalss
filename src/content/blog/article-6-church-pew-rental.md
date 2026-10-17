@@ -56,7 +56,7 @@ What you need for pew delivery: flat, accessible ground that a truck can reach. 
 
 ## How Many Pews Do You Need?
 
-A standard church pew holds five to seven guests comfortably. The "comfortable" number matters more than the maximum — no one wants to spend a ceremony shoulder-to-shoulder with strangers.
+A standard church pew holds six to seven guests comfortably. The "comfortable" number matters more than the maximum — no one wants to spend a ceremony shoulder-to-shoulder with strangers.
 
 Here is the quick calculation:
 
@@ -136,7 +136,7 @@ For outdoor ceremonies, a rain plan is important regardless of seating. Most out
 We serve Owensboro and approximately a 30-mile radius throughout Western Kentucky. If you are unsure whether your venue falls within our delivery area, [reach out with your location](https://www.howardweddingrentals.com/contact) and we will confirm.
 
 **Are the pews available in different sizes?**
-No. All pews are 9ft long, 18in in depth, and 34in tall. Each pew seats approximately 5–6 people.
+No. All pews are 9ft long, 18in in depth, and 34in tall. Each pew seats approximately 6–7 people.
 
 ---
 

@@ -24,13 +24,13 @@ const faqs = [
     id: 'distance',
     question: 'How far do you travel for deliveries?',
     answer:
-      'We serve Owensboro, KY and the surrounding areas, and we\'re happy to travel farther for your wedding. For venues within a short drive, delivery is included; for those farther out, a travel fee applies based on the drive time. Enter your venue in our quote calculator for an instant estimate, or give us a call and we\'ll confirm it for you.',
+      'We serve Owensboro, KY and the surrounding areas, and we\'re happy to travel farther for your wedding. For venues within a short drive, delivery is included; for those farther out, a travel fee applies based on the drive time, and every booking has a $1,500 minimum charge. Enter your venue in our quote calculator for an instant estimate, or give us a call and we\'ll confirm it for you.',
   },
   {
     id: 'count',
     question: 'How many pews do I need for my guest count?',
     answer:
-      'Each pew comfortably seats 5-6 adults. As a general rule: divide your expected guest count by 5 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
+      'Each pew comfortably seats 6-7 adults. As a general rule: divide your expected guest count by 6 to estimate the number of pews needed. Our team will help you finalize the exact count and aisle layout during your booking consultation.',
   },
   {
     id: 'deposit',

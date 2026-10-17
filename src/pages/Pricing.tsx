@@ -8,7 +8,7 @@ export default function PricingPage() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Pricing"
-        description="Get an instant quote for your church pew rental. $50 per pew, with travel fees calculated automatically based on your venue's location."
+        description="Get an instant quote for your church pew rental. $50 per pew, a $1,500 minimum charge, and travel fees calculated automatically based on your venue's location."
       />
       <Navbar />
       <main className="flex-1 pt-16">

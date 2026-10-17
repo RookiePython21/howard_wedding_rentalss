@@ -131,7 +131,7 @@ export default function TableRentals() {
                 <li>Serving Owensboro, KY &amp; surrounding areas</li>
               </ul>
               <p className="font-raleway text-sm text-[#6b5744] mb-5">
-                Pricing depends on table count, delivery distance, and your event date — call us
+                Every event is different — call us with your table count, venue, and date
                 for a free quote, no obligation.
               </p>
               <a

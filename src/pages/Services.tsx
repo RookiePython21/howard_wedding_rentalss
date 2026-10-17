@@ -96,14 +96,17 @@ export default function Services() {
               <div className="w-full h-px bg-cream-200" />
               <div>
                 <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
-                  Pricing
+                  Your Estimate
                 </h3>
-                <p className="font-playfair text-3xl text-[#2c1f0e] mb-1">$50 <span className="text-lg font-raleway font-normal text-[#9b836e]">/ pew</span></p>
-                <p className="font-raleway text-sm text-[#6b5744]">Up to 14 pews available</p>
+                <p className="font-playfair text-3xl text-[#2c1f0e] mb-1">Get your instant estimate</p>
+                <p className="font-raleway text-sm text-[#6b5744]">6–7 adults per pew · up to 14 pews</p>
                 <p className="font-raleway text-sm text-[#6b5744] mt-1">Serving Owensboro, KY &amp; surrounding areas</p>
-                <p className="font-raleway text-xs text-[#9b836e] mt-2">
-                  Travel &amp; installation fees vary — determined during your coordination call. $1,500 minimum charge.
-                </p>
+                <Link
+                  to="/pricing"
+                  className="inline-flex items-center gap-2 font-raleway text-sm font-semibold text-[#2c1f0e] hover:text-[#c9a96e] transition-colors mt-3"
+                >
+                  Get a quote <ArrowRight size={15} />
+                </Link>
               </div>
             </div>
           </div>
@@ -152,10 +155,10 @@ export default function Services() {
               <div className="w-full h-px bg-cream-200" />
               <div>
                 <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
-                  Pricing
+                  Your Quote
                 </h3>
                 <p className="font-raleway text-sm text-[#6b5744]">
-                  Pricing depends on quantity, delivery distance &amp; event date — call for a quote.
+                  Every event is different — call us for a quote based on your guest count, venue &amp; date.
                 </p>
               </div>
             </div>
@@ -205,10 +208,10 @@ export default function Services() {
               <div className="w-full h-px bg-cream-200" />
               <div>
                 <h3 className="font-raleway font-semibold text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
-                  Pricing
+                  Your Quote
                 </h3>
                 <p className="font-raleway text-sm text-[#6b5744]">
-                  Pricing depends on quantity, delivery distance &amp; event date — call for a quote.
+                  Every event is different — call us for a quote based on your guest count, venue &amp; date.
                 </p>
               </div>
             </div>

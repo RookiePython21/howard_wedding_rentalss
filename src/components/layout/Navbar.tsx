@@ -8,7 +8,7 @@ const NAV_LINKS = [
 ]
 
 const PAGE_LINKS = [
-  { label: 'Pricing', to: '/pricing' },
+  { label: 'Get a Quote', to: '/pricing' },
   { label: 'Contact', to: '/contact' },
   {
     label: 'Services',

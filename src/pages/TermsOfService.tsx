@@ -42,7 +42,7 @@ export default function TermsOfService() {
             <div>
               <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">2. Rental Services</h2>
               <p>
-                Howard Wedding Rentals provides church pew rentals for wedding ceremonies and events. Our services include delivery, placement (if requested), and post-event retrieval. Pews are rented at <strong>$50 per pew</strong>, with a maximum of 14 pews per booking. Travel fees are assessed based on venue location, and every booking is subject to a $1,500 minimum charge.
+                Howard Wedding Rentals provides church pew rentals for wedding ceremonies and events. Our services include delivery, placement (if requested), and post-event retrieval. Pews are available up to a maximum of 14 per booking. Pricing is provided as an estimate through our online quote tool and confirmed by phone before your booking is final. Travel fees may apply based on venue location, and every booking is subject to a minimum charge, which is reflected in your estimate.
               </p>
             </div>
 

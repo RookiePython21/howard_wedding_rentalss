@@ -59,7 +59,7 @@ export default function AboutUs() {
             <div>
               <h2 className="font-playfair text-2xl text-[#2c1f0e] mb-4">Our Promise</h2>
               <p>
-                When you book with us, you're not just renting furniture — you're getting a team that genuinely cares about your wedding day. We keep communication clear, pricing transparent, and our service thorough. No hidden fees. No no-shows. Just beautiful pews and a team you can count on.
+                When you book with us, you're not just renting furniture — you're getting a team that genuinely cares about your wedding day. We keep communication clear and our service thorough. No surprises. No no-shows. Just beautiful pews and a team you can count on.
               </p>
             </div>
 

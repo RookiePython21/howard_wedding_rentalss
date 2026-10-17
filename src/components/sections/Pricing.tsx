@@ -86,12 +86,12 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-3">
-            Pricing
+            Your Estimate
           </p>
           <h2 className="section-title mb-4">Get Your Custom Quote</h2>
           <div className="gold-divider" />
           <p className="section-subtitle mt-6 max-w-xl mx-auto">
-            Pews are <span className="text-[#2c1f0e] font-semibold">${PEW_PRICE} each</span>. Venues over an hour of round-trip driving add a travel fee based on drive time, and there is a {formatUSD(MINIMUM_CHARGE)} minimum charge — enter your details below for an instant estimate, then give us a call to finalize.
+            Tell us your guest count and venue below for an instant estimate, then give us a call and we'll finalize the details and hold your date.
           </p>
         </div>
 

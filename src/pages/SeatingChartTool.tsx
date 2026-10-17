@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO'
 const NAV_LINKS = [
   { label: 'About',   href: '#benefits' },
   { label: 'Gallery', href: '#gallery'  },
-  { label: 'Pricing', href: '#pricing'  },
+  { label: 'Get a Quote', href: '#pricing'  },
   { label: 'FAQ',     href: '#faq'      },
   { label: 'Contact', href: '#contact'  },
 ]

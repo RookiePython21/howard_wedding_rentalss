@@ -35,11 +35,11 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {['About', 'Gallery', 'Pricing', 'FAQ'].map((item) => (
+              {[['About', 'about'], ['Gallery', 'gallery'], ['Get a Quote', 'pricing'], ['FAQ', 'faq']].map(([item, id]) => (
                 <li key={item}>
                   <button
                     onClick={() => {
-                      const el = document.querySelector(`#${item.toLowerCase()}`)
+                      const el = document.querySelector(`#${id}`)
                       if (el) el.scrollIntoView({ behavior: 'smooth' })
                     }}
                     className="font-raleway text-sm text-white/60 hover:text-[#c9a96e] transition-colors"

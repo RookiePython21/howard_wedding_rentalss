@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
                   contact@howardweddingrentals.com
                 </a>{' '}
                 or call{' '}
-                <a href="tel:2709035890" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
+                <a href="tel:+12709035890" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
                   270.903.5890
                 </a>
                 .

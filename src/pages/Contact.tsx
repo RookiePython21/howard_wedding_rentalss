@@ -43,7 +43,7 @@ export default function Contact() {
 
             {/* Phone */}
             <a
-              href="tel:2709035890"
+              href="tel:+12709035890"
               className="group bg-white border border-cream-200 rounded-sm p-8 hover:border-[#c9a96e] hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center"
             >
               <div className="w-14 h-14 rounded-sm bg-[#c9a96e]/10 flex items-center justify-center mb-5 group-hover:bg-[#c9a96e] transition-colors duration-300">

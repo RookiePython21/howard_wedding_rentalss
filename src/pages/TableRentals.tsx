@@ -85,7 +85,7 @@ export default function TableRentals() {
               floor plan. One call gets you a free, no-obligation quote.
             </p>
             <a
-              href="tel:2709035890"
+              href="tel:+12709035890"
               className="inline-flex items-center gap-2 font-raleway text-sm font-semibold bg-[#c9a96e] text-[#2c1f0e] px-8 py-4 hover:bg-white transition-colors duration-300 mb-8"
             >
               <Phone size={16} />
@@ -135,7 +135,7 @@ export default function TableRentals() {
                 for a free quote, no obligation.
               </p>
               <a
-                href="tel:2709035890"
+                href="tel:+12709035890"
                 className="flex items-center justify-center gap-2 font-raleway text-sm font-semibold bg-[#2c1f0e] text-white px-6 py-3.5 hover:bg-[#c9a96e] transition-colors duration-300"
               >
                 <Phone size={16} />
@@ -153,7 +153,7 @@ export default function TableRentals() {
               Have questions about your event? We're one call away.
             </p>
             <a
-              href="tel:2709035890"
+              href="tel:+12709035890"
               className="inline-flex items-center gap-2 font-raleway text-sm font-semibold bg-[#c9a96e] text-[#2c1f0e] px-6 py-3 hover:bg-white transition-colors duration-300 shrink-0"
             >
               <Phone size={15} />
@@ -186,7 +186,7 @@ export default function TableRentals() {
               figure out exactly what you need.
             </p>
             <a
-              href="tel:2709035890"
+              href="tel:+12709035890"
               className="inline-flex items-center gap-2 font-raleway text-sm font-semibold bg-[#c9a96e] text-[#2c1f0e] px-8 py-4 hover:bg-white transition-colors duration-300"
             >
               Call 270.903.5890 <ArrowRight size={15} />

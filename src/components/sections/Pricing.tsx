@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
 import {
   PEW_PRICE,
@@ -10,6 +10,7 @@ import {
   ROUND_TRIP_MULTIPLIER,
   computeQuote,
 } from '../../config/pricing'
+import { trackQuoteEstimate } from '../../services/analytics'
 
 // Single fixed departure point: 9643 KY-2157, Whitesville, KY 42378 (KY-2157 / McCamish Rd).
 const ORIGIN_LAT = 37.734848
@@ -79,6 +80,14 @@ export default function Pricing() {
   // instantly without re-fetching the drive time).
   const { pewTotal, travelFee, minimumAdjustment, total, travelWins, isLocal } = computeQuote(pewCount, driveHours)
   const billableHours = driveHours != null ? driveHours * ROUND_TRIP_MULTIPLIER : null
+
+  // generate_lead: fire once per computed travel estimate (a venue was entered and resolved).
+  useEffect(() => {
+    if (driveHours != null) {
+      trackQuoteEstimate({ pews: pewCount, total: Math.round(total), has_location: 1 })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [driveHours])
 
   return (
     <section id="pricing" className="py-20 sm:py-28 bg-[#f5edd8]/30">
@@ -286,14 +295,15 @@ export default function Pricing() {
             )}
 
             <a
-              href="tel:2709035890"
+              data-call-placement="quote-result"
+              href="tel:+12709035890"
               className="btn-gold w-full flex items-center justify-center gap-2 py-4 text-sm mt-4"
             >
               <Phone size={16} />
               Call to Confirm — 270.903.5890
             </a>
             <p className="text-center font-raleway text-xs text-[#9b836e] mt-4">
-              This is an estimate — we'll confirm your travel fee, finalize details, and hold your date.
+              This is an estimate only, not a final price. Travel fees may apply and are confirmed when you call, along with final details and holding your date.
             </p>
           </div>
         </div>

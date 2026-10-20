@@ -3,6 +3,9 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import './styles/index.css'
 import App from './App'
+import { initAnalytics } from './services/analytics'
+
+initAnalytics()
 
 const rootEl = document.getElementById('root')!
 

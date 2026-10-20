@@ -56,7 +56,7 @@ export default function Success() {
 
           <p className="font-raleway text-xs text-[#9b836e] mt-10">
             Questions about your order? Call us at{' '}
-            <a href="tel:2709035890" className="text-[#c9a96e] hover:underline">
+            <a href="tel:+12709035890" className="text-[#c9a96e] hover:underline">
               270.903.5890
             </a>
           </p>

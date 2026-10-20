@@ -116,7 +116,7 @@ export default function Navbar() {
 
         {/* Phone CTA */}
         <a
-          href="tel:2709035890"
+          href="tel:+12709035890"
           className="hidden md:inline-flex items-center gap-2 font-raleway text-sm font-semibold text-[#2c1f0e] hover:text-[#c9a96e] transition-colors tracking-wide"
         >
           <Phone size={16} />
@@ -196,7 +196,7 @@ export default function Navbar() {
             )}
           </ul>
           <a
-            href="tel:2709035890"
+            href="tel:+12709035890"
             className="mt-4 w-full flex items-center justify-center gap-2 font-raleway text-sm font-semibold text-[#2c1f0e] hover:text-[#c9a96e] transition-colors py-3"
           >
             <Phone size={16} />

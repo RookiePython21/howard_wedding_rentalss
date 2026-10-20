@@ -35,7 +35,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:2709035890" tabIndex={-1}>
+          <a href="tel:+12709035890" tabIndex={-1}>
             <Button
               size="lg"
               className="text-base px-10 py-4 shadow-xl flex items-center gap-2"

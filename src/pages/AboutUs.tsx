@@ -69,7 +69,7 @@ export default function AboutUs() {
               <h2 className="font-playfair text-2xl text-[#2c1f0e] mb-4">Get in Touch</h2>
               <p>
                 Have questions or ready to check availability? We'd love to hear about your wedding. Give us a call at{' '}
-                <a href="tel:2709035890" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
+                <a href="tel:+12709035890" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
                   270.903.5890
                 </a>{' '}
                 or reach out via email at{' '}

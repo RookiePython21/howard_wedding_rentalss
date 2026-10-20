@@ -102,7 +102,7 @@ export default function SeatingChartTool() {
               </button>
             ))}
             <a
-              href="tel:2709035890"
+              href="tel:+12709035890"
               className="ml-auto flex items-center gap-1.5 font-raleway text-sm text-gold-700 font-medium hover:text-gold-800 transition-colors"
             >
               <Phone size={13} />

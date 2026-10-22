@@ -11,9 +11,10 @@ interface SEOProps {
   url?: string
   type?: 'website' | 'article'
   schema?: Record<string, unknown>
+  noindex?: boolean
 }
 
-export function SEO({ title, description, image, url, type = 'website', schema }: SEOProps) {
+export function SEO({ title, description, image, url, type = 'website', schema, noindex }: SEOProps) {
   const fullTitle = `${title} | Howard Wedding Rentals`
   const ogImage = image || DEFAULT_OG_IMAGE
   // Derive the canonical from the router path so it is deterministic at build
@@ -26,6 +27,7 @@ export function SEO({ title, description, image, url, type = 'website', schema }
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

@@ -76,6 +76,11 @@ const STATIC_ROUTES = [
   '/privacy-policy',
   '/terms-of-service',
   '/success',
+  // Persona ad landers (src/content/personas.ts). noindex, not in the sitemap.
+  '/pews/backyard-wedding',
+  '/pews/outdoor-church-wedding',
+  '/pews/for-parents',
+  '/pews/for-planners',
   '/', // render the home page LAST — see note below.
 ]
 

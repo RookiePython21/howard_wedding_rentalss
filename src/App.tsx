@@ -23,6 +23,8 @@ import ChairRentals from './pages/ChairRentals'
 import TableRentals from './pages/TableRentals'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import PersonaLander from './pages/PersonaLander'
+import { personas } from './content/personas'
 
 function Home() {
   return (
@@ -65,6 +67,9 @@ export default function App() {
         <Route path="/table-rentals" element={<TableRentals />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        {personas.map((p) => (
+          <Route key={p.key} path={p.path} element={<PersonaLander persona={p} />} />
+        ))}
       </Routes>
     </BrowserRouter>
   )

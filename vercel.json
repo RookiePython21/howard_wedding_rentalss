@@ -9,5 +9,11 @@
       "permanent": true
     }
   ],
+  "headers": [
+    {
+      "source": "/pews/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    }
+  ],
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }

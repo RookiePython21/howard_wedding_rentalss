@@ -84,8 +84,8 @@
   "content_cadence": {
     "target_articles_per_week": 2,
     "research_run_interval_days": 14,
-    "last_research_run": "2026-10-08",
-    "next_research_run": "2026-10-22"
+    "last_research_run": "2026-10-22",
+    "next_research_run": "2026-11-05"
   },
   "ahrefs": {
     "competitor_domains": [],

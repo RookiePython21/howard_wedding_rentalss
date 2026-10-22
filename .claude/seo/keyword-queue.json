@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-10-09",
+  "last_updated": "2026-10-22",
   "queue": [
     {
       "id": "kw-008",
@@ -22,7 +22,8 @@
       "phase_eligible": 1,
       "cluster_siblings": [
         "sitting chart",
-        "free seating chart"
+        "free seating chart",
+        "how to make a seating chart"
       ],
       "suggested_slug": "wedding-seating-chart-basics",
       "suggested_angle": "A foundational 'what is a wedding seating chart and how do I make one' guide that captures the broad head-term search, then branches readers to either the free drag-and-drop tool or a custom-printed display board depending on where they are in planning \u2014 avoiding overlap with the existing how-to and template posts by focusing on the decision (DIY vs. printed board vs. digital tool) rather than execution steps.",

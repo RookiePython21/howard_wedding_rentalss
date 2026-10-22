@@ -135,11 +135,12 @@ async function run() {
       // Brief settle for react-helmet-async (<head> tags) and markdown rendering.
       await new Promise((r) => setTimeout(r, 500))
 
-      // Firebase Analytics injects a gtag loader at runtime; strip it so it is
-      // not baked into the static HTML (it re-initialises on its own on the
-      // client — baking it would cause a double load).
+      // Firebase Analytics (gtag) and the Meta pixel (fbevents.js + its config
+      // script) inject loaders at runtime; strip them so they are not baked into
+      // the static HTML (they re-initialise on the client — baking them would
+      // cause a double load, and the pixel config would carry domain=localhost).
       const html = (await page.content()).replace(
-        /<script[^>]*googletagmanager\.com[^>]*><\/script>/g,
+        /<script[^>]*(googletagmanager\.com|connect\.facebook\.net)[^>]*><\/script>/g,
         ''
       )
       const outDir = route === '/' ? DIST : path.join(DIST, route)

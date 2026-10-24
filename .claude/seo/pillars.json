@@ -84,6 +84,26 @@
       "articles_queued": 0,
       "status": "active",
       "created_at": "2026-06-08"
+    },
+    {
+      "id": "nashville-pew-rentals",
+      "label": "Nashville & Regional Pew Rentals",
+      "description": "Wooden church pew rental for weddings with delivery, setup and teardown, extending to Nashville TN and the rest of the 120-mile service radius from Owensboro KY. Max 14 pews per booking. No prices in titles or briefs.",
+      "service_url": "https://www.howardweddingrentals.com/services",
+      "price_anchor": null,
+      "seed_terms": [
+        "church pew rental nashville",
+        "wedding pew rental nashville",
+        "pew rental near me",
+        "rent church pews near me",
+        "church pew rental near me",
+        "rent pews for outdoor wedding"
+      ],
+      "alignment_score": 3,
+      "articles_published": 0,
+      "articles_queued": 0,
+      "status": "active",
+      "created_at": "2026-10-24"
     }
   ]
 }

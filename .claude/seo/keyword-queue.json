@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-26",
   "queue": [
     {
       "id": "kw-008",
@@ -188,6 +188,103 @@
       "published_date": "2026-09-25"
     },
     {
+      "id": "kw-017",
+      "keyword": "wedding ceremony seating",
+      "pillar_id": "ceremony-planning",
+      "volume": 150,
+      "traffic_potential": 6400,
+      "kd": 4,
+      "parent_topic": "seating chart template",
+      "search_intent": "informational/commercial: couple deciding how to arrange ceremony seating",
+      "serp_features": [],
+      "priority_score": 66.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding ceremony seating layout",
+        "wedding ceremony layout",
+        "ceremony seating chart"
+      ],
+      "suggested_slug": "wedding-ceremony-seating-guide",
+      "suggested_angle": "Anchor ceremony-seating guide: aisle, rows, family sections, seats per row; pews as one option; links to (does not repeat) reception seating posts. No prices; 14-pew max only as a call prompt.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-basics"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Cluster anchor, write first (11/6). Ceremony seating is a distinct intent from reception seating charts; cross-link, do not cannibalize. Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
+    },
+    {
+      "id": "kw-018",
+      "keyword": "wedding aisle ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": 150,
+      "traffic_potential": 500,
+      "kd": 0,
+      "parent_topic": "wedding aisle decor",
+      "search_intent": "informational: ideas for decorating and shaping the ceremony aisle",
+      "serp_features": [],
+      "priority_score": 60.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding aisle decor"
+      ],
+      "suggested_slug": "wedding-aisle-ideas",
+      "suggested_angle": "Aisle ideas by style (church-feel, rustic, outdoor) with pews framing the aisle as the structural choice; generic decor, no unverified claims.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
+    },
+    {
+      "id": "kw-019",
+      "keyword": "outdoor wedding ceremony ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": 150,
+      "traffic_potential": 150,
+      "kd": 7,
+      "parent_topic": "outdoor wedding aisle ideas",
+      "search_intent": "informational: planning an outdoor ceremony setup",
+      "serp_features": [],
+      "priority_score": 58.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "outdoor wedding aisle ideas",
+        "outdoor wedding ceremony decor"
+      ],
+      "suggested_slug": "outdoor-wedding-ceremony-ideas",
+      "suggested_angle": "Outdoor ceremony ideas: layout, shade, ground and weather planning, seating that holds up outdoors (hardwood pews). We deliver within about 120 miles of Owensboro incl. Nashville.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
+    },
+    {
       "id": "kw-012",
       "keyword": "template for seating chart",
       "pillar_id": "seating-chart-tool",
@@ -221,6 +318,68 @@
       "status": "published",
       "article_slug": "wedding-seating-chart-template-vs-tool",
       "published_date": "2026-09-29"
+    },
+    {
+      "id": "kw-020",
+      "keyword": "church wedding decor",
+      "pillar_id": "ceremony-planning",
+      "volume": 100,
+      "traffic_potential": 300,
+      "kd": 0,
+      "parent_topic": "church wedding decorations",
+      "search_intent": "informational/commercial: couple wanting a church look",
+      "serp_features": [],
+      "priority_score": 56.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "church wedding decorations"
+      ],
+      "suggested_slug": "church-wedding-decor-ideas",
+      "suggested_angle": "Church-feel ceremony decor for non-church venues, pews as centerpiece. Distinct from the pew-decoration post (bows/flowers); link between them.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Persona church-feel. Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
+    },
+    {
+      "id": "kw-021",
+      "keyword": "wedding ceremony checklist",
+      "pillar_id": "ceremony-planning",
+      "volume": 200,
+      "traffic_potential": 350,
+      "kd": 2,
+      "parent_topic": "wedding ceremony checklist",
+      "search_intent": "informational: checklist of ceremony logistics",
+      "serp_features": [],
+      "priority_score": 54.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "outdoor wedding checklist"
+      ],
+      "suggested_slug": "wedding-ceremony-checklist",
+      "suggested_angle": "One combined ceremony + outdoor checklist with seating/rental line items and booking timeline; end with get your instant estimate or call.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Folds outdoor wedding checklist (150/KD0) as sibling. Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
       "id": "kw-013",
@@ -260,6 +419,37 @@
       "published_date": "2026-09-29"
     },
     {
+      "id": "kw-022",
+      "keyword": "backyard wedding ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": 2900,
+      "traffic_potential": 250,
+      "kd": 10,
+      "parent_topic": "backyard wedding ideas",
+      "search_intent": "informational: couple planning a backyard wedding",
+      "serp_features": [],
+      "priority_score": 52.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "backyard wedding ceremony ideas"
+      ],
+      "suggested_slug": "backyard-wedding-ceremony-ideas",
+      "suggested_angle": "Backyard ceremony focus (ceremony-ideas variant has TP 1,900): seating, aisle, lawn layout; pews as a delivered, set-up option.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Persona backyard. Primary is the parent term; serve the ceremony-ideas intent (50/KD0, TP 1,900). Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
+    },
+    {
       "id": "kw-002",
       "keyword": "wedding name tags",
       "pillar_id": "place-cards",
@@ -292,6 +482,35 @@
       "status": "published",
       "article_slug": "wedding-name-tags-vs-place-cards",
       "published_date": "2026-07-27"
+    },
+    {
+      "id": "kw-023",
+      "keyword": "wedding ceremony chairs",
+      "pillar_id": "ceremony-planning",
+      "volume": 200,
+      "traffic_potential": 350,
+      "kd": 0,
+      "parent_topic": "white padded chairs",
+      "search_intent": "commercial: comparing ceremony seating types",
+      "serp_features": [],
+      "priority_score": 48.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-ceremony-chairs-vs-pews",
+      "suggested_angle": "Chairs vs pews for a ceremony on look, comfort and logistics. No price-comparison language; send to instant estimate.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Doubles as the pews-vs-chairs comparison page (plan option 7). Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
       "id": "kw-003",
@@ -355,6 +574,35 @@
       "status": "published",
       "article_slug": "free-wedding-seating-chart-maker",
       "published_date": "2026-07-27"
+    },
+    {
+      "id": "kw-024",
+      "keyword": "small wedding ceremony ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": 100,
+      "traffic_potential": 900,
+      "kd": 1,
+      "parent_topic": "small intimate wedding",
+      "search_intent": "informational: small or intimate ceremony planning",
+      "serp_features": [],
+      "priority_score": 46.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "small-wedding-ceremony-ideas",
+      "suggested_angle": "Small ceremony ideas: seating for a smaller guest list, layout, aisle; a few pews instead of rows of chairs.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
       "id": "kw-014",
@@ -535,6 +783,114 @@
       "status": "published",
       "article_slug": "wedding-place-card-template-guide",
       "published_date": "2026-10-09"
+    },
+    {
+      "id": "kw-025",
+      "keyword": "church pew wedding decor",
+      "pillar_id": "church-pew-rentals",
+      "volume": 50,
+      "traffic_potential": 60,
+      "kd": 0,
+      "parent_topic": "pew decorations for wedding",
+      "search_intent": "commercial/informational: decorating rented pews",
+      "serp_features": [],
+      "priority_score": 19.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding pew bows",
+        "pew decorations wedding",
+        "pew flowers wedding",
+        "diy wedding pew decorations"
+      ],
+      "suggested_slug": "wedding-pew-decorations",
+      "suggested_angle": "Supporting post 1 of 3. Pew decoration guide: bows, flowers, ribbon, DIY, folding 5 terms into one post. Check overlap with the pew-end decoration section of church-pew-rental-for-wedding and link to it. Any rule about what is safe on rented pews needs a [CONFIRM] with the owner.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "floor_override supporting post. Folded: wedding pew bows 30, pew decorations wedding 10, pew flowers wedding 20, diy wedding pew decorations 10.",
+      "queue_label": "supporting",
+      "floor_override_applied": true
+    },
+    {
+      "id": "kw-026",
+      "keyword": "wedding ceremony benches",
+      "pillar_id": "church-pew-rentals",
+      "volume": 10,
+      "traffic_potential": 40,
+      "kd": 0,
+      "parent_topic": "wedding bench",
+      "search_intent": "commercial: looking for bench-style ceremony seating",
+      "serp_features": [],
+      "priority_score": 19.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "church bench rental",
+        "antique pew rental",
+        "vintage pew rentals",
+        "wooden pew rental"
+      ],
+      "suggested_slug": "wooden-bench-and-pew-rental-for-wedding",
+      "suggested_angle": "Supporting post 2 of 3. Wooden pews vs benches for a ceremony; what antique/vintage/wooden pew rental means in practice; what to ask a rental company. Captures GSC head variants (antique 27, vintage 18, wooden 22, church bench 14 impressions). Do not duplicate what-is-a-church-pew; link to it.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "floor_override supporting post. Ahrefs vol for antique/vintage/wooden/church bench is 0; GSC impressions are the real demand.",
+      "queue_label": "supporting",
+      "floor_override_applied": true
+    },
+    {
+      "id": "kw-027",
+      "keyword": "rent pews for outdoor wedding",
+      "pillar_id": "nashville-pew-rentals",
+      "volume": 10,
+      "traffic_potential": 10,
+      "kd": 0,
+      "parent_topic": "rent pews for outdoor wedding",
+      "search_intent": "commercial/local: renting pews for an outdoor ceremony, delivered across the region",
+      "serp_features": [],
+      "priority_score": 19.9,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "pew rental",
+        "pews for rent",
+        "church pew rental near me",
+        "rent church pews near me"
+      ],
+      "suggested_slug": "rent-pews-for-an-outdoor-wedding",
+      "suggested_angle": "Supporting post 3 of 3. How renting pews for an outdoor ceremony works: delivery within about 120 miles of Owensboro incl. Nashville, ground and weather, setup and teardown, 14-pew max, instant estimate (estimate only, travel confirmed on a call). Near-me and Nashville terms go to city landing pages.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-10-26",
+      "source_run": "research-run-007",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "notes": "floor_override supporting post. Local/near-me terms (vol 10 each) are siblings; city pages are web-dev scope.",
+      "queue_label": "supporting",
+      "floor_override_applied": true
     },
     {
       "id": "kw-007",

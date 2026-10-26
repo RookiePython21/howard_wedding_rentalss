@@ -120,7 +120,7 @@ Not at all. Solid hardwood pews are actually a better outdoor choice than lightw
 That depends on your guest count and how many you seat per row — most standard pews comfortably seat around nine adults. If you're still mapping out your layout, our [free seating chart tool](https://www.howardweddingrentals.com/seating-chart-tool) makes it easy to plan the whole room, ceremony seating included.
 
 **Is it cheaper to buy pews than rent them?**
-On paper, sometimes. Once you account for transport, extra hands to move them, and storage for something you'll use once, renting usually comes out ahead — especially when delivery and teardown are already part of the price.
+On paper, sometimes. Once you account for transport, extra hands to move them, and storage for something you'll use once, renting usually comes out ahead — especially when delivery, setup, and teardown are handled for you. [Get your instant estimate](https://www.howardweddingrentals.com/services) or call (270) 903-5890 to compare.
 
 ---
 

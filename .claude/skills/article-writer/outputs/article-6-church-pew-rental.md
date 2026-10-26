@@ -18,7 +18,7 @@ Church pew rentals are not the most talked-about wedding detail. But couples who
 
 ## What Does a Church Pew Rental Include?
 
-When you rent church pews from Howard Wedding Rentals, here is what is included — no add-ons, no surprises:
+When you rent church pews from Howard Wedding Rentals, here is what the service covers:
 
 **Solid hardwood church pews.** These are real, substantial wooden pews — not folding benches or laminate. They are the kind of pew you would find in an actual church, with the weight and warmth that comes with solid hardwood construction.
 
@@ -63,8 +63,10 @@ Here is the quick calculation:
 Then add 10–15% as a buffer. Late arrivals like to slip into end spots. Guests spread out when a row is not full. The extra pew or two prevents the packed-in feeling that makes ceremony seating uncomfortable.
 
 **A practical example:**
-120 guests ÷ 6 = 20 pews as a baseline.
-With a 15% buffer: 23 pews.
+72 guests ÷ 6 = 12 pews as a baseline.
+With a buffer: 13 or 14 pews.
+
+We rent up to 14 pews per booking, which seats about 84 to 98 guests. Planning a bigger ceremony? Call (270) 903-5890 and we will talk it through.
 
 If you are planning specific rows for immediate family — a reserved section up front — factor that in separately and add those rows to your total.
 

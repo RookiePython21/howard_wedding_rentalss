@@ -22,7 +22,7 @@ Church pew rentals are not the most talked-about wedding detail. But couples who
 
 ![Close-up of a solid hardwood church pew end decorated with white florals and satin ribbon for a wedding ceremony](/images/blog/church-pew-rental-for-wedding-body.png)
 
-When you rent church pews from Howard Wedding Rentals, here is what is included — no add-ons, no surprises:
+When you rent church pews from Howard Wedding Rentals, here is what the service covers:
 
 **Solid hardwood church pews.** These are real, substantial wooden pews — not folding benches or laminate. They are the kind of pew you would find in an actual church, with the weight and warmth that comes with solid hardwood construction.
 
@@ -32,7 +32,7 @@ When you rent church pews from Howard Wedding Rentals, here is what is included 
 
 **Teardown and retrieval.** After your ceremony — or after your full event, depending on the timeline — we return, break everything down, and take it away. You do not lift anything, store anything, or coordinate a return.
 
-The total service area is Owensboro, KY and roughly a 30-mile radius throughout Western Kentucky. To confirm that we serve your venue location and to check availability for your date, [contact us here](https://www.howardweddingrentals.com/contact).
+We deliver within about 120 miles of Owensboro, KY, including Nashville, TN. To confirm that we serve your venue location and to check availability for your date, [contact us here](https://www.howardweddingrentals.com/contact).
 
 ---
 
@@ -65,8 +65,10 @@ Here is the quick calculation:
 Then add 10–15% as a buffer. Late arrivals like to slip into end spots. Guests spread out when a row is not full. The extra pew or two prevents the packed-in feeling that makes ceremony seating uncomfortable.
 
 **A practical example:**
-120 guests ÷ 6 = 20 pews as a baseline.
-With a 15% buffer: 23 pews.
+72 guests ÷ 6 = 12 pews as a baseline.
+With a buffer: 13 or 14 pews.
+
+We rent up to 14 pews per booking, which seats about 84 to 98 guests. Planning a bigger ceremony? Call (270) 903-5890 and we will talk it through.
 
 If you are planning specific rows for immediate family — a reserved section up front — factor that in separately and add those rows to your total.
 
@@ -133,7 +135,7 @@ As soon as your venue and date are confirmed. Spring and fall wedding seasons bo
 For outdoor ceremonies, a rain plan is important regardless of seating. Most outdoor venues have a backup indoor option or a tent contingency. Solid hardwood pews can be moved to a covered location — that is part of the delivery and setup conversation. Confirm your rain plan with your venue coordinator first, then share it with us so we can plan accordingly.
 
 **Do you deliver outside of Owensboro, KY?**
-We serve Owensboro and approximately a 30-mile radius throughout Western Kentucky. If you are unsure whether your venue falls within our delivery area, [reach out with your location](https://www.howardweddingrentals.com/contact) and we will confirm.
+We deliver within about 120 miles of Owensboro, KY, including Nashville, TN. If you are unsure whether your venue falls within our delivery area, [reach out with your location](https://www.howardweddingrentals.com/contact) and we will confirm.
 
 **Are the pews available in different sizes?**
 No. All pews are 9ft long, 18in in depth, and 34in tall. Each pew seats approximately 6–7 people.

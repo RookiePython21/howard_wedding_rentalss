@@ -133,6 +133,27 @@
       "notification_sent": false,
       "pushed_to_main": true,
       "notes": "Owner-approved 5th pillar (nashville-pew-rentals). Phase-1 thresholds kept (kd<=25, vol>=100). Ahrefs US: every pew-rental keyword is below the volume floor: pew rental 10, church pew rental 20, rent church pews 20, church pew rental near me 10, rent church pews near me 10, church pews for rent near me 10, pews for rent 10, rent pews for outdoor wedding 10, wedding pews for rent 0, church pew rental nashville / wedding pew rental nashville / pew rental near me / church pew rental cost 0 or no data. Nothing queued. Non-rental terms that pass mechanically were rejected: church pews (vol2000 kd1) is a parent_topic dupe of published kw-001 'church pew' and is shopping/buy intent; wedding venues nashville (600, kd1) is a venue-directory SERP we cannot win. Near misses: outdoor wedding venues nashville (80, kd2); wedding rentals nashville (100, kd40, fails KD). Pillar registered so the bi-weekly run seeds it; likely needs a per-pillar volume floor override or local-landing-page (non-blog) treatment to ever queue."
+    },
+    {
+      "run_id": "research-run-007",
+      "started_at": "2026-10-26T12:00:00Z",
+      "completed_at": "2026-10-26T12:30:00Z",
+      "trigger": "new_pillar_seed+floor_override",
+      "phase_at_time": 1,
+      "pillars_researched": [
+        "ceremony-planning",
+        "church-pew-rentals",
+        "nashville-pew-rentals"
+      ],
+      "raw_keywords_found": 24,
+      "keywords_after_guardrail": 24,
+      "keywords_after_dedup": 11,
+      "keywords_added_to_queue": 11,
+      "cluster_siblings_updated": 0,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": false,
+      "notes": "Owner-approved 2026-10-25 (#32 items 1 and 3b). Data from the 10/25 plan plus one keywords-explorer-overview call for 24 terms (1,008 Ahrefs units) for KD/TP/parent_topic; no discovery calls, no SERP sampling. ceremony-planning: normal floor (vol>=100, KD<=25), 8 entries; backyard wedding ideas (2900) is the parent of the sub-100 backyard ceremony ideas term. Pew floor_override (vol>=10, commercial intent): 3 supporting posts folding 14 terms. Supporting scores capped at 19.9 so they never outrank the planning cluster. Dropped: church pew rentals (20, KD28 > ceiling); zero-volume antique/vintage/wooden pew rental, church bench rental and church pews for rent used as siblings only; 0-volume Nashville terms go to landing pages."
     }
   ]
 }

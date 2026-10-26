@@ -46,7 +46,7 @@ Goal: collect 40–60 raw candidates before filtering.
 
 ## Step 3 — Relaxed guardrail filter
 
-Apply the standard guardrail checks from keyword-research.md Steps 3A–3F, BUT use a
+Apply the standard guardrail checks from keyword-research.md Steps 3A–3F (including the per-pillar `floor_override` rule in Checks C/D and Step 4 when the pillar defines one), BUT use a
 relaxed KD ceiling: `phase kd_ceiling + 10`. This gives the new pillar more runway
 to build its initial cluster.
 

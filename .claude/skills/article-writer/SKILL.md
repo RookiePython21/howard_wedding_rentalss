@@ -21,7 +21,8 @@ This skill runs **end to end**: from a keyword in the queue to a deployed page o
 Stages 3 through 7 are mechanical and run without prompting.
 
 ## Who this is for and what it's about
-- **Brand:** Howard Wedding Rentals — solid hardwood church pew rentals (delivery, setup, teardown included), plus printed place cards, seating chart foam boards, and a free seating chart tool. Serves Owensboro, KY + ~30 miles.
+- **Brand:** Howard Wedding Rentals — solid hardwood church pew rentals (delivery, setup, teardown), plus printed place cards, seating chart foam boards, and a free seating chart tool. Delivers within about 120 miles of Owensboro, KY, including Nashville, TN.
+- **CLAIMS RULES (owner, 2026-10-16; source of truth is `business-profile.md` in the business root, NOT `pillars.json`):** no prices anywhere in a post: no per-pew price, no minimum, no "starting at", no "cheap/affordable/free delivery", no dollar figure of any kind. `price_anchor` in pillars.json is deprecated and must be ignored even if a value reappears. Send cost questions to "get your instant estimate" ([/services](https://www.howardweddingrentals.com/services)) or call (270) 903-5890; the estimate is an estimate only and excludes travel. Never quote above the 14-pew maximum (about 84-98 guests); larger lists go to a call. Never write "part of the price" or "no surprises". Before publishing, grep the draft for `$`, "per pew", "minimum", "starting at".
 - **Audience:** Brides-to-be, often overwhelmed and time-poor.
 - **Core topics:** weddings, wedding planning, wedding seating, wedding guest experience.
 

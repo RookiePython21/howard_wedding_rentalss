@@ -1,12 +1,12 @@
 {
-  "_comment": "One entry per business service/product. Add new entries here when a service launches, then run .claude/routines/new-pillar.md to seed its keyword queue.",
+  "_comment": "One entry per business service/product. Add new entries here when a service launches, then run .claude/routines/new-pillar.md to seed its keyword queue. price_anchor must stay null: owner rule 2026-10-16, no prices anywhere outside the quote tool (business-profile.md claims rules). Article-writer ignores it. floor_override (optional per pillar): {min_volume, min_score_threshold, commercial_intent_only, label, max_posts, fold_into_posts} replaces the global phase floor for that pillar only.",
   "pillars": [
     {
       "id": "church-pew-rentals",
       "label": "Church Pew Rentals",
       "description": "Solid hardwood church pew rental with delivery, placement/setup, and teardown \u2014 Owensboro KY and ~30-mile radius",
       "service_url": "https://www.howardweddingrentals.com/services",
-      "price_anchor": "$50/pew, delivery included",
+      "price_anchor": null,
       "seed_terms": [
         "church pew rental",
         "pew rental wedding",
@@ -18,9 +18,18 @@
       ],
       "alignment_score": 3,
       "articles_published": 3,
-      "articles_queued": 0,
+      "articles_queued": 2,
       "status": "active",
-      "created_at": "2026-06-08"
+      "created_at": "2026-06-08",
+      "floor_override": {
+        "min_volume": 10,
+        "min_score_threshold": 0,
+        "kd_ceiling": 25,
+        "commercial_intent_only": true,
+        "queue_label": "supporting",
+        "fold_into_posts": "2-3 supporting posts total across both pillars; one post per topic cluster, never one post per term",
+        "approved": "owner 2026-10-25 (3b)"
+      }
     },
     {
       "id": "place-cards",
@@ -101,9 +110,39 @@
       ],
       "alignment_score": 3,
       "articles_published": 0,
-      "articles_queued": 0,
+      "articles_queued": 1,
       "status": "active",
-      "created_at": "2026-10-24"
+      "created_at": "2026-10-24",
+      "floor_override": {
+        "min_volume": 10,
+        "min_score_threshold": 0,
+        "kd_ceiling": 25,
+        "commercial_intent_only": true,
+        "queue_label": "supporting",
+        "fold_into_posts": "2-3 supporting posts total across both pillars; one post per topic cluster, never one post per term",
+        "approved": "owner 2026-10-25 (3b)"
+      }
+    },
+    {
+      "id": "ceremony-planning",
+      "label": "Wedding Ceremony Planning",
+      "description": "Ceremony seating, layout, aisle, outdoor/backyard/church-feel ceremony ideas and checklists. Planning-stage audience that feeds reach and internal links to pew rental (/services) and the instant estimate. No prices, no 'starting at'; max 14 pews per booking.",
+      "service_url": "https://www.howardweddingrentals.com/services",
+      "price_anchor": null,
+      "seed_terms": [
+        "wedding ceremony seating",
+        "wedding ceremony layout",
+        "wedding aisle ideas",
+        "outdoor wedding ceremony ideas",
+        "church wedding decor",
+        "backyard wedding ceremony ideas",
+        "wedding ceremony checklist"
+      ],
+      "alignment_score": 3,
+      "articles_published": 0,
+      "articles_queued": 8,
+      "status": "active",
+      "created_at": "2026-10-26"
     }
   ]
 }

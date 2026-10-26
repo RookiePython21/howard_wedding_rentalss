@@ -7,10 +7,10 @@ link *which* page.
 ---
 
 ## Business facts (keep these accurate in every post)
-- **What they do:** Family-owned rental of solid hardwood church pews for weddings. Delivery, placement/setup, and teardown/retrieval are **included**.
+- **What they do:** Family-owned rental of solid hardwood church pews for weddings. Delivery, placement/setup, and teardown/retrieval are part of the service. **No prices, minimums or "starting at" in any post** (owner rule 2026-10-16); the estimate tool is the only place numbers appear, it is an estimate only, and it excludes travel. Max 14 pews per booking.
 - **Also sells:** Custom printed name place cards; personalized seating chart foam boards (the "Shop").
 - **Free tool:** A drag-and-drop seating chart tool to design the reception layout, assign guests, and export a floor plan.
-- **Service area:** Owensboro, KY and roughly a 30-mile radius (Western Kentucky).
+- **Service area:** about a 120-mile radius from Owensboro, KY, including Nashville, TN (business-profile.md).
 - **Contact:** (270) 903-5890 · contact@howardweddingrentals.com
 - **Domain:** howardweddingrentals.com
 

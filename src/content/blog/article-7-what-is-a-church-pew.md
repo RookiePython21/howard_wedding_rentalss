@@ -74,7 +74,7 @@ Howard's solid hardwood pews seat 6–7 adults each. That's more than a standard
 
 **Quick calculation:** Take your ceremony guest count. Divide by 6. That's your starting pew number. Then add two or three extra for the family rows up front, where you'll want a little more breathing room.
 
-Example: 100 guests ÷ 6 = 17 pews. Add 3 for front family rows. You're looking at roughly 20 pews total.
+Example: 72 guests ÷ 6 = 12 pews. Add one or two for front family rows and you're at 13 or 14. We rent up to 14 pews per booking, so larger guest lists are a conversation. Call us.
 
 Your action: pull up your current RSVP count and run that math right now. It takes thirty seconds and answers a question you'd otherwise spend a week second-guessing.
 
@@ -98,7 +98,7 @@ If you want a deeper look at how the process works — what to expect from deliv
 
 A few things worth confirming before you commit to any pew rental:
 
-**What's the service area?** Pews aren't small. Delivery radius matters. If you're in Owensboro, KY or within roughly 30 miles, you're in range. If you're further out, confirm this early — don't save it for the week before.
+**What's the service area?** Pews aren't small. Delivery radius matters. We deliver within about 120 miles of Owensboro, KY, including Nashville, TN. If you're further out, confirm this early — don't save it for the week before.
 
 **What's included in the rental?** Delivery, setup, and teardown should all be part of the package. If they're not — or if there's a separate labor charge — factor that into your comparison.
 

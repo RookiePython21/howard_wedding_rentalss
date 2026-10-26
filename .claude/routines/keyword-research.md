@@ -72,10 +72,10 @@ The keyword must contain at least one term from `guardrails.inclusion_required_a
 The keyword must NOT contain any term from `guardrails.exclusion_any`.
 
 **Check C — Volume floor**
-`volume` must be ≥ `min_volume` from the current phase config.
+`volume` must be ≥ `min_volume` from the current phase config, UNLESS the keyword's pillar has a `floor_override` in pillars.json. Then use `floor_override.min_volume` for that pillar only, and require commercial intent (Ahrefs `intents.commercial` or `transactional` true) when `commercial_intent_only` is true.
 
 **Check D — KD ceiling**
-`kd` must be ≤ `kd_ceiling` from the current phase config.
+`kd` must be ≤ `kd_ceiling` from the current phase config (or `floor_override.kd_ceiling` for an overridden pillar).
 
 **Check E — Dedup check**
 The keyword string (lowercase, trimmed) must NOT exist in the dedup set from Step 0.
@@ -102,7 +102,9 @@ pillar_align   = pillar.alignment_score / 3
 score = (volume_norm * 0.30 + tp_norm * 0.25 + kd_inv * 0.25 + pillar_align * 0.20) * 100
 ```
 
-Round to one decimal. Discard any keyword with score < 20.
+Round to one decimal. Discard any keyword with score < 20, UNLESS its pillar has `floor_override`: then use `floor_override.min_score_threshold` (0) instead, and cap the score at 19.9 so override ("supporting") terms never outrank the normal-floor cluster.
+
+**floor_override terms are folded, not one post each.** Group override terms by parent_topic/topic into at most `floor_override.fold_into_posts` supporting posts: one queue entry per cluster, other terms in `cluster_siblings`, entry gets `queue_label: "supporting"` and `floor_override_applied: true`. Do not create a new supporting entry if 3 supporting entries are already queued or in progress.
 
 Determine `phase_eligible`:
 - 1 if kd <= 25

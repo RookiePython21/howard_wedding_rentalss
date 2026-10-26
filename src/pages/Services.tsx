@@ -3,6 +3,8 @@ import { CheckCircle, ArrowRight } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { SEO } from '../components/SEO'
+import ServiceFAQ from '../components/sections/ServiceFAQ'
+import { graph, localBusinessSchema, pewServiceSchema, faqPageSchema } from '../content/seoSchema'
 
 const pewIncludes = [
   'White-glove delivery to your venue',
@@ -13,12 +15,50 @@ const pewIncludes = [
   'Clean, polished pews ready for photos',
 ]
 
+const pewFaqs = [
+  {
+    id: 'cost',
+    question: 'How much does it cost to rent church pews?',
+    text: 'It depends on your guest count and where your venue is, so the easiest way is to get your instant estimate with our quote calculator. It is an estimate and does not include travel, so call us at (270) 903-5890 and we will confirm it for your date.',
+  },
+  {
+    id: 'wedding',
+    question: 'Can I rent church pews for a wedding ceremony?',
+    text: 'Yes. Pew rental for weddings is what we do. We deliver the pews to your venue, set them up in your ceremony layout, and pick them up afterward.',
+  },
+  {
+    id: 'wooden',
+    question: 'Are your pews wooden, antique or vintage?',
+    text: 'They are solid hardwood church pews in a classic Golden Oak finish, with the warm, timeless look people picture when they search for antique or vintage wooden pews. They take ribbons, sashes and florals beautifully.',
+  },
+  {
+    id: 'count',
+    question: 'How many pews do I need for my guests?',
+    text: 'Each pew seats 6-7 adults, and we can place up to 14 pews, which is about 84-98 guests. For a larger guest list, give us a call and we will talk it through with you.',
+  },
+  {
+    id: 'area',
+    question: 'Where do you deliver church pews?',
+    text: 'We are based in Owensboro, KY and deliver within about 120 miles, including Nashville, TN. Enter your venue in the quote calculator or call us and we will confirm delivery to your venue.',
+  },
+  {
+    id: 'advance',
+    question: 'How far in advance should I book church pews?',
+    text: 'We recommend booking 3-6 months out, especially for peak wedding season (May-October). Shorter timelines are often still possible, so call and we will check your date.',
+  },
+]
+
 export default function Services() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Our Services"
-        description="Explore church pew rentals, printed place cards, seating chart foam boards, and free planning tools from Howard Wedding Rentals in Western Kentucky."
+        title="Church Pews for Rent: Wedding Pew Rental"
+        description="Wooden church pew rentals for weddings, delivered, set up and picked up, plus chair and table rentals. Howard Wedding Rentals, Owensboro, KY. Get your instant estimate or call."
+        schema={graph(
+          localBusinessSchema,
+          pewServiceSchema,
+          faqPageSchema(pewFaqs.map((f) => ({ question: f.question, text: f.text })))
+        )}
       />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
@@ -32,15 +72,16 @@ export default function Services() {
           <div className="absolute inset-0 bg-[#2c1f0e]/80" />
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <p className="font-raleway text-xs tracking-widest uppercase text-[#c9a96e] mb-4">
-              What We Offer
+              Church Pews for Rent
             </p>
             <h1 className="font-playfair text-4xl sm:text-5xl text-white leading-tight mb-4">
-              Our Services
+              Church Pew Rentals for Your Wedding
             </h1>
             <div className="w-12 h-0.5 bg-[#c9a96e] mx-auto mb-6" />
             <p className="font-raleway text-white/70 text-base max-w-xl mx-auto">
-              Everything you need for a beautiful, stress-free wedding day — from elegant pew rentals
-              to custom stationery and free planning tools.
+              Looking for church pews to rent for your wedding? We bring classic wooden pews to your
+              ceremony, set them up, and pick them up after. We also offer chair and table rentals,
+              printed stationery and planning tools.
             </p>
           </div>
         </div>
@@ -308,6 +349,13 @@ export default function Services() {
                 Open the Tool <ArrowRight size={15} />
               </Link>
             </div>
+          </div>
+
+          <div className="w-full h-px bg-cream-200" />
+
+          {/* ── FAQ ── */}
+          <div className="-mx-4 sm:-mx-6">
+            <ServiceFAQ faqs={pewFaqs.map((f) => ({ id: f.id, question: f.question, answer: f.text }))} />
           </div>
 
         </div>

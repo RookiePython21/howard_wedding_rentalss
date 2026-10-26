@@ -8,7 +8,7 @@ import Testimonials from './components/sections/Testimonials'
 import MoreBenefits from './components/sections/MoreBenefits'
 import Pricing from './components/sections/Pricing'
 import ProductDetails from './components/sections/ProductDetails'
-import FAQ from './components/sections/FAQ'
+import FAQ, { faqs as homeFaqs } from './components/sections/FAQ'
 import CTA from './components/sections/CTA'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
@@ -25,13 +25,19 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import PersonaLander from './pages/PersonaLander'
 import { personas } from './content/personas'
+import { graph, localBusinessSchema, pewServiceSchema, faqPageSchema } from './content/seoSchema'
 
 function Home() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Wedding Church Pew Rentals"
-        description="Elegant wooden church pew rentals for your perfect wedding day. Delivery, setup, and teardown included."
+        title="Church Pew Rentals for Weddings"
+        description="Wooden church pews for rent for your wedding, indoors or outdoors. We deliver, set up and pick up. Get your instant estimate or call Howard Wedding Rentals in Owensboro, KY."
+        schema={graph(
+          localBusinessSchema,
+          pewServiceSchema,
+          faqPageSchema(homeFaqs.map((f) => ({ question: f.question, text: f.answer })))
+        )}
       />
       <Navbar />
       <main>

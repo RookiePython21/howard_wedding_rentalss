@@ -1,7 +1,19 @@
 import * as Accordion from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
 
-const faqs = [
+export const faqs = [
+  {
+    id: 'cost',
+    question: 'How much does it cost to rent church pews?',
+    answer:
+      'It depends on your guest count and where your venue is, so the easiest way is to get your instant estimate with our quote calculator. It is an estimate and does not include travel, so call us at (270) 903-5890 and we will confirm it for your date.',
+  },
+  {
+    id: 'wooden',
+    question: 'What kind of church pews do you rent?',
+    answer:
+      'Solid hardwood church pews in a classic Golden Oak finish, with the warm, timeless look of a wooden church pew. They take ribbons, sashes and florals beautifully.',
+  },
   {
     id: 'booking',
     question: 'How far in advance should I book?',

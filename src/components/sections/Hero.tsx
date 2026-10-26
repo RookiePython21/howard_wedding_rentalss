@@ -26,12 +26,12 @@ export default function Hero() {
         </div>
 
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
-          Timeless Pews for Your{' '}
-          <span className="italic text-[#c9a96e]">Perfect Day</span>
+          Church Pew Rentals for Your{' '}
+          <span className="italic text-[#c9a96e]">Perfect Wedding Day</span>
         </h1>
 
         <p className="font-raleway text-white/80 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-          Authentic wooden church pews that bring classic elegance to any venue — indoors or outdoors. Delivery, setup, and teardown included.
+          Wooden church pews for rent, for weddings indoors or outdoors. We deliver, set them up, and pick them up, so you can simply enjoy the day.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

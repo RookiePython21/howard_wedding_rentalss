@@ -47,4 +47,4 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-Sitemap: https://howardweddingrentals.com/sitemap.xml
+Sitemap: https://www.howardweddingrentals.com/sitemap.xml

@@ -11,6 +11,14 @@ import {
   computeQuote,
 } from '../../config/pricing'
 import { trackQuoteEstimate } from '../../services/analytics'
+import { recordQuote, type QuoteSnapshot } from '../../services/quoteCapture'
+import QuoteContactForm from './QuoteContactForm'
+
+type ResolvedPlace = { name: string; city: string; state: string; postcode: string; lat: number; lng: number }
+
+// Seconds of no changes before a quote is saved, so clicking the pew count up from 6 to 14
+// saves one quote, not eight.
+const QUOTE_SETTLE_MS = 2500
 
 // Single fixed departure point: 9643 KY-2157, Whitesville, KY 42378 (KY-2157 / McCamish Rd).
 const ORIGIN_LAT = 37.734848
@@ -28,6 +36,12 @@ function localToday(): string {
   return `${d.getFullYear()}-${m}-${day}`
 }
 
+function daysUntil(isoDate: string): number | null {
+  if (!isoDate) return null
+  const ms = new Date(`${isoDate}T00:00:00`).getTime() - new Date(`${localToday()}T00:00:00`).getTime()
+  return Number.isFinite(ms) ? Math.round(ms / 86_400_000) : null
+}
+
 export default function Pricing() {
   const [pewCount, setPewCount] = useState(6)
   const [weddingDate, setWeddingDate] = useState('')
@@ -42,11 +56,13 @@ export default function Pricing() {
   const [driveHours, setDriveHours] = useState<number | null>(null) // one-way driving time, in hours
   const [estimateFailed, setEstimateFailed] = useState(false)
   const [locationChecking, setLocationChecking] = useState(false)
+  const [place, setPlace] = useState<ResolvedPlace | null>(null)
   const lastGeoCall = useRef<number>(0)
+  const lastSavedQuote = useRef('')
 
   async function computeTravel() {
     const trimmed = location.trim()
-    if (!trimmed) { setDriveHours(null); setEstimateFailed(false); return }
+    if (!trimmed) { setDriveHours(null); setEstimateFailed(false); setPlace(null); return }
 
     const now = Date.now()
     if (now - lastGeoCall.current < 3000) return
@@ -54,11 +70,12 @@ export default function Pricing() {
 
     setLocationChecking(true)
     setEstimateFailed(false)
+    setPlace(null)
 
     try {
       // 1. Geocode the venue (free Nominatim).
       const geoRes = await fetch(
-        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(trimmed)}&format=json&limit=1`,
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(trimmed)}&format=json&limit=1&addressdetails=1`,
         { headers: { 'Accept-Language': 'en' } }
       )
       const geoData = await geoRes.json()
@@ -69,6 +86,15 @@ export default function Pricing() {
       }
       const destLat = parseFloat(geoData[0].lat)
       const destLng = parseFloat(geoData[0].lon)
+      const addr = geoData[0].address ?? {}
+      setPlace({
+        name: String(geoData[0].display_name ?? ''),
+        city: String(addr.city ?? addr.town ?? addr.village ?? addr.hamlet ?? addr.county ?? ''),
+        state: String(addr.state ?? ''),
+        postcode: String(addr.postcode ?? ''),
+        lat: destLat,
+        lng: destLng,
+      })
 
       // 2. Driving time from our origin to the venue (free OSRM public server; lng,lat order).
       const routeRes = await fetch(
@@ -102,6 +128,45 @@ export default function Pricing() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [driveHours])
+
+  function snapshot(): QuoteSnapshot {
+    return {
+      status: driveHours != null ? 'ok' : estimateFailed ? 'failed' : 'no_location',
+      location: location.trim().slice(0, 200),
+      resolved_place: (place?.name ?? '').slice(0, 300),
+      city: place?.city ?? '',
+      state: place?.state ?? '',
+      postcode: place?.postcode ?? '',
+      lat: place?.lat ?? null,
+      lng: place?.lng ?? null,
+      drive_hours_one_way: driveHours != null ? Math.round(driveHours * 100) / 100 : null,
+      billable_hours: billableHours != null ? Math.round(billableHours * 100) / 100 : null,
+      pews: pewCount,
+      pew_total: Math.round(pewTotal),
+      travel_fee: Math.round(travelFee),
+      minimum_adjustment: Math.round(minimumAdjustment),
+      total: Math.round(total),
+      travel_wins: travelWins,
+      is_local: isLocal,
+      placement,
+      wedding_date: weddingDate,
+      days_out: daysUntil(weddingDate),
+    }
+  }
+
+  // Save every quote the visitor settles on (venue resolved, or venue typed but not found).
+  useEffect(() => {
+    if (driveHours == null && !estimateFailed) return
+    const t = window.setTimeout(() => {
+      const q = snapshot()
+      const key = [q.status, q.location, q.pews, q.placement, q.wedding_date, q.total].join('|')
+      if (key === lastSavedQuote.current) return
+      lastSavedQuote.current = key
+      recordQuote(q)
+    }, QUOTE_SETTLE_MS)
+    return () => window.clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [driveHours, estimateFailed, pewCount, placement, weddingDate])
 
   return (
     <section id="pricing" className="py-20 sm:py-28 bg-[#f5edd8]/30">
@@ -323,6 +388,8 @@ export default function Pricing() {
             <p className="text-center font-raleway text-xs text-[#9b836e] mt-4">
               This is an estimate only, not a final price. Travel fees may apply and are confirmed when you call, along with final details and holding your date.
             </p>
+
+            <QuoteContactForm getQuote={snapshot} />
           </div>
         </div>
       </div>

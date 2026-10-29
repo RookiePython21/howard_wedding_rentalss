@@ -7,8 +7,10 @@
 //   VITE_GOOGLE_ADS_CALL_LABEL         conversion label for call clicks
 //   VITE_GOOGLE_ADS_LEAD_LABEL         conversion label for quote estimates (optional)
 //   VITE_META_PIXEL_ID                 Meta pixel id
+// Quote estimates, call taps and quote contact forms are also saved to Firestore (quoteCapture.ts).
 import { logEvent } from 'firebase/analytics'
 import { analyticsReady } from './firebase'
+import { captureAttribution, recordCallClick } from './quoteCapture'
 
 type Params = Record<string, string | number>
 type Gtag = (...args: unknown[]) => void
@@ -59,12 +61,27 @@ function track(name: string, params: Params, adsLabel?: string, metaEvent?: stri
   if (PIXEL_ID && metaEvent) fbq('track', metaEvent, params)
 }
 
+// Custom Meta event (trackCustom) so it never collides with the standard Lead/Contact events
+// the ad sets optimize for.
+function trackCustom(name: string, params: Params, metaEvent: string) {
+  analyticsReady.then((analytics) => {
+    if (analytics) logEvent(analytics, name, params)
+  })
+  if (PIXEL_ID) fbq('trackCustom', metaEvent, params)
+}
+
 export function trackPhoneClick(placement: string, page: string) {
   track('phone_call_click', { placement, page_path: page, phone: '+12709035890' }, ADS_CALL_LABEL, 'Contact')
+  recordCallClick(placement)
 }
 
 export function trackQuoteEstimate(params: { pews: number; total: number; has_location: number }) {
   track('generate_lead', { ...params, lead_type: 'quote_estimate', currency: 'USD', value: params.total }, ADS_LEAD_LABEL, 'Lead')
+}
+
+/** Visitor left name + phone on the quote tool: the first lead we can actually follow up. */
+export function trackQuoteContact(params: { pews: number; total: number }) {
+  trackCustom('quote_contact_submit', { ...params, currency: 'USD', value: params.total }, 'QuoteContactSubmit')
 }
 
 function placementFor(a: HTMLElement): string {
@@ -80,6 +97,7 @@ function placementFor(a: HTMLElement): string {
 export function initAnalytics() {
   if (started || typeof document === 'undefined') return
   started = true
+  captureAttribution()
 
   document.addEventListener('click', (e) => {
     const target = e.target as Element | null

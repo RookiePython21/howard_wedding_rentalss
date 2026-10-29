@@ -1,0 +1,91 @@
+rules_version = '2';
+// Firestore rules for project howardwedding-ca526. Source of truth lives here; deploy with
+//   firebase deploy --only firestore:rules --project howardwedding-ca526
+// The capture collections are create-only from the browser and never readable by it; the owner
+// reads them in the Firebase console (console/IAM access is not subject to these rules).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function str(v, max) { return v is string && v.size() <= max; }
+    function optStr(d, k, max) { return !(k in d) || str(d[k], max); }
+    function flag(v) { return v == 0 || v == 1; }
+
+    // Fields every capture doc carries (quoteCapture.ts base()).
+    function baseOk(d) {
+      return str(d.session_id, 40)
+        && str(d.page_path, 200)
+        && str(d.landing_path, 200)
+        && str(d.referrer, 300)
+        && flag(d.fbclid) && flag(d.gclid)
+        && optStr(d, 'utm_source', 100) && optStr(d, 'utm_medium', 100)
+        && optStr(d, 'utm_campaign', 100) && optStr(d, 'utm_content', 100)
+        && optStr(d, 'utm_term', 100)
+        && d.created_at == request.time;
+    }
+    function baseKeys() {
+      return ['session_id', 'page_path', 'landing_path', 'referrer', 'fbclid', 'gclid',
+              'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'created_at'];
+    }
+    function quoteKeys() {
+      return ['status', 'location', 'resolved_place', 'city', 'state', 'postcode', 'lat', 'lng',
+              'drive_hours_one_way', 'billable_hours', 'pews', 'pew_total', 'travel_fee',
+              'minimum_adjustment', 'total', 'travel_wins', 'is_local', 'placement',
+              'wedding_date', 'days_out'];
+    }
+    function quoteOk(q) {
+      return q.keys().hasOnly(quoteKeys())
+        && q.status in ['ok', 'failed', 'no_location']
+        && str(q.location, 200) && str(q.resolved_place, 300)
+        && str(q.city, 100) && str(q.state, 100) && str(q.postcode, 20)
+        && q.pews is int && q.pews >= 1 && q.pews <= 100
+        && q.total is number && q.total >= 0 && q.total < 100000
+        && q.placement in ['place', 'deliver']
+        && str(q.wedding_date, 10);
+    }
+
+    // Users can only read/write their own chart
+    match /users/{uid}/charts/{chartId} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.guests.size() <= 500;
+    }
+
+    // Seating-chart export email gate (cloudSync.ts saveLead).
+    match /leads/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['email', 'source', 'guestCount', 'tableCount', 'createdAt'])
+        && str(request.resource.data.email, 200)
+        && str(request.resource.data.source, 100)
+        && request.resource.data.createdAt == request.time;
+    }
+
+    // One doc per estimate shown on the quote tool.
+    match /quotes/{id} {
+      allow create: if request.resource.data.keys().hasOnly(baseKeys().concat(quoteKeys()))
+        && baseOk(request.resource.data)
+        && quoteOk(request.resource.data);
+    }
+
+    // One doc per tel: tap, joined to quotes by session_id.
+    match /call_clicks/{id} {
+      allow create: if request.resource.data.keys().hasOnly(baseKeys().concat(['placement', 'last_quote_total']))
+        && baseOk(request.resource.data)
+        && str(request.resource.data.placement, 100);
+    }
+
+    // "Send me this quote" contact form.
+    match /quote_leads/{id} {
+      allow create: if request.resource.data.keys().hasOnly(baseKeys().concat(['name', 'phone', 'email', 'quote']))
+        && baseOk(request.resource.data)
+        && str(request.resource.data.name, 100) && request.resource.data.name.size() > 0
+        && str(request.resource.data.phone, 30) && request.resource.data.phone.size() >= 10
+        && str(request.resource.data.email, 200)
+        && (request.resource.data.quote == null || quoteOk(request.resource.data.quote));
+    }
+
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

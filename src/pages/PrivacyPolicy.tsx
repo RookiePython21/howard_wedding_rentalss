@@ -45,6 +45,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc list-inside space-y-2 ml-2">
                 <li><strong>Contact information</strong> — name, phone number, and email address when you reach out to us directly</li>
                 <li><strong>Event details</strong> — wedding date, venue location, and service preferences you share with us</li>
+                <li><strong>Quote details</strong> — when you use our online quote tool, we save the estimate you see (pew count, wedding date, the venue or address you enter, and the quoted price) along with the page and ad that brought you to our site, so we can follow up on your quote and improve our pricing</li>
                 <li><strong>Usage data</strong> — basic analytics such as pages visited, browser type, and referring URL, collected automatically</li>
               </ul>
               <p className="mt-3">

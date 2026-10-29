@@ -20,9 +20,23 @@ function formatUSD(n: number): string {
   return `$${Math.round(n).toLocaleString()}`
 }
 
+// Today's date as YYYY-MM-DD in the visitor's LOCAL time zone (not UTC).
+function localToday(): string {
+  const d = new Date()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${d.getFullYear()}-${m}-${day}`
+}
+
 export default function Pricing() {
   const [pewCount, setPewCount] = useState(6)
-  const [weddingDate, setWeddingDate] = useState('2026-09-01')
+  const [weddingDate, setWeddingDate] = useState('')
+  const [minDate, setMinDate] = useState('') // set on the client so prerendered HTML never bakes in a build-time date
+  useEffect(() => {
+    const today = localToday()
+    setMinDate(today)
+    setWeddingDate((cur) => (cur && cur >= today ? cur : today))
+  }, [])
   const [location, setLocation] = useState('')
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
   const [driveHours, setDriveHours] = useState<number | null>(null) // one-way driving time, in hours
@@ -158,8 +172,12 @@ export default function Pricing() {
               <input
                 type="date"
                 value={weddingDate}
-                min="2026-09-01"
-                onChange={(e) => setWeddingDate(e.target.value)}
+                min={minDate || undefined}
+                onChange={(e) => {
+                  const v = e.target.value
+                  const today = localToday()
+                  setWeddingDate(v && v < today ? today : v)
+                }}
                 className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
               />
             </div>

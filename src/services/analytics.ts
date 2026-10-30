@@ -61,13 +61,28 @@ function track(name: string, params: Params, adsLabel?: string, metaEvent?: stri
   if (PIXEL_ID && metaEvent) fbq('track', metaEvent, params)
 }
 
-// Custom Meta event (trackCustom) so it never collides with the standard Lead/Contact events
-// the ad sets optimize for.
-function trackCustom(name: string, params: Params, metaEvent: string) {
+// Custom Meta event (trackCustom), so Ads Manager never reports it as a standard Lead/Contact.
+// Ad sets optimize for QuoteEstimate and are judged on Contact + QuoteContactSubmit, via custom
+// conversions on the pixel.
+function trackCustom(name: string, params: Params, metaEvent: string, adsLabel?: string) {
   analyticsReady.then((analytics) => {
     if (analytics) logEvent(analytics, name, params)
+    if (ADS_ID && adsLabel) gtag()?.('event', 'conversion', { send_to: `${ADS_ID}/${adsLabel}` })
   })
   if (PIXEL_ID) fbq('trackCustom', metaEvent, params)
+}
+
+const ESTIMATE_SENT_KEY = 'hwr_quote_estimate_sent'
+
+// True the first time it is called in a browser session.
+function firstInSession(key: string): boolean {
+  try {
+    if (window.sessionStorage.getItem(key)) return false
+    window.sessionStorage.setItem(key, '1')
+  } catch {
+    /* storage blocked: count it */
+  }
+  return true
 }
 
 export function trackPhoneClick(placement: string, page: string) {
@@ -75,8 +90,11 @@ export function trackPhoneClick(placement: string, page: string) {
   recordCallClick(placement)
 }
 
+/** A venue resolved and the quote tool showed a travel estimate. Once per session: the ads optimize
+ *  on this, so it counts visitors who got a quote, not every venue they tried. Not a lead. */
 export function trackQuoteEstimate(params: { pews: number; total: number; has_location: number }) {
-  track('generate_lead', { ...params, lead_type: 'quote_estimate', currency: 'USD', value: params.total }, ADS_LEAD_LABEL, 'Lead')
+  if (!firstInSession(ESTIMATE_SENT_KEY)) return
+  trackCustom('generate_lead', { ...params, lead_type: 'quote_estimate', currency: 'USD', value: params.total }, 'QuoteEstimate', ADS_LEAD_LABEL)
 }
 
 /** Visitor left name + phone on the quote tool: the first lead we can actually follow up. */

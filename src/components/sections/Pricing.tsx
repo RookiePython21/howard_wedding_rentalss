@@ -121,7 +121,7 @@ export default function Pricing() {
   const { pewTotal, travelFee, minimumAdjustment, total, travelWins, isLocal } = computeQuote(pewCount, driveHours)
   const billableHours = driveHours != null ? driveHours * ROUND_TRIP_MULTIPLIER : null
 
-  // generate_lead: fire once per computed travel estimate (a venue was entered and resolved).
+  // QuoteEstimate: fires when a venue resolves to a travel estimate (once per session, see analytics.ts).
   useEffect(() => {
     if (driveHours != null) {
       trackQuoteEstimate({ pews: pewCount, total: Math.round(total), has_location: 1 })

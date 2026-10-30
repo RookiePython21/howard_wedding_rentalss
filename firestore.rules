@@ -32,9 +32,13 @@ service cloud.firestore {
               'minimum_adjustment', 'total', 'travel_wins', 'is_local', 'placement',
               'wedding_date', 'days_out'];
     }
+    // Field checks only. A `quotes` doc also carries the base fields, so its key list is checked
+    // by the match itself; a nested quote (quote_leads.quote) uses quoteOk, which adds the key check.
     function quoteOk(q) {
-      return q.keys().hasOnly(quoteKeys())
-        && q.status in ['ok', 'failed', 'no_location']
+      return q.keys().hasOnly(quoteKeys()) && quoteFieldsOk(q);
+    }
+    function quoteFieldsOk(q) {
+      return q.status in ['ok', 'failed', 'no_location']
         && str(q.location, 200) && str(q.resolved_place, 300)
         && str(q.city, 100) && str(q.state, 100) && str(q.postcode, 20)
         && q.pews is int && q.pews >= 1 && q.pews <= 100
@@ -63,7 +67,7 @@ service cloud.firestore {
     match /quotes/{id} {
       allow create: if request.resource.data.keys().hasOnly(baseKeys().concat(quoteKeys()))
         && baseOk(request.resource.data)
-        && quoteOk(request.resource.data);
+        && quoteFieldsOk(request.resource.data);
     }
 
     // One doc per tel: tap, joined to quotes by session_id.

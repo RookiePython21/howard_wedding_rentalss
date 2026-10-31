@@ -68,3 +68,5 @@ for the most up-to-date list — the table below is updated by Stage 5 of the ar
 | Free Seating Chart Maker for Weddings | https://www.howardweddingrentals.com/blog/free-wedding-seating-chart-maker | Free tools, software comparisons, choosing a seating chart app, exporting a floor plan |
 | Wedding Name Tags vs. Place Cards | https://www.howardweddingrentals.com/blog/wedding-name-tags-vs-place-cards | Escort cards vs. place cards vs. name tags, which stationery a reception actually needs |
 | Wedding Place Cards With Meal Choice | https://www.howardweddingrentals.com/blog/wedding-place-cards-meal-choice | Meal indicators on place cards, caterer counts, dietary restrictions, plated dinner service |
+| Wedding Ceremony Seating: A Calm, Complete Guide | https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide | Ceremony layout, aisle width, row counts, family/reserved sections, ceremony vs. reception seating |
+| Wedding Aisle Ideas: Styles That Fit Any Ceremony | https://www.howardweddingrentals.com/blog/wedding-aisle-ideas | Aisle styling by ceremony type (church-feel, rustic, outdoor), aisle decor, how pews frame the aisle |

@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-10-09",
+  "last_updated": "2026-10-30",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -310,7 +310,9 @@
         "https://www.howardweddingrentals.com/contact"
       ],
       "linked_from": [
-        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew"
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas"
       ],
       "queue_id": null
     },
@@ -336,7 +338,9 @@
         "https://www.howardweddingrentals.com/blog/how-to-make-a-wedding-seating-chart",
         "https://www.howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide"
+      ],
       "queue_id": "kw-008"
     },
     {
@@ -535,6 +539,63 @@
       ],
       "linked_from": [],
       "queue_id": "kw-016"
+    },
+    {
+      "slug": "wedding-ceremony-seating-guide",
+      "title": "Wedding Ceremony Seating: A Calm, Complete Guide",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "wedding ceremony seating",
+      "secondary_keywords": [
+        "wedding ceremony seating layout",
+        "wedding ceremony layout",
+        "ceremony seating chart"
+      ],
+      "published_date": "2026-10-30",
+      "last_updated": "2026-10-30",
+      "tags": [
+        "ceremony seating",
+        "wedding ceremony layout",
+        "wedding planning",
+        "church pews"
+      ],
+      "excerpt": "Wedding ceremony seating comes down to the aisle, the rows, and the family sections. Here's how to plan the layout without the overwhelm.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-basics",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-017"
+    },
+    {
+      "slug": "wedding-aisle-ideas",
+      "title": "Wedding Aisle Ideas: Styles That Fit Any Ceremony",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "wedding aisle ideas",
+      "secondary_keywords": [
+        "wedding aisle decor"
+      ],
+      "published_date": "2026-10-30",
+      "last_updated": "2026-10-30",
+      "tags": [
+        "wedding aisle",
+        "wedding aisle decor",
+        "ceremony decor",
+        "church pews"
+      ],
+      "excerpt": "Wedding aisle ideas for church-feel, rustic, and outdoor ceremonies, plus how your seating choice shapes the whole look of the walk.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-018"
     }
   ]
 }

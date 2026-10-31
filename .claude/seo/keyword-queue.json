@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-30",
   "queue": [
     {
       "id": "kw-008",
@@ -216,9 +216,9 @@
       "competitor_pages_to_beat": [],
       "added_date": "2026-10-26",
       "source_run": "research-run-007",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
+      "status": "published",
+      "article_slug": "wedding-ceremony-seating-guide",
+      "published_date": "2026-10-30",
       "notes": "Cluster anchor, write first (11/6). Ceremony seating is a distinct intent from reception seating charts; cross-link, do not cannibalize. Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
@@ -247,9 +247,9 @@
       "competitor_pages_to_beat": [],
       "added_date": "2026-10-26",
       "source_run": "research-run-007",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
+      "status": "published",
+      "article_slug": "wedding-aisle-ideas",
+      "published_date": "2026-10-30",
       "notes": "Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {

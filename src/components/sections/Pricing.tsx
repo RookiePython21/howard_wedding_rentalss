@@ -49,7 +49,9 @@ export default function Pricing() {
   useEffect(() => {
     const today = localToday()
     setMinDate(today)
-    setWeddingDate((cur) => (cur && cur >= today ? cur : today))
+    // Leave the date blank unless the visitor picks one: pre-filling today saved a fake
+    // wedding date on every quote and made the field look required.
+    setWeddingDate((cur) => (cur && cur < today ? '' : cur))
   }, [])
   const [location, setLocation] = useState('')
   const [placement, setPlacement] = useState<'place' | 'deliver'>('place')
@@ -230,7 +232,7 @@ export default function Pricing() {
           {/* Wedding date */}
           <div className="mb-8">
             <label className="block font-raleway text-xs tracking-widest uppercase text-[#6b5744] mb-3">
-              What is your wedding date?
+              What is your wedding date? <span className="normal-case tracking-normal text-[#9b836e]">(optional)</span>
             </label>
             <div className="relative">
               <Calendar size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#c9a96e]" />
@@ -266,10 +268,26 @@ export default function Pricing() {
                 value={location}
                 onChange={(e) => { setLocation(e.target.value); setEstimateFailed(false); setDriveHours(null) }}
                 onBlur={computeTravel}
+                onKeyDown={(e) => {
+                  // Mobile "Go"/Enter does not always blur the field, so the estimate never ran.
+                  if (e.key === 'Enter') { e.preventDefault(); lastGeoCall.current = 0; computeTravel() }
+                }}
+                enterKeyHint="go"
                 placeholder="City, venue name, or address"
                 className="w-full pl-10 pr-4 py-3 border border-cream-200 rounded-sm font-raleway text-sm text-[#2c1f0e] placeholder-[#9b836e] focus:outline-none focus:border-[#c9a96e] transition-colors bg-[#fdfcf8]"
               />
             </div>
+            {/* Tapping this blurs the field first, which already starts the lookup; computeTravel throttles the repeat. */}
+            {location.trim() && driveHours == null && !estimateFailed && (
+              <button
+                type="button"
+                onClick={computeTravel}
+                disabled={locationChecking}
+                className="btn-gold w-full flex items-center justify-center gap-2 py-3 text-sm mt-3 disabled:opacity-60"
+              >
+                {locationChecking ? 'Calculating…' : 'Show My Estimate'}
+              </button>
+            )}
             {estimateFailed && (
               <div className="flex items-start gap-2 mt-3 p-3 bg-[#f5edd8]/50 border border-cream-200 rounded-sm">
                 <AlertCircle size={15} className="text-[#c9a96e] mt-0.5 shrink-0" />

@@ -1,9 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Phone, MapPin, Truck, CheckSquare, Calendar, AlertCircle, Loader2 } from 'lucide-react'
 import {
-  PEW_PRICE,
   MAX_PEWS,
-  MINIMUM_CHARGE,
   GUESTS_PER_PEW_MIN,
   GUESTS_PER_PEW_MAX,
   GUESTS_PER_PEW_LABEL,
@@ -341,59 +339,22 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* Price summary */}
+          {/* Price summary: no dollar figure until a venue resolves to a travel estimate, then one
+              "Estimated total" line. The pew/travel/minimum breakdown is still computed and saved
+              with the quote (snapshot below), just not shown to the visitor. */}
           <div className="border-t border-cream-200 pt-7">
-            <div className="flex items-center justify-between mb-3">
-              <span className="font-raleway text-sm text-[#6b5744]">
-                {pewCount} pew{pewCount !== 1 ? 's' : ''} × ${PEW_PRICE}
-              </span>
-              <span className="font-raleway text-sm text-[#2c1f0e] font-semibold">{formatUSD(pewTotal)}</span>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <span className="font-raleway text-sm text-[#6b5744]">Travel &amp; setup</span>
-              <span className="font-raleway text-sm">
-                {locationChecking ? (
-                  <span className="text-[#9b836e] italic">Calculating…</span>
-                ) : estimateFailed ? (
-                  <span className="text-[#9b836e] italic">Confirmed by phone</span>
-                ) : billableHours == null ? (
-                  <span className="text-[#9b836e] italic">Enter location to estimate</span>
-                ) : isLocal ? (
-                  <span className="text-[#6b5744]">Included (local)</span>
-                ) : (
-                  <span className="text-[#2c1f0e] font-semibold">{formatUSD(travelFee)}</span>
-                )}
-              </span>
-            </div>
-            {billableHours != null && !isLocal && (
-              <p className="font-raleway text-xs text-[#9b836e] mt-1">
-                ≈ {billableHours.toFixed(1)} hrs driving · two round trips (drop-off + pick-up)
-              </p>
-            )}
-
-            {minimumAdjustment > 0 && (
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-raleway text-sm text-[#6b5744]">Minimum charge adjustment</span>
-                <span className="font-raleway text-sm text-[#2c1f0e] font-semibold">{formatUSD(minimumAdjustment)}</span>
-              </div>
-            )}
-
-            <div className="flex items-center justify-between border-t border-cream-200 pt-4 mt-4 mb-2">
+            <div className="flex items-center justify-between mb-2">
               <span className="font-raleway text-sm text-[#6b5744] font-semibold">Estimated total</span>
-              <span className="font-playfair text-2xl text-[#2c1f0e] font-bold">{formatUSD(total)}</span>
+              {locationChecking ? (
+                <span className="font-raleway text-sm text-[#9b836e] italic">Calculating…</span>
+              ) : driveHours != null ? (
+                <span className="font-playfair text-2xl text-[#2c1f0e] font-bold">{formatUSD(total)}</span>
+              ) : estimateFailed ? (
+                <span className="font-raleway text-sm text-[#9b836e] italic">Confirmed by phone</span>
+              ) : (
+                <span className="font-raleway text-sm text-[#9b836e] italic">Enter your venue to see your estimate</span>
+              )}
             </div>
-            {travelWins && (
-              <p className="font-raleway text-xs text-[#9b836e] mb-4">
-                Your travel rate is greater than the pew subtotal, so the travel rate applies.
-              </p>
-            )}
-
-            {minimumAdjustment > 0 && (
-              <p className="font-raleway text-xs text-[#9b836e] mb-4">
-                Every booking has a {formatUSD(MINIMUM_CHARGE)} minimum charge, so the total is raised to that amount.
-              </p>
-            )}
 
             <a
               data-call-placement="quote-result"

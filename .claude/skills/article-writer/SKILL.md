@@ -71,6 +71,9 @@ an abandoned run — it is invisible to both Triage and Queue Mode. Set it back 
 
 - **Phase eligibility** — `kd` must be ≤ the current phase's `kd_ceiling` from config.json.
   Over ceiling → SKIP (`skip_reason`: too competitive for phase N).
+  If `kd` is `null` (entry sourced without Ahrefs, see `.claude/seo/research-method-no-ahrefs.md`),
+  skip this test and the Traffic floor test below; instead glance at the SERP: if page one is all
+  national high-authority sites and no small site, SKIP (too competitive for phase N).
 - **Cannibalization** — compare the entry's `suggested_angle` and `keyword` against every published
   article's `primary_keyword` and `secondary_keywords` in published-map.json. If an existing article
   already serves that search intent, → SKIP. Two of our own pages competing for one intent splits

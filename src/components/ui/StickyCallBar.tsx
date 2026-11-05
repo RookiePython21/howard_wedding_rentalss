@@ -4,7 +4,7 @@ interface StickyCallBarProps {
   label?: string
 }
 
-export default function StickyCallBar({ label = 'Call Now for a Free Quote' }: StickyCallBarProps) {
+export default function StickyCallBar({ label = 'Call Now for Your Estimate' }: StickyCallBarProps) {
   return (
     <div data-call-placement="sticky-call-bar" className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#2c1f0e] border-t border-[#c9a96e]/30 pb-[env(safe-area-inset-bottom)]">
       <a

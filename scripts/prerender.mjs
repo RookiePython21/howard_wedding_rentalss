@@ -73,6 +73,7 @@ const STATIC_ROUTES = [
   '/shop',
   '/seating-chart-tool',
   '/blog',
+  '/privacy',
   '/privacy-policy',
   '/terms-of-service',
   '/success',

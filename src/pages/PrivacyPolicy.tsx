@@ -2,12 +2,19 @@ import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { SEO } from '../components/SEO'
 
+const linkClass = 'text-[#c9a96e] hover:text-[#a8813e] transition-colors'
+
+function Divider() {
+  return <div className="w-full h-px bg-cream-200" />
+}
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Privacy Policy"
-        description="Read the Howard Wedding Rentals privacy policy to understand how we collect, use, and protect your personal information."
+        url="https://www.howardweddingrentals.com/privacy"
+        description="How Howard Wedding Rentals handles your information: what we collect, why, and how to ask us to delete it."
       />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
@@ -22,7 +29,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <div className="w-12 h-0.5 bg-[#c9a96e] mx-auto mb-4" />
-            <p className="font-raleway text-sm text-white/50">Last updated: April 2026</p>
+            <p className="font-raleway text-sm text-white/50">Effective date: November 5, 2026</p>
           </div>
         </div>
 
@@ -31,104 +38,117 @@ export default function PrivacyPolicy() {
           <div className="prose-styles space-y-10 font-raleway text-[#6b5744] text-sm leading-relaxed">
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">1. Overview</h2>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">1. Who we are</h2>
               <p>
-                Howard Wedding Rentals ("we," "us," or "our") operates the website howardweddingrentals.com. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information. By using our website, you agree to the practices described here.
+                Howard Wedding Rentals ("we," "us," or "our") rents church pews and other wedding furniture for weddings in and around Owensboro, Kentucky. This page explains, in plain words, what information we collect through howardweddingrentals.com, our online estimate tool, and our Facebook and Instagram ads and lead forms, and what we do with it.
               </p>
             </div>
 
-            <div className="w-full h-px bg-cream-200" />
+            <Divider />
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">2. Information We Collect</h2>
-              <p className="mb-3">We may collect the following when you use our website or contact us:</p>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">2. What we collect</h2>
+              <p className="mb-3">Depending on how you use the site, we may collect:</p>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li><strong>Contact information</strong> — name, phone number, and email address when you reach out to us directly</li>
-                <li><strong>Event details</strong> — wedding date, venue location, and service preferences you share with us</li>
-                <li><strong>Quote details</strong> — when you use our online quote tool, we save the estimate you see (pew count, wedding date, the venue or address you enter, and the quoted price) along with the page and ad that brought you to our site, so we can follow up on your quote and improve our pricing</li>
-                <li><strong>Usage data</strong> — basic analytics such as pages visited, browser type, and referring URL, collected automatically</li>
+                <li><strong>Contact details</strong> — your name, phone number, and email address, if you send us a message, ask us to send you your estimate, or fill out a form</li>
+                <li><strong>Wedding details</strong> — your wedding date, venue or venue city, and guest count or number of pews</li>
+                <li><strong>Estimate details</strong> — when you use the estimate tool, we save the estimate you see (pews, wedding date, the venue or address you typed, and the estimated total), along with a random visit ID, the page and ad that brought you to us, and the website that referred you</li>
+                <li><strong>Call taps</strong> — when you tap a phone number on the site, we record that tap and which button it was</li>
+                <li><strong>Usage data</strong> — pages visited, device and browser type, and similar information collected by Google Analytics (through Firebase) and the Meta pixel</li>
+                <li><strong>Seating chart tool</strong> — if you save a seating chart or enter your email to export one, we keep that email and your chart so you can come back to it</li>
               </ul>
               <p className="mt-3">
-                We do not collect payment information directly. Any payment processing is handled through secure third-party providers.
+                We do not collect payment card information on this site.
               </p>
             </div>
 
-            <div className="w-full h-px bg-cream-200" />
+            <Divider />
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">3. How We Use Your Information</h2>
-              <p className="mb-3">We use the information we collect solely to:</p>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">3. Meta (Facebook and Instagram) lead forms</h2>
+              <p>
+                If you fill out a lead form on one of our Facebook or Instagram ads, Meta passes us the answers you give. That may include your name, phone number, email address, wedding date, venue city, and guest count. We receive only what the form asks for, and we use it to follow up on your request. Meta handles the form itself under its own privacy policy.
+              </p>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">4. Why we collect it</h2>
+              <p className="mb-3">We use your information to:</p>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li>Respond to your inquiries and provide quotes</li>
-                <li>Confirm and coordinate your rental booking</li>
-                <li>Communicate updates relevant to your order</li>
-                <li>Improve the functionality of our website</li>
+                <li>Prepare an estimate for your wedding</li>
+                <li>Contact you back about your estimate or booking</li>
+                <li>Confirm and coordinate your rental</li>
+                <li>Understand how people use the site, and make it easier to use</li>
+                <li>Measure whether our ads are reaching couples who are planning weddings</li>
               </ul>
-              <p className="mt-3">
-                We do not sell, trade, or rent your personal information to third parties.
+            </div>
+
+            <Divider />
+
+            <div>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">5. Cookies, the Meta pixel, and analytics</h2>
+              <p>
+                The site uses Google Analytics (through Firebase) and the Meta pixel. These use cookies or similar tools to count visits and to record actions such as getting an estimate, tapping to call, or sending a message. Meta may use that information to show our ads and measure results, under Meta's own policies. You can block cookies in your browser settings, and you can control ad settings in your Facebook and Instagram accounts. The site will still work.
               </p>
             </div>
 
-            <div className="w-full h-px bg-cream-200" />
+            <Divider />
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">4. Cookies & Analytics</h2>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">6. We do not sell your information</h2>
               <p>
-                Our website may use cookies and similar technologies to understand how visitors interact with our site. This data is aggregated and anonymous. You can disable cookies through your browser settings, though some site features may not function as intended.
+                We do not sell or rent your personal information. We share it only with the service providers that run the site and our ads (such as Google, Meta, and our hosting provider), and only as needed to do that, or when the law requires it.
               </p>
             </div>
 
-            <div className="w-full h-px bg-cream-200" />
+            <Divider />
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">5. Third-Party Links</h2>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">7. How long we keep it</h2>
               <p>
-                Our website may contain links to external sites (such as Facebook). We are not responsible for the privacy practices of those sites and encourage you to review their policies separately.
+                We keep your information for as long as we need it to answer you, serve your booking, and keep our business records, or as the law requires. After that we delete it.
               </p>
             </div>
 
-            <div className="w-full h-px bg-cream-200" />
+            <Divider />
 
             <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">6. Data Retention</h2>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">8. Asking us to delete or correct your information</h2>
               <p>
-                We retain your contact and booking information only as long as necessary to fulfill the purpose for which it was collected or as required by law.
-              </p>
-            </div>
-
-            <div className="w-full h-px bg-cream-200" />
-
-            <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">7. Your Rights</h2>
-              <p>
-                You may request access to, correction of, or deletion of any personal information we hold about you. To do so, contact us at{' '}
-                <a href="mailto:contact@howardweddingrentals.com" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
-                  contact@howardweddingrentals.com
-                </a>
-                .
-              </p>
-            </div>
-
-            <div className="w-full h-px bg-cream-200" />
-
-            <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">8. Changes to This Policy</h2>
-              <p>
-                We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the website after changes constitutes acceptance of the updated policy.
-              </p>
-            </div>
-
-            <div className="w-full h-px bg-cream-200" />
-
-            <div>
-              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">9. Contact</h2>
-              <p>
-                Questions about this policy? Reach us at{' '}
-                <a href="mailto:contact@howardweddingrentals.com" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
+                You can ask to see, correct, or delete what we have about you at any time. Email{' '}
+                <a href="mailto:contact@howardweddingrentals.com" className={linkClass}>
                   contact@howardweddingrentals.com
                 </a>{' '}
                 or call{' '}
-                <a href="tel:+12709035890" className="text-[#c9a96e] hover:text-[#a8813e] transition-colors">
+                <a href="tel:+12709035890" className={linkClass}>
+                  270.903.5890
+                </a>
+                . Tell us the name and phone number or email you used, and we will take care of it.
+              </p>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">9. Changes to this policy</h2>
+              <p>
+                If we change this policy, we will post the new version here with a new effective date.
+              </p>
+            </div>
+
+            <Divider />
+
+            <div>
+              <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">10. Contact</h2>
+              <p>
+                Questions about this policy? Email{' '}
+                <a href="mailto:contact@howardweddingrentals.com" className={linkClass}>
+                  contact@howardweddingrentals.com
+                </a>{' '}
+                or call{' '}
+                <a href="tel:+12709035890" className={linkClass}>
                   270.903.5890
                 </a>
                 .

@@ -101,7 +101,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Howard Wedding Rentals. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
+            <Link to="/privacy" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">
               Privacy Policy
             </Link>
             <Link to="/terms-of-service" className="font-raleway text-xs text-white/40 hover:text-[#c9a96e] transition-colors">

@@ -141,7 +141,8 @@
         "https://www.howardweddingrentals.com/contact"
       ],
       "linked_from": [
-        "https://www.howardweddingrentals.com/blog/how-much-does-a-church-pew-weigh"
+        "https://www.howardweddingrentals.com/blog/how-much-does-a-church-pew-weigh",
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
       ],
       "queue_id": "kw-001"
     },
@@ -313,7 +314,8 @@
         "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
         "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
         "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
-        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
       ],
       "queue_id": null
     },
@@ -598,7 +600,8 @@
         "https://www.howardweddingrentals.com/contact"
       ],
       "linked_from": [
-        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
       ],
       "queue_id": "kw-018"
     },
@@ -629,8 +632,40 @@
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
+      ],
       "queue_id": "kw-019"
+    },
+    {
+      "slug": "church-wedding-decor-ideas",
+      "title": "Church Wedding Decor: Get the Look at Any Venue",
+      "url": "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "church wedding decor",
+      "secondary_keywords": [
+        "church wedding decorations"
+      ],
+      "published_date": "2026-11-06",
+      "last_updated": "2026-11-06",
+      "tags": [
+        "church wedding decor",
+        "church wedding decorations",
+        "ceremony decor",
+        "church pews"
+      ],
+      "excerpt": "Church wedding decor ideas for barns, backyards and gardens. Start with the rows, add a few classic touches, and get the chapel feel anywhere.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/what-is-a-church-pew",
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/contact",
+        "https://www.howardweddingrentals.com/seating-chart-tool"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-020"
     }
   ]
 }

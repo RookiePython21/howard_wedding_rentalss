@@ -173,6 +173,31 @@
         "google_autocomplete"
       ],
       "notes": "No Ahrefs. GSC and Google Ads pending."
+    },
+    {
+      "run_id": "research-run-009",
+      "started_at": "2026-11-08T13:07:23Z",
+      "completed_at": "2026-11-08T13:30:00Z",
+      "trigger": "scheduled",
+      "phase_at_time": 1,
+      "pillars_researched": [
+        "church-pew-rentals",
+        "place-cards",
+        "seating-chart-boards",
+        "seating-chart-tool",
+        "nashville-pew-rentals",
+        "ceremony-planning"
+      ],
+      "raw_keywords_found": 221,
+      "keywords_after_guardrail": 192,
+      "keywords_after_dedup": 6,
+      "keywords_added_to_queue": 2,
+      "cluster_siblings_updated": 4,
+      "keywords_discarded_low_score": 0,
+      "competitor_domains_identified": [],
+      "notification_sent": true,
+      "pushed_to_main": true,
+      "notes": "Ahrefs back online (Lite plan, 200k units/mo, 0 used before this run; ~17k units spent on 24 discovery calls + 3 SERP samples). Discovery used first two seed terms per active pillar per routine Step 2. Most of the pew-rental and place-card space is already saturated from runs 002/004/006/007/008 -- 192 of 221 raw candidates passed the inclusion/exclusion guardrail but all but 6 failed on volume, KD, or dedup against the existing queue/published-map. Two new entries added (both ceremony-planning, informational/reception-planning angles distinct from the published ceremony-seating guide). Folded 4 near-duplicates into existing cluster_siblings instead of creating new entries: vintage church pews -> kw-026 (3 pew floor_override supporting posts already queued, cap respected); wedding seating chart examples -> kw-017 (shares Ahrefs parent_topic seating chart template); wedding ceremony outline pdf and sample wedding ceremony scripts -> kw-030 (same ceremony-outline/script intent, avoids a 3rd near-duplicate script article). One SERP-sampled candidate, standard foam board size (score 46.7, passed guardrails on a foam board substring match), was dropped after SERP sampling showed zero wedding-seating-chart intent in the top results (Office Depot, VistaPrint generic foam board, Owens Corning insulation) -- mechanical guardrail pass but wrong search intent, so excluded rather than queued. Also performed a full priority_score re-sort of the entire queue per Step 7 (previous runs had appended research-run-008 entries at the tail without a full re-sort, leaving kw-028/029/030/032/033 at score 44.0 out of descending order relative to earlier 46-45 entries); order is now fully descending with the one null-score entry (kw-007) last."
     }
   ]
 }

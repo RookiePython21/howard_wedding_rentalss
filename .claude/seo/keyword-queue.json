@@ -1,7 +1,7 @@
 {
   "_comment": "Keyword pipeline for Howard Wedding Rentals. Sorted by priority_score DESC. Status lifecycle: queued -> in_progress -> published (or skipped). A 'skipped' entry MUST carry skip_reason and skipped_date so triage does not resurface it; skipped entries are permanent rulings, not deferrals.",
   "_schema_version": "1.0",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-08",
   "queue": [
     {
       "id": "kw-008",
@@ -202,7 +202,8 @@
       "cluster_siblings": [
         "wedding ceremony seating layout",
         "wedding ceremony layout",
-        "ceremony seating chart"
+        "ceremony seating chart",
+        "wedding seating chart examples"
       ],
       "suggested_slug": "wedding-ceremony-seating-guide",
       "suggested_angle": "Anchor ceremony-seating guide: aisle, rows, family sections, seats per row; pews as one option; links to (does not repeat) reception seating posts. No prices; 14-pew max only as a call prompt.",
@@ -513,6 +514,43 @@
       "notes": "Doubles as the pews-vs-chairs comparison page (plan option 7). Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
+      "id": "kw-034",
+      "keyword": "how long is a typical wedding ceremony",
+      "pillar_id": "ceremony-planning",
+      "volume": 250,
+      "traffic_potential": 250,
+      "kd": 0,
+      "parent_topic": "how long is a wedding ceremony",
+      "search_intent": "informational: couple estimating how long the ceremony portion of their wedding day will run",
+      "serp_features": [
+        "ai_overview",
+        "ai_overview_sitelink",
+        "question",
+        "sitelink"
+      ],
+      "priority_score": 47.8,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "how-long-is-a-wedding-ceremony",
+      "suggested_angle": "Quick-answer guide to ceremony length by type (religious, civil, outdoor) and what stretches or shortens it (vow length, readings, communion, processional size); ties seating/pew setup time into the day-of timeline and links to the published ceremony seating guide and aisle ideas rather than repeating them.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://www.reddit.com/r/weddingplanning/comments/nlwal0/how_long_is_the_actual_ceremony_officiant/",
+        "https://www.ecmatrimony.com/blog/2022/4/20/how-long-is-a-wedding-ceremony",
+        "https://www.brides.com/story/wedding-ceremony-length"
+      ],
+      "added_date": "2026-11-08",
+      "source_run": "research-run-009",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
       "id": "kw-003",
       "keyword": "wedding place cards with meal choice",
       "pillar_id": "place-cards",
@@ -675,6 +713,228 @@
       "published_date": "2026-10-06"
     },
     {
+      "id": "kw-035",
+      "keyword": "wedding reception layout ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": 100,
+      "traffic_potential": 300,
+      "kd": 2,
+      "parent_topic": "wedding reception layout ideas",
+      "search_intent": "informational/commercial: couple planning the reception floor plan — table shape, dance floor placement, head table vs. sweetheart table",
+      "serp_features": [
+        "question"
+      ],
+      "priority_score": 45.1,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "wedding-reception-layout-ideas",
+      "suggested_angle": "Reception floor-plan roundup (long tables vs. rounds, dance floor placement, head table vs. sweetheart table) — a distinct post-ceremony intent from the published ceremony seating guide, positioned to introduce seating chart boards and bench-style reception seating as furniture options.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/blog/wedding-seating-chart-board-ideas",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [
+        "https://za.pinterest.com/nocesdafrique/reception-floor-plan-layout/",
+        "https://www.theknot.com/content/wedding-reception-layout",
+        "https://prismm.com/blog/how-to-design-a-wedding-floor-plan-with-seating-style-ideas"
+      ],
+      "added_date": "2026-11-08",
+      "source_run": "research-run-009",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null
+    },
+    {
+      "id": "kw-028",
+      "keyword": "can you rent church pews",
+      "pillar_id": "church-pew-rentals",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 44.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "church pews for rent near me",
+        "can you rent benches for a wedding"
+      ],
+      "suggested_slug": "can-you-rent-church-pews",
+      "suggested_angle": "Practical guide for 'can you rent church pews' in the brand voice; tie back to Church Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 11,
+        "best_rank": 2,
+        "seed_count": 3,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
+    },
+    {
+      "id": "kw-029",
+      "keyword": "are church pews solid wood",
+      "pillar_id": "church-pew-rentals",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 44.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "are-church-pews-solid-wood",
+      "suggested_angle": "Practical guide for 'are church pews solid wood' in the brand voice; tie back to Church Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 5,
+        "best_rank": 3,
+        "seed_count": 1,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
+    },
+    {
+      "id": "kw-030",
+      "keyword": "wedding ceremony outline and script",
+      "pillar_id": "ceremony-planning",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 44.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding ceremony outline for officiant",
+        "wedding ceremony outline with unity candle",
+        "wedding ceremony outline for officiant non religious",
+        "wedding ceremony outline pdf",
+        "sample wedding ceremony scripts"
+      ],
+      "suggested_slug": "wedding-ceremony-outline-and-script",
+      "suggested_angle": "Practical guide for 'wedding ceremony outline and script' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 2,
+        "best_rank": 1,
+        "seed_count": 1,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
+    },
+    {
+      "id": "kw-032",
+      "keyword": "wedding ceremony ideas to involve guests",
+      "pillar_id": "ceremony-planning",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 44.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding ceremony ideas near me",
+        "wedding ceremony ideas to include child",
+        "garden wedding ceremony decor ideas"
+      ],
+      "suggested_slug": "wedding-ceremony-ideas-to-involve-guests",
+      "suggested_angle": "Practical guide for 'wedding ceremony ideas to involve guests' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 2,
+        "best_rank": 1,
+        "seed_count": 1,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
+    },
+    {
+      "id": "kw-033",
+      "keyword": "where to rent church pews near me",
+      "pillar_id": "nashville-pew-rentals",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 44.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [],
+      "suggested_slug": "where-to-rent-church-pews-near-me",
+      "suggested_angle": "Practical guide for 'where to rent church pews near me' in the brand voice; tie back to Nashville & Regional Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 3,
+        "best_rank": 1,
+        "seed_count": 1,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
+    },
+    {
       "id": "kw-005",
       "keyword": "place cards for table",
       "pillar_id": "place-cards",
@@ -710,6 +970,45 @@
       "skipped_date": "2026-07-27",
       "article_slug": null,
       "published_date": null
+    },
+    {
+      "id": "kw-031",
+      "keyword": "garden wedding ceremony decor ideas",
+      "pillar_id": "ceremony-planning",
+      "volume": null,
+      "traffic_potential": null,
+      "kd": null,
+      "parent_topic": null,
+      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
+      "serp_features": [],
+      "priority_score": 40.0,
+      "phase_eligible": 1,
+      "cluster_siblings": [
+        "wedding ceremony ideas near me",
+        "wedding ceremony ideas to involve guests",
+        "wedding ceremony ideas to include child"
+      ],
+      "suggested_slug": "garden-wedding-ceremony-decor-ideas",
+      "suggested_angle": "Practical guide for 'garden wedding ceremony decor ideas' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
+      "internal_link_targets": [
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "competitor_pages_to_beat": [],
+      "added_date": "2026-11-02",
+      "source_run": "research-run-008",
+      "status": "queued",
+      "article_slug": null,
+      "published_date": null,
+      "source": "autocomplete",
+      "evidence": {
+        "autocomplete_hits": 2,
+        "best_rank": 2,
+        "seed_count": 2,
+        "gsc_impr_90d": null,
+        "ads_impr": null
+      },
+      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
     },
     {
       "id": "kw-006",
@@ -836,7 +1135,8 @@
         "church bench rental",
         "antique pew rental",
         "vintage pew rentals",
-        "wooden pew rental"
+        "wooden pew rental",
+        "vintage church pews"
       ],
       "suggested_slug": "wooden-bench-and-pew-rental-for-wedding",
       "suggested_angle": "Supporting post 2 of 3. Wooden pews vs benches for a ceremony; what antique/vintage/wooden pew rental means in practice; what to ask a rental company. Captures GSC head variants (antique 27, vintage 18, wooden 22, church bench 14 impressions). Do not duplicate what-is-a-church-pew; link to it.",
@@ -923,231 +1223,6 @@
       "status": "published",
       "article_slug": "how-much-does-a-church-pew-weigh",
       "published_date": "2026-08-02"
-    },
-    {
-      "id": "kw-028",
-      "keyword": "can you rent church pews",
-      "pillar_id": "church-pew-rentals",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 44.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [
-        "church pews for rent near me",
-        "can you rent benches for a wedding"
-      ],
-      "suggested_slug": "can-you-rent-church-pews",
-      "suggested_angle": "Practical guide for 'can you rent church pews' in the brand voice; tie back to Church Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 11,
-        "best_rank": 2,
-        "seed_count": 3,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
-    },
-    {
-      "id": "kw-029",
-      "keyword": "are church pews solid wood",
-      "pillar_id": "church-pew-rentals",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 44.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [],
-      "suggested_slug": "are-church-pews-solid-wood",
-      "suggested_angle": "Practical guide for 'are church pews solid wood' in the brand voice; tie back to Church Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 5,
-        "best_rank": 3,
-        "seed_count": 1,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
-    },
-    {
-      "id": "kw-030",
-      "keyword": "wedding ceremony outline and script",
-      "pillar_id": "ceremony-planning",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 44.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [
-        "wedding ceremony outline for officiant",
-        "wedding ceremony outline with unity candle",
-        "wedding ceremony outline for officiant non religious"
-      ],
-      "suggested_slug": "wedding-ceremony-outline-and-script",
-      "suggested_angle": "Practical guide for 'wedding ceremony outline and script' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 2,
-        "best_rank": 1,
-        "seed_count": 1,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
-    },
-    {
-      "id": "kw-031",
-      "keyword": "garden wedding ceremony decor ideas",
-      "pillar_id": "ceremony-planning",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 40.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [
-        "wedding ceremony ideas near me",
-        "wedding ceremony ideas to involve guests",
-        "wedding ceremony ideas to include child"
-      ],
-      "suggested_slug": "garden-wedding-ceremony-decor-ideas",
-      "suggested_angle": "Practical guide for 'garden wedding ceremony decor ideas' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 2,
-        "best_rank": 2,
-        "seed_count": 2,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
-    },
-    {
-      "id": "kw-032",
-      "keyword": "wedding ceremony ideas to involve guests",
-      "pillar_id": "ceremony-planning",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 44.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [
-        "wedding ceremony ideas near me",
-        "wedding ceremony ideas to include child",
-        "garden wedding ceremony decor ideas"
-      ],
-      "suggested_slug": "wedding-ceremony-ideas-to-involve-guests",
-      "suggested_angle": "Practical guide for 'wedding ceremony ideas to involve guests' in the brand voice; tie back to Wedding Ceremony Planning. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 2,
-        "best_rank": 1,
-        "seed_count": 1,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
-    },
-    {
-      "id": "kw-033",
-      "keyword": "where to rent church pews near me",
-      "pillar_id": "nashville-pew-rentals",
-      "volume": null,
-      "traffic_potential": null,
-      "kd": null,
-      "parent_topic": null,
-      "search_intent": "informational/commercial: surfaced by Google autocomplete (demand evidence, no volume figure)",
-      "serp_features": [],
-      "priority_score": 44.0,
-      "phase_eligible": 1,
-      "cluster_siblings": [],
-      "suggested_slug": "where-to-rent-church-pews-near-me",
-      "suggested_angle": "Practical guide for 'where to rent church pews near me' in the brand voice; tie back to Nashville & Regional Pew Rentals. Delivery within about 120 miles of Owensboro incl. Nashville where relevant. No prices, no 'free'. Check SERP before drafting.",
-      "internal_link_targets": [
-        "https://www.howardweddingrentals.com/services",
-        "https://www.howardweddingrentals.com/contact"
-      ],
-      "competitor_pages_to_beat": [],
-      "added_date": "2026-11-02",
-      "source_run": "research-run-008",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
-      "source": "autocomplete",
-      "evidence": {
-        "autocomplete_hits": 3,
-        "best_rank": 1,
-        "seed_count": 1,
-        "gsc_impr_90d": null,
-        "ads_impr": null
-      },
-      "notes": "No-Ahrefs entry: volume/KD/TP are null by design (see research-method-no-ahrefs.md). GSC/Ads evidence pending (MCPs offline at run time)."
     }
   ]
 }

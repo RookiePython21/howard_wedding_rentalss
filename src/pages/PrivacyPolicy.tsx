@@ -118,8 +118,8 @@ export default function PrivacyPolicy() {
               <h2 className="font-playfair text-xl text-[#2c1f0e] mb-3">8. Asking us to delete or correct your information</h2>
               <p>
                 You can ask to see, correct, or delete what we have about you at any time. Email{' '}
-                <a href="mailto:contact@howardweddingrentals.com" className={linkClass}>
-                  contact@howardweddingrentals.com
+                <a href="mailto:logan08516@gmail.com" className={linkClass}>
+                  logan08516@gmail.com
                 </a>{' '}
                 or call{' '}
                 <a href="tel:+12709035890" className={linkClass}>

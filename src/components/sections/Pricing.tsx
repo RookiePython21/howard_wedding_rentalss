@@ -192,7 +192,7 @@ export default function Pricing() {
               How many pews do you need?
             </label>
             <p className="font-raleway text-xs text-[#9b836e] mb-4">
-              Each pew seats {GUESTS_PER_PEW_LABEL} adults &mdash; maximum of {MAX_PEWS} pews
+              Each pew seats {GUESTS_PER_PEW_LABEL} adults &mdash; maximum of {MAX_PEWS} pews. Need more than {MAX_PEWS}? Give us a call and we'll talk it through.
             </p>
             <div className="flex items-center gap-4">
               <button

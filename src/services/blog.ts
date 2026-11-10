@@ -75,6 +75,11 @@ export function getPostsSync(pageSize = 10): BlogPost[] {
   return loadPosts().slice(0, pageSize)
 }
 
+/** Every published post, newest first. */
+export function getAllPostsSync(): BlogPost[] {
+  return loadPosts()
+}
+
 export function getPostBySlugSync(slug: string): BlogPost | null {
   return loadPosts().find((p) => p.slug === slug) ?? null
 }

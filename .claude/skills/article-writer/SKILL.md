@@ -282,16 +282,10 @@ Runs immediately after Stage 4. No confirmation needed — Stage 3 already wrote
 
    Recomputing is deliberate. These counters drifted out of sync under increment/decrement.
 
-6. **public/sitemap.xml** — add a `<url>` block after the last blog entry, before the
-   about/contact/legal pages:
-   ```xml
-     <url>
-       <loc>https://www.howardweddingrentals.com/blog/[slug]</loc>
-       <lastmod>[today]</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-   ```
+6. **public/sitemap.xml** — do not hand-edit it. `npm run build` (Stage 6) regenerates it from
+   the blog frontmatter via `scripts/generate-sitemap.mjs`, so the new post appears with
+   `<lastmod>` = its `publishedAt`. Commit the regenerated file. If you later edit an already
+   published post, add `updatedAt: [today]` to that post's frontmatter so its `<lastmod>` moves.
 
 7. **references/sitemap.csv** — append:
    ```

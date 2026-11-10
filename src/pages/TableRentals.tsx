@@ -6,6 +6,8 @@ import { SEO, SITE_URL } from '../components/SEO'
 import TrustBar from '../components/ui/TrustBar'
 import StickyCallBar from '../components/ui/StickyCallBar'
 import ServiceFAQ from '../components/sections/ServiceFAQ'
+import PlanningGuides from '../components/sections/PlanningGuides'
+import { tableGuides } from '../content/planningGuides'
 
 const tableIncludes = [
   'Delivery to your ceremony or reception venue',
@@ -166,6 +168,13 @@ export default function TableRentals() {
         <div className="py-16 sm:py-24 bg-[#fdfcf8]">
           <ServiceFAQ faqs={tableFaqs} />
         </div>
+
+        {/* Planning guides (internal links to the blog) */}
+        <PlanningGuides
+          heading="Reception Planning Guides"
+          intro="Helpful reads for tables, seating charts and place cards."
+          guides={tableGuides}
+        />
 
         {/* Closing CTA */}
         <div className="relative py-20 sm:py-28 overflow-hidden">

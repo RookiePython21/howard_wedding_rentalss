@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node scripts/prerender.mjs",
+    "build": "tsc && vite build && node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
     "build:client": "tsc && vite build",
     "prerender": "node scripts/prerender.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "server": "tsx server/index.ts"
   },

@@ -10,6 +10,8 @@ import Pricing from './components/sections/Pricing'
 import ProductDetails from './components/sections/ProductDetails'
 import FAQ, { faqs as homeFaqs } from './components/sections/FAQ'
 import CTA from './components/sections/CTA'
+import PlanningGuides from './components/sections/PlanningGuides'
+import { homeGuides } from './content/planningGuides'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import PricingPage from './pages/Pricing'
@@ -48,6 +50,12 @@ function Home() {
         <Pricing />
         <ProductDetails />
         <FAQ />
+        <PlanningGuides
+          heading="Plan Your Ceremony, One Step at a Time"
+          intro="Short, calm guides from our team on pews, ceremony seating, place cards and seating charts."
+          guides={homeGuides}
+          className="bg-[#fdfcf8]"
+        />
         <CTA />
       </main>
       <Footer />

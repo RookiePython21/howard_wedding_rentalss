@@ -5,6 +5,8 @@ import { SEO, SITE_URL } from '../components/SEO'
 import TrustBar from '../components/ui/TrustBar'
 import StickyCallBar from '../components/ui/StickyCallBar'
 import ServiceFAQ from '../components/sections/ServiceFAQ'
+import PlanningGuides from '../components/sections/PlanningGuides'
+import { chairGuides } from '../content/planningGuides'
 
 const chairIncludes = [
   'Delivery to your ceremony or reception venue',
@@ -158,6 +160,13 @@ export default function ChairRentals() {
         <div className="py-16 sm:py-24 bg-[#fdfcf8]">
           <ServiceFAQ faqs={chairFaqs} />
         </div>
+
+        {/* Planning guides (internal links to the blog) */}
+        <PlanningGuides
+          heading="Seating Planning Guides"
+          intro="Helpful reads for laying out your ceremony and reception seating."
+          guides={chairGuides}
+        />
 
         {/* Closing CTA */}
         <div className="relative py-20 sm:py-28 overflow-hidden">

@@ -1,26 +1,15 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Calendar, ArrowRight, Loader2 } from 'lucide-react'
+import { Calendar, ArrowRight } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { SEO } from '../components/SEO'
-import { getPostsSync } from '../services/blog'
-import type { BlogPost } from '../services/blog'
+import { getAllPostsSync } from '../services/blog'
 
 export default function Blog() {
-  // Seed synchronously so the first render (and the prerendered HTML) already
-  // contains every post — no loading spinner, no hydration mismatch.
-  const [posts, setPosts] = useState<BlogPost[]>(() => getPostsSync(10))
-  const [loadingMore, setLoadingMore] = useState(false)
-  const [hasMore, setHasMore] = useState(() => getPostsSync(10).length === 10)
-
-  async function loadMore() {
-    setLoadingMore(true)
-    const more = getPostsSync(posts.length + 10).slice(posts.length)
-    setPosts((prev) => [...prev, ...more])
-    setHasMore(more.length === 10)
-    setLoadingMore(false)
-  }
+  // Every post is rendered on the first pass, so the prerendered /blog HTML
+  // links to every article. A "Load More" button hid all but 10 posts from
+  // crawlers that don't click (ops to-do #35, 2026-11-10).
+  const posts = getAllPostsSync()
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -119,19 +108,6 @@ export default function Blog() {
                   </Link>
                 ))}
               </div>
-
-              {hasMore && (
-                <div className="flex justify-center mt-12">
-                  <button
-                    onClick={loadMore}
-                    disabled={loadingMore}
-                    className="font-raleway text-sm font-semibold text-[#2c1f0e] border border-[#2c1f0e] px-8 py-3 hover:bg-[#2c1f0e] hover:text-white transition-all duration-300 disabled:opacity-50 flex items-center gap-2"
-                  >
-                    {loadingMore && <Loader2 size={15} className="animate-spin" />}
-                    {loadingMore ? 'Loading…' : 'Load More'}
-                  </button>
-                </div>
-              )}
             </>
           )}
         </div>

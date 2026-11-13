@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-13",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -315,7 +315,9 @@
         "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
         "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
         "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
-        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
       ],
       "queue_id": null
     },
@@ -571,7 +573,9 @@
         "https://www.howardweddingrentals.com/contact"
       ],
       "linked_from": [
-        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
       ],
       "queue_id": "kw-017"
     },
@@ -601,7 +605,9 @@
       ],
       "linked_from": [
         "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
-        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
       ],
       "queue_id": "kw-018"
     },
@@ -633,7 +639,9 @@
         "https://www.howardweddingrentals.com/contact"
       ],
       "linked_from": [
-        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas"
+        "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
       ],
       "queue_id": "kw-019"
     },
@@ -666,6 +674,70 @@
       ],
       "linked_from": [],
       "queue_id": "kw-020"
+    },
+    {
+      "slug": "wedding-ceremony-checklist",
+      "title": "Wedding Ceremony Checklist: A Calm, Complete List",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "wedding ceremony checklist",
+      "secondary_keywords": [
+        "outdoor wedding checklist",
+        "wedding ceremony to do list",
+        "ceremony planning checklist"
+      ],
+      "published_date": "2026-11-13",
+      "last_updated": "2026-11-13",
+      "tags": [
+        "wedding ceremony checklist",
+        "outdoor wedding checklist",
+        "ceremony planning",
+        "church pews"
+      ],
+      "excerpt": "A wedding ceremony checklist for every stage, from booking seating to the morning of, with extra lines for outdoor ceremonies. Check it off calmly.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-021"
+    },
+    {
+      "slug": "backyard-wedding-ceremony-ideas",
+      "title": "Backyard Wedding Ideas: A Calm Guide to the Ceremony",
+      "url": "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "backyard wedding ideas",
+      "secondary_keywords": [
+        "backyard wedding ceremony ideas",
+        "backyard wedding layout",
+        "home wedding ceremony ideas"
+      ],
+      "published_date": "2026-11-13",
+      "last_updated": "2026-11-13",
+      "tags": [
+        "backyard wedding ideas",
+        "backyard wedding ceremony ideas",
+        "ceremony planning",
+        "church pews"
+      ],
+      "excerpt": "Backyard wedding ideas that make a home lawn feel like a real ceremony: layout, an aisle, seating, and the practical bits nobody posts about.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-022"
     }
   ]
 }

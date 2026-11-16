@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://www.howardweddingrentals.com/blog</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -177,6 +177,18 @@
   <url>
     <loc>https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas</loc>
     <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

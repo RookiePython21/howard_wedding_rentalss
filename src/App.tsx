@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SEO } from './components/SEO'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import StickyCallBar from './components/ui/StickyCallBar'
 import Hero from './components/sections/Hero'
 import Benefits from './components/sections/Benefits'
 import Testimonials from './components/sections/Testimonials'
@@ -50,6 +51,7 @@ function Home() {
         <FAQ />
         <CTA />
       </main>
+      <StickyCallBar />
       <Footer />
     </div>
   )

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import StickyCallBar from '../components/ui/StickyCallBar'
 import { SEO } from '../components/SEO'
 import ServiceFAQ from '../components/sections/ServiceFAQ'
 import { graph, localBusinessSchema, pewServiceSchema, faqPageSchema } from '../content/seoSchema'
@@ -360,6 +361,7 @@ export default function Services() {
 
         </div>
       </main>
+      <StickyCallBar />
       <Footer />
     </div>
   )

@@ -508,9 +508,9 @@
       "competitor_pages_to_beat": [],
       "added_date": "2026-10-26",
       "source_run": "research-run-007",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null,
+      "status": "published",
+      "article_slug": "wedding-ceremony-chairs-vs-pews",
+      "published_date": "2026-11-20",
       "notes": "Doubles as the pews-vs-chairs comparison page (plan option 7). Score hand-ordered to match the 10/25 plan Friday order (formula score preserved in research-log)."
     },
     {
@@ -546,9 +546,9 @@
       ],
       "added_date": "2026-11-08",
       "source_run": "research-run-009",
-      "status": "queued",
-      "article_slug": null,
-      "published_date": null
+      "status": "published",
+      "article_slug": "how-long-is-a-wedding-ceremony",
+      "published_date": "2026-11-20"
     },
     {
       "id": "kw-003",

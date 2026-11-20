@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for all published blog articles. Updated by article-writer Stage 5 after each publish. Used for deduplication in research and internal link suggestions in article writing.",
-  "last_updated": "2026-11-13",
+  "last_updated": "2026-11-20",
   "articles": [
     {
       "slug": "how-much-does-a-church-pew-weigh",
@@ -317,7 +317,9 @@
         "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
         "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
         "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
-        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews",
+        "https://www.howardweddingrentals.com/blog/how-long-is-a-wedding-ceremony"
       ],
       "queue_id": null
     },
@@ -575,7 +577,9 @@
       "linked_from": [
         "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
         "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
-        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews",
+        "https://www.howardweddingrentals.com/blog/how-long-is-a-wedding-ceremony"
       ],
       "queue_id": "kw-017"
     },
@@ -607,7 +611,9 @@
         "https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas",
         "https://www.howardweddingrentals.com/blog/church-wedding-decor-ideas",
         "https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist",
-        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas"
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews",
+        "https://www.howardweddingrentals.com/blog/how-long-is-a-wedding-ceremony"
       ],
       "queue_id": "kw-018"
     },
@@ -736,8 +742,74 @@
         "https://www.howardweddingrentals.com/seating-chart-tool",
         "https://www.howardweddingrentals.com/contact"
       ],
-      "linked_from": [],
+      "linked_from": [
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews"
+      ],
       "queue_id": "kw-022"
+    },
+    {
+      "slug": "wedding-ceremony-chairs-vs-pews",
+      "title": "Wedding Ceremony Chairs vs. Pews: How to Choose",
+      "url": "https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "wedding ceremony chairs",
+      "secondary_keywords": [
+        "wedding ceremony chairs vs pews",
+        "ceremony chair rental",
+        "wedding ceremony seating options",
+        "chairs or pews for wedding"
+      ],
+      "published_date": "2026-11-20",
+      "last_updated": "2026-11-20",
+      "tags": [
+        "wedding ceremony chairs",
+        "ceremony seating",
+        "church pews",
+        "wedding planning"
+      ],
+      "excerpt": "Wedding ceremony chairs or wooden pews? Compare the look, comfort and setup of each style, then pick the seating that fits your day and move on.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/backyard-wedding-ceremony-ideas",
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/seating-chart-tool",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-023"
+    },
+    {
+      "slug": "how-long-is-a-wedding-ceremony",
+      "title": "How Long Is a Wedding Ceremony? A Calm Timing Guide",
+      "url": "https://www.howardweddingrentals.com/blog/how-long-is-a-wedding-ceremony",
+      "pillar_id": "ceremony-planning",
+      "primary_keyword": "how long is a typical wedding ceremony",
+      "secondary_keywords": [
+        "how long is a wedding ceremony",
+        "wedding ceremony length",
+        "how long is a catholic wedding ceremony",
+        "wedding ceremony timeline"
+      ],
+      "published_date": "2026-11-20",
+      "last_updated": "2026-11-20",
+      "tags": [
+        "wedding ceremony length",
+        "wedding timeline",
+        "ceremony planning",
+        "wedding planning"
+      ],
+      "excerpt": "How long is a typical wedding ceremony? Most run 20 to 30 minutes. Here's how long each type takes, what stretches it, and how to plan the timeline.",
+      "links_to": [
+        "https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide",
+        "https://www.howardweddingrentals.com/services",
+        "https://www.howardweddingrentals.com/blog/church-pew-rental-for-wedding",
+        "https://www.howardweddingrentals.com/blog/wedding-aisle-ideas",
+        "https://www.howardweddingrentals.com/contact"
+      ],
+      "linked_from": [],
+      "queue_id": "kw-034"
     }
   ]
 }

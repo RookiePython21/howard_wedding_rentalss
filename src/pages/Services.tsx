@@ -5,6 +5,8 @@ import Footer from '../components/layout/Footer'
 import StickyCallBar from '../components/ui/StickyCallBar'
 import { SEO } from '../components/SEO'
 import ServiceFAQ from '../components/sections/ServiceFAQ'
+import PlanningGuides from '../components/sections/PlanningGuides'
+import { pewGuides } from '../content/planningGuides'
 import { graph, localBusinessSchema, pewServiceSchema, faqPageSchema } from '../content/seoSchema'
 
 const pewIncludes = [
@@ -357,6 +359,17 @@ export default function Services() {
           {/* ── FAQ ── */}
           <div className="-mx-4 sm:-mx-6">
             <ServiceFAQ faqs={pewFaqs.map((f) => ({ id: f.id, question: f.question, answer: f.text }))} />
+          </div>
+
+          <div className="w-full h-px bg-cream-200" />
+
+          {/* ── Planning guides (internal links to the blog) ── */}
+          <div className="-mx-4 sm:-mx-6">
+            <PlanningGuides
+              heading="Church Pew Planning Guides"
+              intro="More from our team on pews, aisles and ceremony seating."
+              guides={pewGuides}
+            />
           </div>
 
         </div>

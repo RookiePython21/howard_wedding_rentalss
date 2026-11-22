@@ -32,6 +32,7 @@
   </url>
   <url>
     <loc>https://www.howardweddingrentals.com/blog</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -114,25 +115,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/what-are-place-cards</loc>
-    <lastmod>2026-09-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.howardweddingrentals.com/blog/wedding-escort-cards-guide</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/wedding-seating-chart-template-vs-tool</loc>
-    <lastmod>2026-09-29</lastmod>
+    <loc>https://www.howardweddingrentals.com/blog/what-are-place-cards</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.howardweddingrentals.com/blog/table-by-table-wedding-seating-chart</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.howardweddingrentals.com/blog/wedding-seating-chart-template-vs-tool</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -156,20 +157,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.howardweddingrentals.com/blog/wedding-aisle-ideas</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-seating-guide</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -180,8 +175,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://www.howardweddingrentals.com/blog/outdoor-wedding-ceremony-ideas</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -192,13 +187,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews</loc>
-    <lastmod>2026-11-20</lastmod>
+    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-checklist</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.howardweddingrentals.com/blog/how-long-is-a-wedding-ceremony</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.howardweddingrentals.com/blog/wedding-ceremony-chairs-vs-pews</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
